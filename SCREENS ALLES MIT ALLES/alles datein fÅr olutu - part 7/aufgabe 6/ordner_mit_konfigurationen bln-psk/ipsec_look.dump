@@ -1,0 +1,6 @@
+localhost.localdomain Thu Jan 18 18:26:56 CET 2018
+IPSEC TABLE
+ROUTING TABLE
+10.88.40.96/27 dev eth5  proto kernel  scope link  src 10.88.40.97  metric 1 
+10.88.40.128/27 via 10.88.40.98 dev eth5  proto static 
+default via 10.88.40.98 dev eth5  proto static 

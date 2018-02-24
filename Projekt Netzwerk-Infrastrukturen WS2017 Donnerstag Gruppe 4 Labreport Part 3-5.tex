@@ -1,0 +1,185 @@
+%\documentclass[11pt,a4paper]{scrbook}
+\documentclass[12pt,a4paper,listof=totoc,captions=nooneline]{scrreprt} 
+\usepackage{geometry}	
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[pdftex]{graphicx}
+\usepackage[ngerman]{babel}
+\usepackage{colortbl}	
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+%\usepackage{tocloft}
+\usepackage[colorlinks,
+pdfpagelabels,
+pdfstartview = FitH,
+bookmarksopen = true,
+bookmarksnumbered = true,
+linkcolor = black,
+plainpages = false,
+hypertexnames = false,
+citecolor = black] {hyperref}
+\usepackage{amsmath, amssymb, amstext, amsfonts, mathrsfs}	% Mathe
+
+\usepackage{selinput} 
+\SelectInputMappings{ 
+adieresis={ä}, 
+germandbls={ß}, 
+}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{graphicx}
+\usepackage[onehalfspacing]{setspace}
+
+\usepackage{chngcntr}
+\counterwithout{equation}{chapter}
+
+
+\definecolor{uhhred}{cmyk}{0,100,100,0}
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\addtokomafont{caption}{\centering}
+\AfterTOCHead[lof]{\renewcommand*{\numberline}[1]{\nonumberline}}
+\AfterTOCHead[toc]{\renewcommand*{\numberline}[1]{\nonumberline}}
+
+\usepackage{selinput} 
+\SelectInputMappings{ 
+adieresis={ä}, 
+germandbls={ß}, 
+}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{graphicx}
+\usepackage[onehalfspacing]{setspace}
+
+
+\definecolor{uhhred}{cmyk}{0,100,100,0}
+
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\addtokomafont{caption}{\centering}
+\AfterTOCHead[lof]{\renewcommand*{\numberline}[1]{\nonumberline}}
+\AfterTOCHead[toc]{\renewcommand*{\numberline}[1]{\nonumberline}}
+
+\begin{document}
+
+%\frontmatter
+\newgeometry{centering,left=2cm,right=2cm,top=2cm,bottom=2cm}
+\begin{titlepage}
+\includegraphics[scale=0.3]{UHH-Logo_2010_Farbe_CMYK.pdf}
+\vspace*{2cm}
+\Large
+\begin{center} 
+      {\color{uhhred}\textbf{\so{Labreport, Gruppe 4 }}}
+%oder {\color{uhhred}\textbf{\so{MASTERTHESIS}}}
+\vspace*{2.0cm}\\
+{\LARGE \textbf{Projekt Netzwerk-Infrastruktur WS 2017/18}}
+\vspace*{2.0cm}\\
+vorgelegt von
+\vspace*{0.4cm}\\
+\textbf{Dewin Bagci:} 5bagci@informatik.uni-hamburg.de\\ \textbf{Karan Popat:} karan.popat@outlook.de \\ \textbf{ Hanife Demircioglu:} h.demircioglu@hotmail.de \\ 
+\end{center}
+\vspace*{3.9cm}
+
+\noindent 
+MIN-Fakultät \vspace*{0.4cm} \\ 
+Fachbereich Informatik \\
+Abgabedatum: 01.03.2018\\
+Dozent: Robert Olotu
+
+\end{titlepage}
+
+\restoregeometry
+
+\tableofcontents
+
+\chapter{Abkürzungsverzeichnis}
+
+\listoffigures
+%\mainmatter 
+
+
+\chapter*{Part 3: Network Troubleshooting Utilities}
+\addcontentsline{toc}{chapter}{Part 3: Network Troubleshooting Utilities} 
+
+\begin{figure}[H]
+%\begin{subfigure}{0.5\textwidth}
+
+\includegraphics[width=0.75\textwidth]{UHH-Logo_2010_Farbe_CMYK.pdf}
+%\subcaption{Subfigure Bild Nr. 1}
+
+%\end{subfigure}
+%\begin{subfigure}{0.5\textwidth}
+%\includegraphics[width=0.75\textwidth]{Bild2.png}
+%\subcaption{Subfigure Bild Nr. 2}
+%\end{subfigure}
+\caption[Abbildung 1: Broadcast und Multicast]{Broadcast und Multicast}
+\end{figure}
+
+
+\section*{Exercise 6: Managing Services (Please use pnidX-svr-mu)}
+\addcontentsline{toc}{section}{Exercise 6: Managing Services (Please use pnidX-svr-mu} 
+
+\section*{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}
+\addcontentsline{toc}{section}{Exercise 7: Configure the following network (figure 1) using ifconfig and route add} 
+
+\section*{Exercise 8: Configure the following network (figure 1) using ip and nmcli}
+\addcontentsline{toc}{section}{Exercise 8: Configure the following network (figure 1) using ip and nmcli} 
+
+\section*{Exercise 9: Configure the following network (figure 1) using GUI}
+\addcontentsline{toc}{section}{Exercise 9: Configure the following network (figure 1) using GUI} 
+
+\chapter*{Part 4: Network Scanning}
+\addcontentsline{toc}{chapter}{Part 4: Network Scanning} 
+
+\section*{Exercise 1: Configure the networks of figure 1}
+\addcontentsline{toc}{section}{Exercise 1: Configure the networks of figure 1} 
+
+\section*{Exercise 2: NMAP}
+\addcontentsline{toc}{section}{Exercise 2: NMAP} 
+
+\section*{Exercise 3: Nessus network device identification}
+\addcontentsline{toc}{section}{Exercise 3: Nessus network device identification} 
+
+\section*{Exercise 4: OpenVAS Network device identification}
+\addcontentsline{toc}{section}{Exercise 4: OpenVAS Network device identification} 
+
+\chapter*{Part 5: Sniffing, Virtual Private Network (VPN)}
+\addcontentsline{toc}{chapter}{Part 5: Sniffing, Virtual Private Network (VPN)} 
+
+\section*{Exercise 1: Configure and set the networks shown below (figure1 and 2)}
+\addcontentsline{toc}{section}{Exercise 1: Configure and set the networks shown below (figure1 and 2)} 
+
+\section*{Exercise 2: Getting started with network monitoring tools}
+\addcontentsline{toc}{section}{Exercise 2: Getting started with network monitoring tools} 
+
+\section*{Exercise 3: TCPDUMP}
+\addcontentsline{toc}{section}{Exercise 3: TCPDUMP} 
+
+\section*{Exercise 4: Wireshark}
+\addcontentsline{toc}{section}{Exercise 4: Wireshark} 
+
+\section*{Exercise 5: Experimenting with network monitoring tools}
+\addcontentsline{toc}{section}{Exercise 5: Experimenting with network monitoring tools} 
+
+\section*{Exercise 6: Set up a host-to-host VPN using preshared key}
+\addcontentsline{toc}{section}{Exercise 6: Set up a host-to-host VPN using preshared key} 
+
+\section*{Exercise 7: Set up a host-to-host VPN using RSA keys}
+\addcontentsline{toc}{section}{Exercise 7: Set up a host-to-host VPN using RSA keys}
+
+\section*{Exercise 8: Set up a network-to-network VPN using preshared key}
+\addcontentsline{toc}{section}{Exercise 8: Set up a network-to-network VPN using preshared key}
+
+\section*{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}
+\addcontentsline{toc}{section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}
+
+
+
+%\backmatter 
+
+\chapter{Literaturverzeichnis und Quellenverzeichnis}
+
+
+\end{document}
