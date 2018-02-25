@@ -11,14 +11,14 @@
 \contentsline {section}{Exercise 2: NMAP}{8}{section*.12}
 \contentsline {section}{Exercise 3: Nessus network device identification}{8}{section*.13}
 \contentsline {section}{Exercise 4: OpenVAS Network device identification}{8}{section*.14}
-\contentsline {chapter}{Part 5: Sniffing, Virtual Private Network (VPN)}{10}{chapter*.15}
-\contentsline {section}{Exercise 1: Configure and set the networks shown below (figure1 and 2)}{10}{section*.16}
-\contentsline {section}{Exercise 2: Getting started with network monitoring tools}{10}{section*.17}
-\contentsline {section}{Exercise 3: TCPDUMP}{10}{section*.18}
-\contentsline {section}{Exercise 4: Wireshark}{10}{section*.19}
-\contentsline {section}{Exercise 5: Experimenting with network monitoring tools}{10}{section*.20}
-\contentsline {section}{Exercise 6: Set up a host-to-host VPN using preshared key}{10}{section*.21}
-\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{10}{section*.22}
-\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{10}{section*.23}
-\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{10}{section*.24}
-\contentsline {chapter}{\numberline {2}Literaturverzeichnis und Quellenverzeichnis}{11}{chapter.25}
+\contentsline {chapter}{Part 5: Sniffing, Virtual Private Network (VPN)}{9}{chapter*.15}
+\contentsline {section}{Exercise 1: Configure and set the networks shown below (figure1 and 2)}{9}{section*.16}
+\contentsline {section}{Exercise 2: Getting started with network monitoring tools}{9}{section*.17}
+\contentsline {section}{Exercise 3: TCPDUMP}{9}{section*.18}
+\contentsline {section}{Exercise 4: Wireshark}{9}{section*.19}
+\contentsline {section}{Exercise 5: Experimenting with network monitoring tools}{12}{section*.20}
+\contentsline {section}{Exercise 6: Set up a host-to-host VPN using preshared key}{12}{section*.21}
+\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{12}{section*.22}
+\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{12}{section*.23}
+\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{12}{section*.24}
+\contentsline {chapter}{\numberline {2}Literaturverzeichnis und Quellenverzeichnis}{13}{chapter.25}

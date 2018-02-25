@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[pdftex]{graphicx}
+\usepackage{graphicx}
 \usepackage[ngerman]{babel}
 \usepackage{colortbl}	
 \usepackage{xcolor}
@@ -62,7 +63,7 @@ germandbls={ß},
 \AfterTOCHead[toc]{\renewcommand*{\numberline}[1]{\nonumberline}}
 
 \begin{document}
-
+\setlength{\parindent}{0pt}
 %\frontmatter
 \newgeometry{centering,left=2cm,right=2cm,top=2cm,bottom=2cm}
 \begin{titlepage}
@@ -158,6 +159,45 @@ Dozent: Robert Olotu
 
 \section*{Exercise 4: Wireshark}
 \addcontentsline{toc}{section}{Exercise 4: Wireshark} 
+
+\textbf{Question 1:} Please type and examine the syntax for a Wireshark command which capture filter so that all IP datagrams with source or destination IP address equal to 10.88.X.? are recorded. \\ 
+
+\textbf{Answer 1:} Mit dem Filter: \textit{ip.addr == 10.88.40.70} können wir alle Netzwerkpakete, welche über die Schnittstelle 10.88.40.70 gesendet oer empfangen werden, abfangen und anzeigen lassen.\\
+
+\textbf{Question 2:} Please type and examine the syntax for a Wireshark display filter that shows IP datagrams with destination IP address equal to 10.88.X.? and frame size greater than 400 bytes. \\
+
+\textbf{Answer 2:} Um alle Datenpakete abzufangen, die mindestens 400 Byte groß sind, bedarf eine kleine Erweiterung des vorherigen Befehls. Der Filter lautet nun: \textit{ip.addr == 10.88.40.70 \&\& frame.len > 400}. Mit dem Teil \textit{frame.len > X} können wir die Datenpakete nach Bytegröße X Filtern. Für X gilt, X $< 2^{32}$ $\wedge$ X $\in \mathbb{N}$. \\
+
+\textbf{Question 3:} Please type and examine the syntax for a Wireshark display filter that shows packets containing ICMP messages with source or destination IP address equal to 10.88.X.? and frame numbers between 15 and 30 \\
+
+\textbf{Answer 3:} Der Filter lautet: \textit{ip.addr == 10.88.40.70 \&\& (frame.number > 15 \&\& frame.number < 30)}. ICMP steht für Internet Control Message Protocol und übermittelt hauptsächlich Diagnose-informationen zwischen dem Router und dem Host. \\
+
+\textbf{Question 4:} Please type and examine the syntax for a Wireshark display filter that shows packets containing TCP segments with source or destination IP address equal to 10.88.X.? and using port number 23. \\
+
+\textbf{Answer 4:} Damit wir alle TCP Pakete eines Hosts über die Port 23 abfangen können wird der folgende Filter eingesetzt: \textit{ip.dst == 10.88.40.70 and tcp.port == 23}. Bei TCP handelt es sich um ein Übertragungsprotokoll (Transmission Control Protocol) aus der Familie der Internetprotokolle. Port 23 ist standardisiert für den Service Telnet. \\
+
+\textbf{Question 5:} Please type and examine a Wireshark capture filter expression for Q4. \\  
+
+\textbf{Answer 5:} Der Filter ist ähnlich wie in Q4, lediglich die Konfiguration findet an einer anderen Stelle statt. \\ 
+
+\textbf{Question 6:} Please type and examine the syntax for a Wireshark command which, by default, collects packets with source or destination IP address 10.88.X.? on interface eth4. \\
+
+\textbf{Answer 6:} Innerhalb des Terminals lässt sich der Filter: wireshark -i eth4 -k -f "host 10.88.40.70", anwenden. Die Argumente bedeuten dabei folgendes: -i eth4 steht für Interface, -k startet das Abfangen von Paketen und -f "host 10.88.40.70", ist der Paketfilter.\\
+
+\textbf{Question 7:} : Please type and examine the syntax of a display filter which selects the TCP packets with destination IP address 10.88.X.?, and TCP port number 23.\\
+
+\textbf{Answer 7:} Der Filter lautet: \textit{ip.addr == 10.88.40.70 \&\& tcp.port == 23} und fängt alle ein-/ausgehenden Pakete der Ip Adresse 10.88.40.70 über den Port 23 (Telnet) ab.\\
+
+\textbf{Question 8:} Please login to the server pnidX-mid-hh and start an ftp client to the server pnidXcnt-bln(vsftpd
+daemon should be running on pnidX-cnt-bln). Please use
+wireshark on pnidX-mid-bln to sniff or capture the username and password of the ftp service between pnidX-mid-hh and pnidX-cnt-bln. Is this possible, show your result of the capture\\
+
+\textbf{Answer 8:} Mithilfe von Wireshark können wir leicht das Telnet login Passwort herausfinden, da bei der Übertragung via Telnet die Pakete unverschlüsselt übertragen werden. Dazu starten wir zunächst Wirehsark auf dem Host pnid4-mid-hh. \\
+
+\textbf{Question 9:} Please login to the server pnidX-mid-hh and start an ssh client to the server
+pnidX-cnt-bln(sshd daemon should be running on pnidX-cnt-bln). Please use wireshark on pnidX-mid-bln to sniff or capture the username and password of the ssh service between pnidX-mid-hh and pnidX-cnt-bln. Is this possible, show the result of the capture. \\
+
+\textbf{Answer 9:} Anders als Telnet werden bei shh (Secure Shell) die Pakete verschlüsselt übertragen, sodass es nicht möglich ist das Passwort mitzulesen. Zuerst starten wir wireshark auf dem Host pnid4-mid-hh. \\
 
 \section*{Exercise 5: Experimenting with network monitoring tools}
 \addcontentsline{toc}{section}{Exercise 5: Experimenting with network monitoring tools} 
