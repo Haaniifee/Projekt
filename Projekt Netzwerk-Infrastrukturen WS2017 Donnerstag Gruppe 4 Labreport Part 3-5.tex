@@ -202,6 +202,20 @@ pnidX-cnt-bln(sshd daemon should be running on pnidX-cnt-bln). Please use wiresh
 \section*{Exercise 5: Experimenting with network monitoring tools}
 \addcontentsline{toc}{section}{Exercise 5: Experimenting with network monitoring tools} 
 
+\textbf{Exercise:} In this exercise you will connect to the webserver pnidX-cnt-bln from pnidX-mid-hh. Let pnidX-cnt-bln determine your IP-address and the OS you are running. Then, connect to
+a service of your choice (e.g. ftp, http, ssh etc.) on pnidX cnt-bln. Let pnidX-mid-hh determine which services are running on pnidX-cnt-bln. \\
+
+\textbf{Solution:} Wir führen zunächst nmap auf dem Host pnid4-cnt-bln aus und übergeben dabei die Zieladresse des Hosts pnid4-mid-hh, damit wir sehen können welche Ports geöffnet sind bzw. welcher Service auf dem Zielhost gerade aktiv ist. \\
+
+[IMAGE] \\
+
+Wir sehen nun, dass die Ports 21 ftp, 22 ssh, 23 telnet, 80 http und 111 rpcbind offen sind und entscheiden uns via Telnet vom Quellhost pnid4-cnt-bln bei dem Zielhost pnid-mid-hh anzumelden.
+
+[IMAGE] \\  
+
+Die Ausgabe des letzten Logins zeigt uns, dass die Anmeldung erfolgreich war.  
+
+
 \section*{Exercise 6: Set up a host-to-host VPN using preshared key}
 \addcontentsline{toc}{section}{Exercise 6: Set up a host-to-host VPN using preshared key} 
 

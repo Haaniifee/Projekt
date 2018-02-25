@@ -17,8 +17,8 @@
 \contentsline {section}{Exercise 3: TCPDUMP}{9}{section*.18}
 \contentsline {section}{Exercise 4: Wireshark}{9}{section*.19}
 \contentsline {section}{Exercise 5: Experimenting with network monitoring tools}{12}{section*.20}
-\contentsline {section}{Exercise 6: Set up a host-to-host VPN using preshared key}{12}{section*.21}
-\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{12}{section*.22}
-\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{12}{section*.23}
-\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{12}{section*.24}
-\contentsline {chapter}{\numberline {2}Literaturverzeichnis und Quellenverzeichnis}{13}{chapter.25}
+\contentsline {section}{Exercise 6: Set up a host-to-host VPN using preshared key}{13}{section*.21}
+\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{13}{section*.22}
+\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{13}{section*.23}
+\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{13}{section*.24}
+\contentsline {chapter}{\numberline {2}Literaturverzeichnis und Quellenverzeichnis}{14}{chapter.25}

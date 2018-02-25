@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.26)  25 FEB 2018 19:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.11.26)  25 FEB 2018 20:09
 entering extended mode
 **"./Projekt Netzwerk-Infrastrukturen WS2017 Donnerstag Gruppe 4 Labreport Part
  3-5.tex"
@@ -1278,59 +1278,83 @@ Package babel Info: Redefining ngerman shorthand "|
 (babel)             in language  on input line 203.
 Package babel Info: Redefining ngerman shorthand "~
 (babel)             in language  on input line 203.
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--207
+
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 206.
+(babel)             in language  on input line 207.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 206.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 209.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 209.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 212.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 212.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 215.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 215.
-Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 221.
-Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 221.
+(babel)             in language  on input line 207.
 [11]
+Underfull \hbox (badness 10000) in paragraph at lines 208--209
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
+
+ []
+
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 221.
+(babel)             in language  on input line 220.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 221.
- [12]
+(babel)             in language  on input line 220.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 223.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 223.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 226.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 226.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 229.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 229.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 235.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 235.
+[12]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language  on input line 235.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language  on input line 235.
+ [13]
 chapter 2.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 221.
+(babel)             in language  on input line 235.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 221.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 224.
+(babel)             in language  on input line 235.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 238.
 Package babel Info: Redefining ngerman shorthand "|
-(babel)             in language  on input line 224.
+(babel)             in language  on input line 238.
 Package babel Info: Redefining ngerman shorthand "~
-(babel)             in language  on input line 224.
-[13
+(babel)             in language  on input line 238.
+[14
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 224.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 238.
 
 ("Projekt Netzwerk-Infrastrukturen WS2017 Donnerstag Gruppe 4 Labreport Part 3-
 5.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 224.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 224.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 238.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 238.
 Package rerunfilecheck Info: File `"Projekt Netzwerk-Infrastrukturen WS2017 Don
 nerstag Gruppe 4 Labreport Part 3-5".out' has not changed.
 (rerunfilecheck)             Checksum: 81F280453E611012AF90BD560EF42D69;2147.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 224.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 238.
  ) 
 Here is how much of TeX's memory you used:
- 12480 strings out of 493312
- 193330 string characters out of 3138895
+ 12481 strings out of 493312
+ 193337 string characters out of 3138895
  389639 words of memory out of 3000000
  15789 multiletter control sequences out of 15000+200000
  16072 words of font info for 45 fonts, out of 3000000 for 9000
@@ -1350,9 +1374,9 @@ ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files
 9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/symbols/msbm10.pfb>
 Output written on "Projekt Netzwerk-Infrastrukturen WS2017 Donnerstag Gruppe 4 
-Labreport Part 3-5.pdf" (13 pages, 204273 bytes).
+Labreport Part 3-5.pdf" (14 pages, 206936 bytes).
 PDF statistics:
- 555 PDF objects out of 1000 (max. 8388607)
- 39 named destinations out of 1000 (max. 500000)
+ 564 PDF objects out of 1000 (max. 8388607)
+ 40 named destinations out of 1000 (max. 500000)
  190 words of extra memory for PDF output out of 10000 (max. 10000000)
 
