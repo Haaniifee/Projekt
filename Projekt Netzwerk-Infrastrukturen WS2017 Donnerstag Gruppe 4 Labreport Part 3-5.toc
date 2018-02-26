@@ -1,24 +1,22 @@
 \select@language {ngerman}
-\contentsline {chapter}{\numberline {1}Abk\"urzungsverzeichnis}{4}{chapter.2}
-\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{5}{chapter*.3}
-\contentsline {chapter}{Part 3: Network Troubleshooting Utilities}{6}{chapter*.4}
-\contentsline {section}{Exercise 6: Managing Services (Please use pnidX-svr-mu}{7}{section*.6}
-\contentsline {section}{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}{7}{section*.7}
-\contentsline {section}{Exercise 8: Configure the following network (figure 1) using ip and nmcli}{7}{section*.8}
-\contentsline {section}{Exercise 9: Configure the following network (figure 1) using GUI}{7}{section*.9}
-\contentsline {chapter}{Part 4: Network Scanning}{8}{chapter*.10}
-\contentsline {section}{Exercise 1: Configure the networks of figure 1}{8}{section*.11}
-\contentsline {section}{Exercise 2: NMAP}{8}{section*.12}
-\contentsline {section}{Exercise 3: Nessus network device identification}{8}{section*.13}
-\contentsline {section}{Exercise 4: OpenVAS Network device identification}{8}{section*.14}
-\contentsline {chapter}{Part 5: Sniffing, Virtual Private Network (VPN)}{9}{chapter*.15}
-\contentsline {section}{Exercise 1: Configure and set the networks shown below (figure1 and 2)}{9}{section*.16}
-\contentsline {section}{Exercise 2: Getting started with network monitoring tools}{9}{section*.17}
-\contentsline {section}{Exercise 3: TCPDUMP}{9}{section*.18}
-\contentsline {section}{Exercise 4: Wireshark}{9}{section*.19}
-\contentsline {section}{Exercise 5: Experimenting with network monitoring tools}{12}{section*.20}
-\contentsline {section}{Exercise 6: Set up a host-to-host VPN using preshared key}{13}{section*.21}
-\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{13}{section*.22}
-\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{13}{section*.23}
-\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{13}{section*.24}
-\contentsline {chapter}{\numberline {2}Literaturverzeichnis und Quellenverzeichnis}{14}{chapter.25}
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{3}{chapter*.2}
+\contentsline {chapter}{Part 3: Network Troubleshooting Utilities}{4}{chapter*.3}
+\contentsline {section}{Exercise 6: Managing Services (Please use pnidX-svr-mu}{4}{section*.4}
+\contentsline {section}{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}{13}{section*.25}
+\contentsline {section}{Exercise 8: Configure the following network (figure 1) using ip and nmcli}{13}{section*.26}
+\contentsline {section}{Exercise 9: Configure the following network (figure 1) using GUI}{13}{section*.27}
+\contentsline {chapter}{Part 4: Network Scanning}{14}{chapter*.28}
+\contentsline {section}{Exercise 1: Configure the networks of figure 1}{14}{section*.29}
+\contentsline {section}{Exercise 2: NMAP}{14}{section*.30}
+\contentsline {section}{Exercise 3: Nessus network device identification}{14}{section*.31}
+\contentsline {section}{Exercise 4: OpenVAS Network device identification}{14}{section*.32}
+\contentsline {chapter}{Part 5: Sniffing, Virtual Private Network (VPN)}{15}{chapter*.33}
+\contentsline {section}{Exercise 1: Configure and set the networks shown below (figure1 and 2)}{15}{section*.34}
+\contentsline {section}{Exercise 2: Getting started with network monitoring tools}{15}{section*.35}
+\contentsline {section}{Exercise 3: TCPDUMP}{15}{section*.36}
+\contentsline {section}{Exercise 4: Wireshark}{15}{section*.37}
+\contentsline {section}{Exercise 5: Experimenting with network monitoring tools}{18}{section*.39}
+\contentsline {section}{Exercise 6: Set up a host-to-host VPN using preshared key}{19}{section*.40}
+\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{19}{section*.41}
+\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{19}{section*.42}
+\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{19}{section*.43}

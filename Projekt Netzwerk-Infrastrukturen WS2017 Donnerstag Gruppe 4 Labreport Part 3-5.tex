@@ -94,7 +94,7 @@ Dozent: Robert Olotu
 
 \tableofcontents
 
-\chapter{Abkürzungsverzeichnis}
+%\chapter{Abkürzungsverzeichnis}
 
 \listoffigures
 %\mainmatter 
@@ -103,10 +103,10 @@ Dozent: Robert Olotu
 \chapter*{Part 3: Network Troubleshooting Utilities}
 \addcontentsline{toc}{chapter}{Part 3: Network Troubleshooting Utilities} 
 
-\begin{figure}[H]
+%\begin{figure}[H]
 %\begin{subfigure}{0.5\textwidth}
 
-\includegraphics[width=0.75\textwidth]{UHH-Logo_2010_Farbe_CMYK.pdf}
+%\includegraphics[width=0.75\textwidth]{UHH-Logo_2010_Farbe_CMYK.pdf}
 %\subcaption{Subfigure Bild Nr. 1}
 
 %\end{subfigure}
@@ -114,12 +114,172 @@ Dozent: Robert Olotu
 %\includegraphics[width=0.75\textwidth]{Bild2.png}
 %\subcaption{Subfigure Bild Nr. 2}
 %\end{subfigure}
-\caption[Abbildung 1: Broadcast und Multicast]{Broadcast und Multicast}
-\end{figure}
+%\caption[Abbildung 1: Broadcast und Multicast]{Broadcast und Multicast}
+%\end{figure}
 
 
 \section*{Exercise 6: Managing Services (Please use pnidX-svr-mu)}
 \addcontentsline{toc}{section}{Exercise 6: Managing Services (Please use pnidX-svr-mu} 
+Please type and explain the meaning of the following commands: \\
+1) \# chkconfig \\
+Die folgenden Kommandos wurden auf Rechner pnid4-svr-mu mit dem Betriebssystem Centos-6.5-x86\_64 ausgeführt. \\
+Zeigt an welche Dienste in ihren jeweiligen runlevels aktiviert bzw. deaktiviert sind [siehe Abb. 1] \\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b1.PNG}
+\end{center}
+\caption[Abbildung 1: aktivierte bzw. deaktivierte Dienste eines runlevels]{aktivierte bzw. deaktivierte Dienste eines runlevels}
+\end{figure}
+
+2)\# \verb|chkonfig -- list iptables|\\
+Zeigt an in welchen runlevel iptables eingeschaltet bzw. ausgeschaltet ist. [Abb. 2]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b2.png}
+\end{center}
+\caption[Abbildung 2: Runlevel, in denen iptables eingeschaltet bzw. ausgeschaltet sind]{Runlevels, in denen iptables eingeschaltet bzw. ausgeschaltet sind}
+\end{figure}
+
+3)\# \verb|chkconfig --level 2 iptables off| \\
+Deaktiviert iptables im runlevel 2. [Abb. 3]. Wir sehen, dass zuvor iptables im runlevel 2 aktiviert war. 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b3.png}
+\end{center}
+\caption[Abbildung 3: ]{runlevel 2 wird ausgeschaltet}
+\end{figure}
+
+4)\# \verb|chkconfig --level 2345 iptables off|\\
+Deaktiviert iptables im runlevel 2, 3, 4 und 5. [Abb. 4]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b4.png}
+\end{center}
+\caption[Abbildung 4: Runlevel 2,3,4,5 werden deaktiviert]{Runlevel 2,3,4,5 werden deaktiviert}
+\end{figure}
+
+5)\# chkconfig iptables on | off \\ Mit iptables off wird iptables auf jedem runlevel deaktiviert. Mit iptables on wird iptables auf die default Konfiguration zurückgesetzt. Das bedeutet die runlevels 2,3,4 und 5 sind wieder aktiviert.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b5.png}
+\end{center}
+\caption[Abbildung 5: chkconfig iptables on | off]{chkconfig iptables on | off}
+\end{figure}
+
+6)\# chkconfig tftp on \\
+Tftp ist ein Vorgänger des FTP-Protokolls. Dieser service ist nicht automatisch auf Centos-6.5-x86\_64 vorinstalliert und wird durch den Superserver xinetd, welcher ebenfalls nicht automatisch vorinstalliert ist, verwaltet. Damit wir die gewissen Pakete mit allen Abhängigkeiten für tftp und xinetd über das Terminal mit yum (Yellow dog Updater, Modified) installieren können, müssen wir ein Quellpaket Repository einrichten. \\ Zuerst erstellen wir einen Ordner mit \# mkdir /dvdrom im Verzeichnis /etc/yum.repos.d \\ Danach fügen wir das Verzeichnis als neues Repository hinzu, indem wir die Konfigurationsdatei mit dem vi Editor öffnen \# vi /etc/yum.repos.d/local.repo und das Repository hinzufügen. [Abb. 6]
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_1.png}
+\end{center}
+\caption[Abbildung 6: vi /etc/yum.repos.d/local.repo]{vi /etc/yum.repos.d/local.repo}
+\end{figure}
+Zuletzt mounten wir das Verzeichnis mit dem Befehl \# mount -t iso9660/dev/sr0/dvdrom
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_2.png}
+\end{center}
+\caption[Abbildung 7: mounten]{mounten}
+\end{figure}
+Nach dem wir den Befehl \#yum clean all im Terminal ausgeführt haben, kann die Installation beginnen. Dies geschieht wie folgt: \\ Wir führen im Terminal den Befehl \#yum install tftp aus, sodass die Installation starten kann.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_3.png}
+\end{center}
+\caption[Abbildung 8: yum install tftp]{yum install tftp}
+\end{figure}
+Nachdem tftp installiert wurde, muss außerdem xinetd installiert werden. Ansonsten kann tftp nicht verwendet werden. Mit dem Befehl \#yum install xinetd wird xinetd installiert.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_4.png}
+\end{center}
+\caption[Abbildung 9: yum install tftp]{yum install xinetd}
+\end{figure}
+Zunächst muss xinetd gestartet werden, damit wir Zugriff auf tftp haben. Dies geschieht mit dem Befehl \# service xinetd start.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_5.png}
+\end{center}
+\caption[Abbildung 10: service xinetd start]{service xinetd start}
+\end{figure}
+Die Dateien im Verzeichnis /etc/xinetd.d/ enthalten die Konfigurationsdateien für jeden von xinetd verwalteten Dienst. Die Konfigurationsdatei tftp muss wie in Abbildung 15 angepasst werden. Damit tftp funktioniert, muss disable=no sein. Disable legt fest, ob der Dienst aktiv ist oder nicht. Im Regelfall ist "disable = yes" zu Beginn. Dieser muss dann geändert werden zu "diasable = no". Nach der Konfiguration kann tftp genutzt werden, wie in Abbildung 12 zu sehen ist.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_6.png}
+\end{center}
+\caption[Abbildung 11: ]{}
+\end{figure}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_7.png}
+\end{center}
+\caption[Abbildung 12: ]{}
+\end{figure}
+Nachdem der Befehl \# chkconfig tftp on ausgeführt wurde, kann man sich mit dem Befehl \#chkconfig anzeigenlassen, ob der Dienst wirklich aktiviert wurde, da dieser angibt welche Dienste in ihren jeweiligen runlevels aktiviert bzw. deaktiviert sind. In der Abbildung 13 sieht man, dass tftp aktiviert ist. Tftp findet man unten im Bild bei den "xinetd based services".
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_8.png}
+\end{center}
+\caption[Abbildung 13: ]{}
+\end{figure}
+7)\# \verb|chkconfig --level 2 vsftpd off| \\ Um diesen Befehl ausführen zu können, muss zunächst vsftpd installiert werden. Dies geschieht mit dem Befehl \# yum install vsftpd. Nach der erfolgreichen Installation kann vsftpd verwendet werden. 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b7.png}
+\end{center}
+\caption[Abbildung 14: yum install vsftpd]{yum install vsftpd}
+\end{figure}
+Mit dem Befehl \#\verb|chkconfig --level 2 vsftpd off| wird der Runlevel 2 von vsftpd deaktiviert.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b7_2.png}
+\end{center}
+\caption[Abbildung 15: Runlevel 2 von vsftpd wird deaktiviert]{Runlevel 2 von vsftpd wird deaktiviert}
+\end{figure}
+8)\# \verb|chkconfig --level 2345 vsftpd off| \\
+Mit dem Befehl \#  \verb|chkconfig --level 2345 vsftpd off| werden die Runlevels 2, 3, 4 und 5 deaktiviert.\\
+Zunächst haben wir mit dem Befehl "\#  \verb|chkconfig --level 2345 vsftpd|"die Runlevels 2, 3, 4 und 5 aktiviert, wie in Abbildung 16 zu sehen ist.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b8_1.png}
+\end{center}
+\caption[Abbildung 16: ]{}
+\end{figure}
+
+Hier sieht man, dass nach der Aktivierung die entsprechenden Runlevels aktiviert wurden.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b8_2.png}
+\end{center}
+\caption[Abbildung 17: ]{}
+\end{figure}
+
+Anschließend werden mit dem Befehl "\#  \verb|chkconfig --level 2345 vsftpd off|" die Runlevels 2, 3, 4 und 5 deaktiviert.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b8_3.png}
+\end{center}
+\caption[Abbildung 18: ]{}
+\end{figure}
+
+Man erkennt, dass die aktivierten Runlevels nach dem Ausführen des Befehls ausgeschaltet wurden.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b8_4.png}
+\end{center}
+\caption[Abbildung 19: ]{}
+\end{figure}
+9)\# Explain the function of xinetd \\
+Bei xinetd handelt es sich um einen open source Superserver für Unix-Systeme. Dieser verwaltet verschiedene Dienste u.a. den FTP / HTTP Server. \\Xinetd bietet gegenüber dem Vorgänger inetd noch weitere zusätzliche Dienste an um eine verbesserte Sicherheit zu ermöglichen. Dazu zählen Zugangskontrollen, zeitliche Beschränkung von Diensten (nach Datum und Uhrzeit), sowie einen Verteidigungsmechanismus gegen Portscanner. Sobald der xinetd Superserver eingeschaltet ist, lässt sich im Terminal nachvollziehen, welche Dienste über xinetd verwaltet werden.\\
+The super server xinetd controlled services are automatically enabled or disabled by chkconfig. \\
+Please type and explain the meaning of the following commands: \\10)\# service network stop\\
+Der command stoppt alle konfigurierten Netzwerk interfaces.11)\# service network start\\ Der command aktiviert alle konfigurierten Netzwerk interfaces. 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b10.png}
+\end{center}
+\caption[Abbildung 20: ]{}
+\end{figure}
 
 \section*{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}
 \addcontentsline{toc}{section}{Exercise 7: Configure the following network (figure 1) using ifconfig and route add} 
@@ -239,7 +399,7 @@ Die Ausgabe des letzten Logins zeigt uns, dass die Anmeldung erfolgreich war.
 
 %\backmatter 
 
-\chapter{Literaturverzeichnis und Quellenverzeichnis}
+%\chapter{Literaturverzeichnis und Quellenverzeichnis}
 
 
 \end{document}
