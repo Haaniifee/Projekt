@@ -293,11 +293,106 @@ Der command stoppt alle konfigurierten Netzwerk interfaces.11)\# service networ
 \chapter*{Part 4: Network Scanning}
 \addcontentsline{toc}{chapter}{Part 4: Network Scanning} 
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1.2\textwidth]{bilder/screens/Part_4/lan.PNG} 
+\end{center}
+\caption[Abbildung P4 figure 1 LAN]{Netzwerk mit allen Hosts und Subnetzen}
+\end{figure}
+
 \section*{Exercise 1: Configure the networks of figure 1}
 \addcontentsline{toc}{section}{Exercise 1: Configure the networks of figure 1} 
 
+\textbf{a)} Please copy, configure and set the networks for the following virtual machines provided by your instructor:\\
+vm-Debian-8.5 copy from USB provided , \\
+vm-Ubuntu-16-10 copy from USB provided. \\ 
+The password for the virtual machines is hamburg99tkrn for Ubuntu and Debian. \\ \\
+\textbf{b)} Please scan the following networks: 10.88.X.64/27, 10.88.X.96/27, 10.88.X.128/27, 10.88.X.160/27 and 10.88.X.32/27 \\ \\
+\textbf{c)} Use Zenmap to scan all the above networks \\
+
+Zenmap liefert uns alle statisch vergebenen IP Adressen der Hosts. Als Zusatz erhalten wir die Netzwerktopologie, ausgehend von dem aktuellen Host.  \\
+
+\textbf{Solution of b)}
+
+\begin{center}
+Scan des Subnetztes 10.88.40.64/27
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/z64.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 1 Zenmap Subnetz 64]{Subnetz 10.88.40.64/27}
+\end{figure}
+
+\begin{center}
+Scan des Subnetztes 10.88.40.96/27
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/z96.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 1 Zenmap Subnetz 96]{Subnetz 10.88.40.96/27}
+\end{figure}
+
+\begin{center}
+Scan des Subnetztes 10.88.40.128/27
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/z128.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 1 Zenmap Subnetz 128]{Subnetz 10.88.40.128/27}
+\end{figure}
+
+\begin{center}
+Scan des Subnetztes 10.88.40.160/27
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/z160.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 1 Zenmap Subnetz 160]{Subnetz 10.88.40.160/27}
+\end{figure}
+
+\begin{center}
+Scan des Subnetztes 10.88.40.32/27
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/z32.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 1 Zenmap Subnetz 32]{Subnetz 10.88.40.32/27}
+\end{figure}
+
+\textbf{Solution of c) Use Zenmap to scan all the above networks}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/zAlle.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 1 Zenmap alle Subnetze]{Alle Subnetze}
+\end{figure}
+
+Alternativ hätte man als Target auch folgendes in die Eingabemaske einfügen können: 10.88.40.32-160/27
+
 \section*{Exercise 2: NMAP}
 \addcontentsline{toc}{section}{Exercise 2: NMAP} 
+
+\textbf{Question 1:} Please type and explain the nmap command: nmap -sS -O 10.88.40.130 \\
+
+\textbf{Answer 1:} Scannt das Subnetz 10.88.40.128 nach dem Host mit der IP Adresse 10.88.40.130 -sS bedeutet in diesem zusammenhang SYN-Stealth-Scan. Dabei wird keine vollständige TCP/IP Vergindung aufgebaut und ist deshalb unauffäliger als das der Parameter -sT, welcher als einziger ohne root rechte Funktioniert.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_4/Exercise_2/Q1.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 4 Wireshark Filter 1]{Wireshark Filter ip.addr == 10.88.40.70}
+\end{figure}
 
 \section*{Exercise 3: Nessus network device identification}
 \addcontentsline{toc}{section}{Exercise 3: Nessus network device identification} 
@@ -326,45 +421,139 @@ Der command stoppt alle konfigurierten Netzwerk interfaces.11)\# service networ
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.7\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q1.PNG} 
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q1.PNG} 
 \end{center}
-\caption[Abbildung X1 Wireshark Filter 1]{Wireshark Filter ip.addr == 10.88.40.70}
+\caption[Abbildung P5 ex. 4 Wireshark Filter 1]{Wireshark Filter ip.addr == 10.88.40.70}
 \end{figure}
 
 \textbf{Question 2:} Please type and examine the syntax for a Wireshark display filter that shows IP datagrams with destination IP address equal to 10.88.X.? and frame size greater than 400 bytes. \\
 
-\textbf{Answer 2:} Um alle Datenpakete abzufangen, die mindestens 400 Byte groß sind, bedarf eine kleine Erweiterung des vorherigen Befehls. Der Filter lautet nun: \textit{ip.addr == 10.88.40.70 \&\& frame.len > 400}. Mit dem Teil \textit{frame.len > X} können wir die Datenpakete nach Bytegröße X Filtern. Für X gilt, X $< 2^{32}$ $\wedge$ X $\in \mathbb{N}$. \\
+\textbf{Answer 2:} Um alle Datenpakete abzufangen, die mindestens 400 Byte groß sind, bedarf eine kleine Erweiterung des vorherigen Befehls. Der Filter lautet nun: \textit{ip.addr == 10.88.40.70 \&\& frame.len > 400}. Mit dem Teil \textit{frame.len > X} können wir die Datenpakete nach Bytegröße X Filtern. Für X gilt, X $< 2^{32}$ $\wedge$ X $\in \mathbb{N}$. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.55\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q2.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 4 Wireshark Filter 2]{Wireshark Filter ip.addr == 10.88.40.70 \&\& frame.len > 400}
+\end{figure}
 
 \textbf{Question 3:} Please type and examine the syntax for a Wireshark display filter that shows packets containing ICMP messages with source or destination IP address equal to 10.88.X.? and frame numbers between 15 and 30 \\
 
 \textbf{Answer 3:} Der Filter lautet: \textit{ip.addr == 10.88.40.70 \&\& (frame.number > 15 \&\& frame.number < 30)}. ICMP steht für Internet Control Message Protocol und übermittelt hauptsächlich Diagnose-informationen zwischen dem Router und dem Host. \\
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q3.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 4 Wireshark Filter 3]{Wireshark Filter ip.addr == 10.88.40.70 \&\& (frame.number > 15 \&\& frame.number < 30)}
+\end{figure}
+
 \textbf{Question 4:} Please type and examine the syntax for a Wireshark display filter that shows packets containing TCP segments with source or destination IP address equal to 10.88.X.? and using port number 23. \\
 
-\textbf{Answer 4:} Damit wir alle TCP Pakete eines Hosts über die Port 23 abfangen können wird der folgende Filter eingesetzt: \textit{ip.dst == 10.88.40.70 and tcp.port == 23}. Bei TCP handelt es sich um ein Übertragungsprotokoll (Transmission Control Protocol) aus der Familie der Internetprotokolle. Port 23 ist standardisiert für den Service Telnet. \\
+\textbf{Answer 4:} Damit wir alle TCP Pakete eines Hosts über die Port 23 abfangen können wird der folgende Filter eingesetzt: \textit{ip.dst == 10.88.40.70 and tcp.port == 23}. Bei TCP handelt es sich um ein Übertragungsprotokoll (Transmission Control Protocol) aus der Familie der Internetprotokolle. Port 23 ist standardisiert für den Service Telnet. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q4.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 4 Wireshark Filter 4]{Wireshark Filter ip.dst == 10.88.40.70 and tcp.port == 23}
+\end{figure}
+
 
 \textbf{Question 5:} Please type and examine a Wireshark capture filter expression for Q4. \\  
 
 \textbf{Answer 5:} Der Filter ist ähnlich wie in Q4, lediglich die Konfiguration findet an einer anderen Stelle statt. \\ 
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q5.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 4 Wireshark Filter 5]{Wireshark Filter host 10.88.40.70 \&\& tcp port 23}
+\end{figure}
+
 \textbf{Question 6:} Please type and examine the syntax for a Wireshark command which, by default, collects packets with source or destination IP address 10.88.X.? on interface eth4. \\
 
-\textbf{Answer 6:} Innerhalb des Terminals lässt sich der Filter: wireshark -i eth4 -k -f "host 10.88.40.70", anwenden. Die Argumente bedeuten dabei folgendes: -i eth4 steht für Interface, -k startet das Abfangen von Paketen und -f "host 10.88.40.70", ist der Paketfilter.\\
+\textbf{Answer 6:} Innerhalb des Terminals lässt sich der Filter: \textit{wireshark -i eth4 -k -f "host 10.88.40.70"}, anwenden. Die Argumente bedeuten dabei folgendes: -i eth4 steht für Interface, -k startet das Abfangen von Paketen und -f "host 10.88.40.70", ist der Paketfilter.\\
 
 \textbf{Question 7:} : Please type and examine the syntax of a display filter which selects the TCP packets with destination IP address 10.88.X.?, and TCP port number 23.\\
 
 \textbf{Answer 7:} Der Filter lautet: \textit{ip.addr == 10.88.40.70 \&\& tcp.port == 23} und fängt alle ein-/ausgehenden Pakete der Ip Adresse 10.88.40.70 über den Port 23 (Telnet) ab.\\
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q7.PNG} 
+\end{center}
+\caption[Abbildung P5 ex. 4 Wireshark Filter 7]{Wireshark Filter ip.addr == 10.88.40.70 \&\& tcp.port == 23}
+\end{figure}
+
 \textbf{Question 8:} Please login to the server pnidX-mid-hh and start an ftp client to the server pnidXcnt-bln(vsftpd
 daemon should be running on pnidX-cnt-bln). Please use
 wireshark on pnidX-mid-bln to sniff or capture the username and password of the ftp service between pnidX-mid-hh and pnidX-cnt-bln. Is this possible, show your result of the capture\\
 
-\textbf{Answer 8:} Mithilfe von Wireshark können wir leicht das Telnet login Passwort herausfinden, da bei der Übertragung via Telnet die Pakete unverschlüsselt übertragen werden. Dazu starten wir zunächst Wirehsark auf dem Host pnid4-mid-hh. \\
+\textbf{Answer 8:} Mithilfe von Wireshark können wir leicht das ftp login Passwort herausfinden, da bei der Übertragung via ftp die Pakete unverschlüsselt übertragen werden. Dazu starten wir zunächst Wirehsark auf dem Host pnid4-mid-hh und führen ein ftp login, von cnt-bln nach mid-hh, durch. Zuerst muss der Service ftp auf beiden Host aktiv sein, deshalb überprüfen wir den Status. \\
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q81.PNG} 
+\end{center}
+
+Danach starten wir wireshark auf dem Host mid-hh und melden uns über den Host cnt-bln bei dem Host mid-hh über den ftp servie an.  \\
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q83.PNG} 
+\end{center} 
+
+Über die Ausgabe Login successfull sehen wir, dass das anmelden erfolgreich war. Wir öffnen nun Wireshark auf dem Host mid-hh und filtern nach ftp Paketen. Dazu reicht es aus ftp in die Filtermaske einzugeben.\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q82.PNG} 
+\end{center} 
+\caption[Abbildung P5 ex. 4 Wireshark Filter 8]{Wireshark Filter ftp}
+\end{figure}
+
+Wir schauen uns nun die Pakete genauer an und können die Logininformationen in einem der Pakete anzeigen lassen. \\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q84.PNG} 
+\caption[Abbildung P5 ex. 4 Wireshark ftp Login Passwort]{Wireshark ftp Login Passwort}
+\end{center} 
+\end{figure}
+
+Sofort sehen wir den Benutzernamen trump4 und das Passwort clinton4. Dieses Szenario zeigt wie einfach es ist die Logininformationen herauszulesen, wenn die Datenpakete unverschlüsselt übertragen werden. 
 
 \textbf{Question 9:} Please login to the server pnidX-mid-hh and start an ssh client to the server
 pnidX-cnt-bln(sshd daemon should be running on pnidX-cnt-bln). Please use wireshark on pnidX-mid-bln to sniff or capture the username and password of the ssh service between pnidX-mid-hh and pnidX-cnt-bln. Is this possible, show the result of the capture. \\
 
-\textbf{Answer 9:} Anders als Telnet werden bei shh (Secure Shell) die Pakete verschlüsselt übertragen, sodass es nicht möglich ist das Passwort mitzulesen. Zuerst starten wir wireshark auf dem Host pnid4-mid-hh. \\
+\textbf{Answer 9:} Anders als ftp werden bei shh (Secure Shell) die Pakete verschlüsselt übertragen, sodass es nicht möglich ist das Passwort mitzulesen. Zuerst prüfen wir, ob der der ssh service auf beiden Hosts aktiv ist. \\
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q91.PNG} 
+\end{center}
+
+Danach starten wir wireshark auf dem Host mid-hh und melden uns über den Host cnt-bln bei dem Host mid-hh über den ssh servie an.  \\
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q92.PNG} 
+\end{center}
+
+Über die Ausgabe Last login..., sehen wir, dass das anmelden erfolgreich war. Wir öffnen nun Wireshark auf dem Host mid-hh und filtern nach ssh Paketen. Dazu reicht es aus ssh in die Filtermaske einzugeben.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q93.PNG} 
+\end{center} 
+\caption[Abbildung P5 ex. 4 Wireshark Filter 9]{Wireshark Filter ssh}
+\end{figure}
+
+Wir schauen uns nun die Pakete genauer an und können keine Informationen über das Login erhalten, da alle Datenfragmente verschlüsselt wurden. \\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q94.PNG} 
+\end{center} 
+\caption[Abbildung P5 ex. 4 Wireshark ssh Datenpaket]{Wireshark verschlüsselte Datenfragmente}
+\end{figure}
 
 \section*{Exercise 5: Experimenting with network monitoring tools}
 \addcontentsline{toc}{section}{Exercise 5: Experimenting with network monitoring tools} 
@@ -372,13 +561,23 @@ pnidX-cnt-bln(sshd daemon should be running on pnidX-cnt-bln). Please use wiresh
 \textbf{Exercise:} In this exercise you will connect to the webserver pnidX-cnt-bln from pnidX-mid-hh. Let pnidX-cnt-bln determine your IP-address and the OS you are running. Then, connect to
 a service of your choice (e.g. ftp, http, ssh etc.) on pnidX cnt-bln. Let pnidX-mid-hh determine which services are running on pnidX-cnt-bln. \\
 
-\textbf{Solution:} Wir führen zunächst nmap auf dem Host pnid4-cnt-bln aus und übergeben dabei die Zieladresse des Hosts pnid4-mid-hh, damit wir sehen können welche Ports geöffnet sind bzw. welcher Service auf dem Zielhost gerade aktiv ist. \\
+\textbf{Solution:} Wir führen zunächst nmap auf dem Host pnid4-cnt-bln aus und übergeben dabei die Zieladresse des Hosts pnid4-mid-hh, damit wir sehen können welche Ports geöffnet sind bzw. welcher Service auf dem Zielhost gerade aktiv ist.
 
-[IMAGE] \\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{bilder/screens/Part_5/Aufgabe_5/s1.PNG} 
+\end{center} 
+\caption[Abbildung P5 ex. 5 nmap offene Ports anzeigen]{Zeigt uns die offenen Ports an}
+\end{figure}
 
-Wir sehen nun, dass die Ports 21 ftp, 22 ssh, 23 telnet, 80 http und 111 rpcbind offen sind und entscheiden uns via Telnet vom Quellhost pnid4-cnt-bln bei dem Zielhost pnid-mid-hh anzumelden.
+Wir sehen nun, dass die Ports 21 ftp, 22 ssh, 23 telnet, 80 http und 111 rpcbind offen sind und entscheiden uns via Telnet vom Quellhost pnid4-cnt-bln bei dem Zielhost pnid-mid-hh anzumelden. \\
 
-[IMAGE] \\  
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.45\textwidth]{bilder/screens/Part_5/Aufgabe_5/s2.PNG} 
+\end{center} 
+\caption[Abbildung P5 ex. 5 Telnet login]{Anmeldung via Telnet}
+\end{figure}
 
 Die Ausgabe des letzten Logins zeigt uns, dass die Anmeldung erfolgreich war.  
 

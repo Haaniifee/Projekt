@@ -1,4 +1,5 @@
 \select@language {ngerman}
+<<<<<<< Updated upstream
 \contentsline {figure}{\numberline {1}{\ignorespaces Abbildung 1: aktivierte bzw. deaktivierte Dienste eines runlevels}}{5}{figure.caption.5}
 \contentsline {figure}{\numberline {2}{\ignorespaces Abbildung 2: Runlevel, in denen iptables eingeschaltet bzw. ausgeschaltet sind}}{5}{figure.caption.6}
 \contentsline {figure}{\numberline {3}{\ignorespaces Abbildung 3: }}{6}{figure.caption.7}
@@ -20,3 +21,28 @@
 \contentsline {figure}{\numberline {19}{\ignorespaces Abbildung 19: }}{11}{figure.caption.23}
 \contentsline {figure}{\numberline {20}{\ignorespaces Abbildung 20: }}{12}{figure.caption.24}
 \contentsline {figure}{\numberline {21}{\ignorespaces Abbildung X1 Wireshark Filter 1}}{16}{figure.caption.38}
+=======
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1}{\ignorespaces Abbildung 1: Broadcast und Multicast}}{6}{figure.caption.5}
+\contentsline {figure}{\numberline {2}{\ignorespaces Abbildung P4 figure 1 LAN}}{10}{figure.caption.11}
+\contentsline {figure}{\numberline {3}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 64}}{11}{figure.caption.13}
+\contentsline {figure}{\numberline {4}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 96}}{12}{figure.caption.14}
+\contentsline {figure}{\numberline {5}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 128}}{12}{figure.caption.15}
+\contentsline {figure}{\numberline {6}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 160}}{13}{figure.caption.16}
+\contentsline {figure}{\numberline {7}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 32}}{13}{figure.caption.17}
+\contentsline {figure}{\numberline {8}{\ignorespaces Abbildung P5 ex. 1 Zenmap alle Subnetze}}{14}{figure.caption.18}
+\contentsline {figure}{\numberline {9}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 1}}{14}{figure.caption.20}
+\contentsline {figure}{\numberline {10}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 1}}{17}{figure.caption.28}
+\contentsline {figure}{\numberline {11}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 2}}{17}{figure.caption.29}
+\contentsline {figure}{\numberline {12}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 3}}{18}{figure.caption.30}
+\contentsline {figure}{\numberline {13}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 4}}{18}{figure.caption.31}
+\contentsline {figure}{\numberline {14}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 5}}{19}{figure.caption.32}
+\contentsline {figure}{\numberline {15}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 7}}{20}{figure.caption.33}
+\contentsline {figure}{\numberline {16}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 8}}{21}{figure.caption.34}
+\contentsline {figure}{\numberline {17}{\ignorespaces Abbildung P5 ex. 4 Wireshark ftp Login Passwort}}{21}{figure.caption.35}
+\contentsline {figure}{\numberline {18}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 9}}{22}{figure.caption.36}
+\contentsline {figure}{\numberline {19}{\ignorespaces Abbildung P5 ex. 4 Wireshark ssh Datenpaket}}{23}{figure.caption.37}
+\contentsline {figure}{\numberline {20}{\ignorespaces Abbildung P5 ex. 5 nmap offene Ports anzeigen}}{23}{figure.caption.39}
+\contentsline {figure}{\numberline {21}{\ignorespaces Abbildung P5 ex. 5 Telnet login}}{24}{figure.caption.40}
+\addvspace {10\p@ }
+>>>>>>> Stashed changes
