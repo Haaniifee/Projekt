@@ -7,15 +7,15 @@
 \BOOKMARK [0][]{chapter*.28}{Part 4: Network Scanning}{}% 7
 \BOOKMARK [1][]{section*.30}{Exercise 1: Configure the networks of figure 1}{chapter*.28}% 8
 \BOOKMARK [1][]{section*.37}{Exercise 2: NMAP}{chapter*.28}% 9
-\BOOKMARK [1][]{section*.39}{Exercise 3: Nessus network device identification}{chapter*.28}% 10
-\BOOKMARK [1][]{section*.40}{Exercise 4: OpenVAS Network device identification}{chapter*.28}% 11
-\BOOKMARK [0][]{chapter*.41}{Part 5: Sniffing, Virtual Private Network \(VPN\)}{}% 12
-\BOOKMARK [1][]{section*.42}{Exercise 1: Configure and set the networks shown below \(figure1 and 2\)}{chapter*.41}% 13
-\BOOKMARK [1][]{section*.43}{Exercise 2: Getting started with network monitoring tools}{chapter*.41}% 14
-\BOOKMARK [1][]{section*.44}{Exercise 3: TCPDUMP}{chapter*.41}% 15
-\BOOKMARK [1][]{section*.45}{Exercise 4: Wireshark}{chapter*.41}% 16
-\BOOKMARK [1][]{section*.56}{Exercise 5: Experimenting with network monitoring tools}{chapter*.41}% 17
-\BOOKMARK [1][]{section*.59}{Exercise 6: Set up a host-to-host VPN using preshared key}{chapter*.41}% 18
-\BOOKMARK [1][]{section*.60}{Exercise 7: Set up a host-to-host VPN using RSA keys}{chapter*.41}% 19
-\BOOKMARK [1][]{section*.61}{Exercise 8: Set up a network-to-network VPN using preshared key}{chapter*.41}% 20
-\BOOKMARK [1][]{section*.62}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{chapter*.41}% 21
+\BOOKMARK [1][]{section*.49}{Exercise 3: Nessus network device identification}{chapter*.28}% 10
+\BOOKMARK [1][]{section*.55}{Exercise 4: OpenVAS Network device identification}{chapter*.28}% 11
+\BOOKMARK [0][]{chapter*.56}{Part 5: Sniffing, Virtual Private Network \(VPN\)}{}% 12
+\BOOKMARK [1][]{section*.57}{Exercise 1: Configure and set the networks shown below \(figure1 and 2\)}{chapter*.56}% 13
+\BOOKMARK [1][]{section*.58}{Exercise 2: Getting started with network monitoring tools}{chapter*.56}% 14
+\BOOKMARK [1][]{section*.59}{Exercise 3: TCPDUMP}{chapter*.56}% 15
+\BOOKMARK [1][]{section*.60}{Exercise 4: Wireshark}{chapter*.56}% 16
+\BOOKMARK [1][]{section*.71}{Exercise 5: Experimenting with network monitoring tools}{chapter*.56}% 17
+\BOOKMARK [1][]{section*.74}{Exercise 6: Set up a host-to-host VPN using preshared key}{chapter*.56}% 18
+\BOOKMARK [1][]{section*.75}{Exercise 7: Set up a host-to-host VPN using RSA keys}{chapter*.56}% 19
+\BOOKMARK [1][]{section*.76}{Exercise 8: Set up a network-to-network VPN using preshared key}{chapter*.56}% 20
+\BOOKMARK [1][]{section*.77}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{chapter*.56}% 21
