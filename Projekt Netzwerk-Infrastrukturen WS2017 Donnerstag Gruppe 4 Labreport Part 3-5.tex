@@ -120,13 +120,14 @@ Dozent: Robert Olotu
 
 \section*{Exercise 6: Managing Services (Please use pnidX-svr-mu)}
 \addcontentsline{toc}{section}{Exercise 6: Managing Services (Please use pnidX-svr-mu} 
+Please type and explain the meaning of the following commands:\\1)\# chkconfig \\2)\# \verb|chkonfig --list iptables| \\3)\# \verb|chkconfig --level 2 iptables off| \\4)\# \verb|chkconfig --level 2345 iptables off| \\5)\# chkconfig iptables on | off \\6)\# chkconfig tftp on \\7)\# \verb|chkconfig --level 2 vsftpd off| \\8)\# \verb|chkconfig --level 2345 vsftpd off| \\9)\# Explain the function of xinetd \\The super server xinetd controlled services are automatically enabled or disabled by chkconfig. \\Please type and explain the meaning of the following commands: \\10)\# service network stop \\11)\# service network start \\ \\ 
 Please type and explain the meaning of the following commands: \\
 1) \# chkconfig \\
 Die folgenden Kommandos wurden auf Rechner pnid4-svr-mu mit dem Betriebssystem Centos-6.5-x86\_64 ausgeführt. \\
-Zeigt an welche Dienste in ihren jeweiligen runlevels aktiviert bzw. deaktiviert sind [siehe Abb. 1] \\
+Zeigt an welche Dienste in ihren jeweiligen runlevels aktiviert bzw. deaktiviert sind [siehe Abb. 1] 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b1.PNG}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_3/b1.PNG}
 \end{center}
 \caption[Abbildung 1: aktivierte bzw. deaktivierte Dienste eines runlevels]{aktivierte bzw. deaktivierte Dienste eines runlevels}
 \end{figure}
@@ -285,6 +286,175 @@ Der command stoppt alle konfigurierten Netzwerk interfaces.
 
 \section*{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}
 \addcontentsline{toc}{section}{Exercise 7: Configure the following network (figure 1) using ifconfig and route add} 
+You need to set the network depicted on figure 1 by doing the following: \\Use the \dq ifconfig\dq and the \dq route add\dq commands to configure all the subnets 10.88.X.32/27, 10.88.X.64/27, 10.88.X.96/27 and 10.88.X.128/27. For this exercise you will use the hosts pnidX-svr-mu, pnidX-WEB-hn, pnidX-svr-bln and pnidX-svr-hh. Furthermore you have to configure the routers pnidX-rou-1, pnidX-rou-2 and pnidX-rou-3 \\Hint 1: Remember after rebooting the system, the ifconfig and route add configuration will disappear\\Hint 2: Do not forget to flush the firewall by issuing the command \dq iptables -F\dq \\Please use Kali Linux as root:\\\# zenmap\\Scan the networks: \\10.88.X.32/27 \\10.88.X.64/27 \\10.88.X.96/27 \\and 10.88.X.128/27 \\\\
+Ziel der Aufgaben 7, 8 und 9 ist, das folgende Netzwerk [Abb. 21] mithilfe verschiedener Kommandos aufzubauen um alle zugehörigen Subnetze zu konfigurieren. 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b1.png}
+\end{center}
+\caption[Abbildung 21: ]{}
+\end{figure}
+Zunächst haben wir das Netzwerk für den pnid4-svr-mu (Sever München) konfiguriert, indem wir die Ethernetkarte eth0 zustehende Adresse 10.88.40.129 zugewiesen haben und die Netmask-Adresse mit einbinden. Dieses haben wir ermöglicht, indem wir /27 im Anschluss hinzugefügt haben, jedoch ist es auch über dem Schlüsselwort netmask und die komplette Adresse realisierbar. \\
+Anschließend haben wir die Routing tables über dem Kommando route add erstellt. Hier haben wir die Netze 10.88.40.96, 10.88.40.64 und 10.88.40.32 mit dem Kommando versehen, da wir über alle drei Netze eine Verbindung herstellen möchten. \\
+Nachstehend haben wir die Firewall dieses Servers ausgeschaltet, da wir später eine Verbindung mit anderen Servern und Routern aufbauen möchten. Wir haben die ganze Konfiguration in einer txt-Datei geschrieben und im Anschluss einmal ausgeführt, sodass wir die Konfiguration gespeichert haben und nicht bei jedem Shut-Down erneut einstellen müssen. \\
+\textbf{Konfigurationsdatei von Server-München:(Routing-Tabelle)} \\
+ifconfig eth0 weißt der Netzwerkkarte die zugehörige IP-Adresse zu. \\ Mit dem Befehl route add werden statische Routen zu Rechnern und Netzwerken festgeleget.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b2.png}
+\end{center}
+\caption[Abbildung 22: ]{}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b3.png}
+\end{center}
+\caption[Abbildung 23: ]{}
+\end{figure}
+
+\textbf{Konfigurationsdatei von WEB-Hannover:(Routing-Tabelle)} \\
+ifconfig ens33 weißt der Netzwerkkarte die zugehörige IP-Adresse zu. \\ Mit dem Befehl route add werden statische Routen zu Rechnern und Netzwerken festgeleget.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b4.png}
+\end{center}
+\caption[Abbildung 24: ]{}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b5.png}
+\end{center}
+\caption[Abbildung 25: ]{}
+\end{figure}
+
+\textbf{Konfigurationsdatei von Server-Berlin:(Routing-Tabelle)} \\
+ifconfig ens33 weißt der Netzwerkkarte die zugehörige IP-Adresse zu. \\ Mit dem Befehl route add werden statische Routen zu Rechnern und Netzwerken festgeleget.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b6.png}
+\end{center}
+\caption[Abbildung 26: ]{}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b7.png}
+\end{center}
+\caption[Abbildung 27: ]{}
+\end{figure}
+
+\textbf{Konfigurationsdatei von Server-Hamburg:(Routing-Tabelle)} \\
+ifconfig ens33 weißt der Netzwerkkarte die zugehörige IP-Adresse zu. \\ Mit dem Befehl route add werden statische Routen zu Rechnern und Netzwerken festgeleget.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b8.png}
+\end{center}
+\caption[Abbildung 28: ]{}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b9.png}
+\end{center}
+\caption[Abbildung 29: ]{}
+\end{figure}
+
+\textbf{Konfigurationsdatei von Router 1:(Routing-Tabelle)} \\
+Wie in folgenden Ausschnitten zusehen ist haben wir die Router ebenfalls, so wie oben beschrieben, konfiguriert. Allerdings haben wir hier zwei Ethernet-Anbindungen. Denn ein Router hat immer eine Verbindung zwischen mindestens zwei Netzwerken und leitet Datenpakete anhand von Information der IP-Adressen zwischen den Netzwerken weiter. \\
+Mit ifconfig ens33 und ens37 weißt man den Netzwerkkarten die zugehörige IP-Adresse zu. \\ Mit dem Befehl route add werden statische Routen zu Rechnern und Netzwerken festgeleget.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b10.png}
+\end{center}
+\caption[Abbildung 30: ]{}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b11.png}
+\end{center}
+\caption[Abbildung 31: ]{}
+\end{figure}
+
+\textbf{Konfigurationsdatei von Router 2:(Routing-Tabelle)} \\
+Mit ifconfig ens33 und ens37 weißt man den Netzwerkkarten die zugehörige IP-Adresse zu. \\ Mit dem Befehl route add werden statische Routen zu Rechnern und Netzwerken festgeleget.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b12.png}
+\end{center}
+\caption[Abbildung 32: ]{}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b13.png}
+\end{center}
+\caption[Abbildung 33: ]{}
+\end{figure}
+
+\textbf{Konfigurationsdatei von Router 3:(Routing-Tabelle)} \\
+Mit ifconfig ens33 und ens37 weißt man den Netzwerkkarten die zugehörige IP-Adresse zu. \\ Mit dem Befehl route add werden statische Routen zu Rechnern und Netzwerken festgeleget.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b14.png}
+\end{center}
+\caption[Abbildung 34: ]{}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b15.png}
+\end{center}
+\caption[Abbildung 35: ]{}
+\end{figure}
+Please use Kali Linux as root:\# zenmap\\Scan the networks:\\10.88.X.32/27\\10.88.X.64/27\\10.88.X.96/27\\and 10.88.X.128/27\\
+\textbf{Zenmap}\\
+Zenmap ist eine grafische Ansicht für Nmap, der Ports scannen kann. Wenn man einen Rechner auf offene Ports checken möchte, dann kommt Nmap zum Einsatz. Der Network Mapper ist dafür da, um alle aktiven Hosts in der Netzwerkumgebung (über Ping) sowie deren Betriebssystem und Versionsnummern installierter Dienste herauszufinden. \\
+Infolgedessen konnten wir mit dem Kommando zenmap die Verbindungen von Netzwerk 10.88.40.32, 10.88.40.64, 10.88.40.96 und 10.88.40.128 grafisch darstellen und demonstrieren, dass wir die oben aufgeführte Abbildung und somit unser Ziel erreicht haben.
+\begin{center}
+Das Netz 10.88.40.32/27 wird gescannt:
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b16.png}
+\end{center}
+\caption[Abbildung 36: Netz: 10.88.40.32/27]{Netz: 10.88.40.32/27}
+\end{figure}
+\begin{center}
+
+Das Netz 10.88.40.64/27 wird gescannt:
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b17.png}
+\end{center}
+\caption[Abbildung 37: Netz: 10.88.40.64/27]{Netz: 10.88.40.64/27}
+\end{figure}
+
+\begin{center}
+Das Netz 10.88.40.96/27 wird gescannt:
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b18.png}
+\end{center}
+\caption[Abbildung 38: Netz: 10.88.40.96/27]{Netz: 10.88.40.96/27}
+\end{figure}
+
+\begin{center}
+Das Netz 10.88.40.128/27 wird gescannt:
+\end{center}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b19.png}
+\end{center}
+\caption[Abbildung 39: Netz: 10.88.40.128/27]{Netz: 10.88.40.128/27}
+\end{figure}
 
 \section*{Exercise 8: Configure the following network (figure 1) using ip and nmcli}
 \addcontentsline{toc}{section}{Exercise 8: Configure the following network (figure 1) using ip and nmcli} 
@@ -586,6 +756,7 @@ Die Ausgabe des letzten Logins zeigt uns, dass die Anmeldung erfolgreich war.
 
 \section*{Exercise 6: Set up a host-to-host VPN using preshared key}
 \addcontentsline{toc}{section}{Exercise 6: Set up a host-to-host VPN using preshared key} 
+To create a host-to-host VPN as shown in Figure 1 using preshared keys both systems must have OPENS/WAN properly installed and tested. Next, you must ensure that IP networking is functioning. For this exercise you will capture http packets between the hosts. This capture will allow you to compare and prove that IPSec is functioning after the tunnel is created between the hosts. Make sure Apache and Wireshark are installed. See Figure 1. \\Hints: CREATING PRESHARED KEY use ipsec ranbits 256 > filename
 
 \section*{Exercise 7: Set up a host-to-host VPN using RSA keys}
 \addcontentsline{toc}{section}{Exercise 7: Set up a host-to-host VPN using RSA keys}
