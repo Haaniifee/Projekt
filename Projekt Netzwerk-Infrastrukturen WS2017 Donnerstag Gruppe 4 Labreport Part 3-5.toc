@@ -17,6 +17,6 @@
 \contentsline {section}{Exercise 4: Wireshark}{45}{section*.79}
 \contentsline {section}{Exercise 5: Experimenting with network monitoring tools}{52}{section*.90}
 \contentsline {section}{Exercise 6: Set up a host-to-host VPN using preshared key}{53}{section*.93}
-\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{63}{section*.108}
-\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{63}{section*.109}
-\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{63}{section*.110}
+\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{69}{section*.126}
+\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{69}{section*.127}
+\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{69}{section*.128}
