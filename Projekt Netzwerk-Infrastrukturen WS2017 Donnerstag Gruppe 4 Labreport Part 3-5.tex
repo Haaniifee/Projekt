@@ -555,19 +555,277 @@ Alternativ hätte man als Target auch folgendes in die Eingabemaske einfügen könn
 \section*{Exercise 2: NMAP}
 \addcontentsline{toc}{section}{Exercise 2: NMAP} 
 
-\textbf{Question 1:} Please type and explain the nmap command: nmap -sS -O 10.88.40.130 \\
+Analyze your host system and your virtual machines with Nmap. Please test the following commands before explaining the meaning.  \\
 
-\textbf{Answer 1:} Scannt das Subnetz 10.88.40.128 nach dem Host mit der IP Adresse 10.88.40.130 -sS bedeutet in diesem zusammenhang SYN-Stealth-Scan. Dabei wird keine vollständige TCP/IP Vergindung aufgebaut und ist deshalb unauffäliger als das der Parameter -sT, welcher als einziger ohne root rechte Funktioniert.
+Q1: Please type and explain the nmap command: nmap -sS -O 10.88.X.? \\
+Q2: Please type and explain the nmap command: nmap -sF 10.88.X.? -oN outfile \\ 
+Q3: Please type and explain the nmap command: nmap -sS 10.88.X.? -D 10.100.X.P \\
+Q4: Please type and explain the nmap command: nmap -sS -O 10.88.X.Y/Z \\
+Q5: Please type and explain the nmap command: nmap -sP -PS 10.88.X.? \\
+Q6: Please type and explain the nmap command: nmap -sP -PS25 10.88.X.?  \\
+Q7: Please type and explain the nmap command: nmap -sP -PS80 10.88.X.?/Z  \\
+Q8: Please type and explain the nmap command: nmap -sP -PS53 10.88.X.?/27  \\
+Q9: Please type and explain the nmap command: nmap -sS -v 10.88.X.? \\
+Q10: Please type and explain the nmap command: nmap -sP -v 10.88.X.? \\
+
+\textbf{Question 1:}  Please type and explain the nmap command: nmap -sS -O 10.88.X.?  \\
+
+\textbf{Answer 1:} Scannt das Subnetz 10.88.40.128 nach dem Host mit der IP Adresse 10.88.40.130 -sS bedeutet in diesem zusammenhang SYN-Stealth-Scan. Dabei wird keine vollständige TCP/IP Vergindung aufgebaut und ist deshalb unauffäliger als das der Parameter -sT, welcher als einziger ohne root rechte Funktioniert. -O steht für OS-Detection. Es wird Versucht, an besonderen Eigenarten der Netzwerkimplementierungen das Betriebssystem des Zieles zu identifizieren. Im Gegensatz zu Zenmap, wird nmap im Terminal durchgeführt und besitzt keine grafische Benutzeroberfläche um die Netzwerktopologie zu visualisieren. 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.6\textwidth]{bilder/screens/Part_4/Exercise_2/Q1.PNG} 
+\includegraphics[width=0.65\textwidth]{bilder/screens/Part_4/Exercise_2/Q1.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 4 Wireshark Filter 1]{Wireshark Filter ip.addr == 10.88.40.70}
+\caption[Abbildung P4 ex. 2 nmap command 1]{nmap -sS -O 10.88.40.130}
+\end{figure}
+
+\textbf{Question 2:} Please type and explain the nmap command: nmap -sF 10.88.X.? -oN outfile \\ 
+
+\textbf{Answer 2:}  Bei diesem Scan wir das Subnetz 10.88.40.128/27 mit dem Argument -sF gescannt. -sF bezeichnet die Art des Scans bei der nur Pakete mit FIN-flags zum Ziel Host gesendet werden. Durch das Argument -oN outfile erstellen wir ein externes Logfile, mit dem Namen outfile.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_4/Exercise_2/Q2/Q21.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 2 nmap command 2]{nmap -sF 10.88.40.128 -oN outfile}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_4/Exercise_2/Q2/Q23.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 2 nmap externes Logfile]{externes Logfile}
+\end{figure}
+
+Mit dem Befehl  -sF werden die Ports, die gescannt werden manipuliert, in dem verfälschte TCP-Pakete versendet werden. Dadruch erhält man die Information, ob ein Port offen oder von einer Firewall geschützt ist.  Die Ausgabe wird im Terminal angezeigt, sowie durch das Argument -oN outfile, in einer seperaten outfilele.txt Datei. \\
+
+\textbf{Question 3:} Please type and explain the nmap command: Please type and explain the nmap command: nmap -sS 10.88.X.? -D 10.100.X.P \\ 
+
+\textbf{Answer 3:} Dieser Befehlt führt einen Decoy-Scan durch. Mit dem Argument -D 10.88.40.36 legen wir einen Köder aus, mit dem wir den Ziel Host / Subnetz scannen. Diese Methode wird verwendet um die eigene IP Adresse zu verbergen, jedoch sollte der Host, welcher als Köder benutzt wird eingeschaltet sein.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_4/Exercise_2/Q3.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 2 nmap command 3]{nmap -sS 10.88.40.130 -D 10.88.40.36}
+\end{figure}
+
+\textbf{Question 4:} Please type and explain the nmap command: nmap -sS -O 10.88.X.Y/Z \\ 
+
+\textbf{Answer 4:} Der Befehl versucht alle erreichbaren Hosts im Netzwerk X, mit ihrer IP Adresse anzuzuzeigen. Zusätzlich wird -sS (SYN-Stealth-Scan) und -O (OS-Detection) verwendet.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_4/Exercise_2/Q4.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 2 nmap command 4]{nmap -sS -O 10.88.40.160/27}
+\end{figure}
+
+\textbf{Question 5:} Please type and explain the nmap command: nmap -sP -PS 10.88.X.?\\ 
+
+\textbf{Answer 5:} Das Argument -sP ist der sogenannte Ping-Scan. Es werden alle Hosts ausgegeben, welche auf den Scan geantwortet haben. So kann die Verfügbarkeit eines Rechners im Netzwerk gezählt werden, sowie die Server-Verfügbarkeit überwacht werden. Das Argument -PS sendet ein leeres TCP-Paket mit gesetzten SYN-Flag. Ein SYN-Flag ist ein Synchronisations-Flag, bestehend aus einem Bit. Ist dieser Flag gesetzt, will der Sender eine Verbindung zum Empfänger aufbauen. 
+ 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q5.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 2 nmap command 5]{nmap -sP -PS 10.88.40.130}
+\end{figure}
+
+\textbf{Question 6:} Please type and explain the nmap command: nmap -sP -PS25 10.88.X.?\\ 
+
+\textbf{Answer 6:}  Mit dem Argument -sP wird die Ping-Scan Methode ausgewählt.  -PS wird verwendet um SYN-Pakete, mit gesetztem SYN-flag über den Port 25 (SMTP) zu senden.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q6.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 2 nmap command 6]{nmap -sP -PS25 10.88.40.130}
+\end{figure}
+
+\textbf{Question 7:} Please type and explain the nmap command: nmap -sP -PS80 10.88.X.?/Z\\ 
+
+\textbf{Answer 7:}  Mit dem Argument -sP wird die Ping-Scan Methode ausgewählt.  -PS wird verwendet um SYN-Pakete, mit gesetztem SYN-flag über den Port 80 zu senden.  Port 80 ist zuständig für den Hypertext Transfer Protocol (HTTP). HTTP verwendet das TCP-Protokoll und benutzt diesen am Port 80.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q7.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 2 nmap command 7]{nmap -sP -PS80 10.88.40.130/27}
+\end{figure}
+
+\textbf{Question 8:}  Please type and explain the nmap command: nmap -sP -PS53 10.88.X.?/27\\ 
+
+\textbf{Answer 8:}  Hier wird ebenso ein TCP SYN-Scan auf dem Port 53 durchgeführt. Port 53 wird verwendet für das Domain Name System (DNS) und wird meist über UDP verwendet.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q8.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 2 nmap command 8]{nmap -sP -PS53 10.88.40.130/27}
+\end{figure}
+
+\textbf{Question 9:}  Please type and explain the nmap command: nmap -sS -v 10.88.X.?\\ 
+
+\textbf{Answer 9:}  -sS-Der SYN-Scan ist eine Methode fürs schnelle Scannen und scannt dabei Tausende von Ports pro Sekunde, wenn es nicht von einer Firewall gestört wird. Der Syn-Scan schließt die TCP-Verbindungen nicht ab. Außerdem kann zwischen den Zuständen offen, geschlossen und gefiltert unterschieden werden. Da keine vollständigen TCP-Verbindungen hergestellt werden, wird dies auch als halboffenes Scannen bezeichnet. Ein SYN-Paket wird gesendet. Dann wird auf eine Antwort gewartet. Ein SYN/ACK gibt an, dass jemand auf dem Port lauscht. Dies ist an einem offenen Port erkennbar. RST jedoch bedeutet, dass der Port geschlossen ist.  -v bedeutet, dass die Ausführlichkeitsstufe erhöht wird(verbosity-Level), um mehr Wirkung zu erzielen.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q9.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 2 nmap command 9]{nmap -sS -v 10.88.40.130}
+\end{figure}
+
+\textbf{Question 10:} Please type and explain the nmap command: nmap -sP -v 10.88.X.? \\ 
+
+\textbf{Answer 10:} Ein Ping-Scan wird ausgeführt mit erhöhtem Verbosity Level.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q10.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 2 nmap command 10]{nmap -sP -v 10.88.40.130}
 \end{figure}
 
 \section*{Exercise 3: Nessus network device identification}
 \addcontentsline{toc}{section}{Exercise 3: Nessus network device identification} 
+
+Nessus is a scanner program. \\
+
+It includes following features: \\
+a) It is a vulnerability scanner \\
+b) It is a port scanner \\
+c) It is a host/device detection program \\
+d) It can be used to scan Netbios Servers e.g. Windows Servers and Samba Servers  \\
+e) Nessus can be used as a penetrating testing tool\\
+f) It is a client-server-system. The server performs the actual scan but it is controlled through the client. Both client and server can be run on the same system\\
+
+In this exercise you will download, install and configure Nessus-6.11.2-es7.x86\_64.rpm (use the RPM from your instructor)
+Do the following steps to install and run nessus: \\
+g. \# Go to the nessus website and register your product for home feed means free cost \\
+https://www.tenable.com/products/nessus/select-your-operating-system\#tos
+h. \# rpm -Uvh Nessus-6.11.2-es7.x86\_64.rpm on Centos 7 \\
+i. \# After registration open your email and copy the activation code and type your activation key \\
+j. Now open a web browser and type the following: https://10.88.X.P:8834/ \\
+Enter your login name and password that you enter while installation.
+Note: download the user manual to obtain more information or refer to the internet.
+Then you will perform a scan on all subnet as below and analyze the result. Exercise: \\
+
+1.) Download Nessus from www.nessus.org (Linux Version Nessus-6.11.2 - es7.x86\_64.rpm) \\
+2.) Install the Nessus-6.11.2-es7.x86\_64.rpm Binary on your Centos7 Virtual Machine \\
+3.) Register Nessus to obtain the plugins (note: choose the offline method) \\
+4.) Install the plugins \\
+5.) Perform a host identification of the localhost \\
+6.) Please scan the following networks: 10.88.X.64/27, 10.88.X.96/27, 10.88.X.128/27, 10.88.X.160/27 and 10.88.X.32/27 using nessus \\
+7.) Perform a network device identification on your subnet 10.88.X.P/27, see figure 1 \\
+
+\textbf{Einleitung:} Nessus ist ein Netzwerk- und Vulnerability Scanner. Unter einem Vulnerability Scanner versteht man Computerprogramme. Diese sind dafür zuständig Zielsysteme auf Sicherheitslücken bzw. Schwachstellen zu untersuchen. Der Scanner hat somit Zugriff auf entsprechende Datenbanken, um Informationen zu Sicherheitsproblemen zu bekommen. Dazu gehören der Einsatz bzw. das Vorhandensein von unsicheren oder nicht benötigten Dienste, Fehler in der Konfiguration bzw. Anwendung von Passwort-und Benutzerrichtlinien sowie offene Ports.\\ 
+
+Nessus beruht auf einem Client-Server-Prinzip. Hierbei wird auf einem Rechner der Nessusserver gestartet und im Anschluss wird eine Verbindung zu anderen Rechnern hergestellt. Sobald der Server gestartet wird, werden die Plug-ins geladen. Diese sind notwendig, da man Sicherheitslücken des Betriebssystems finden kann während des Scanns eines Hostes. Nessus kann als Penetrationstest verwendet werden. Darunter versteht man Sicherheitstests eines Rechners oder von Netzwerken. Dabei wird die Sicherheit der Systembestandteile und Anwendungen eines Netzwerks überprüft. Die Mittel, die dafür verwendet werden sind Methoden, die ein Angreifer verwenden würden, um unautorisiert in das System einzudringen, weshalb dies Penetration bezeichnet wird. Man möchte somit vor Angriffen schützen. \\
+
+\textbf{Solution of 1)} Download Nessus from www.nessus.org (Linux Version Nessus-6.11.2-
+es7.x86\_64.rpm) \\
+
+Zunächst geht man zur folgenden Webseite: https://www.tenable.com/products/nessus/select-your-operating-system. \\
+
+Anschließend wird die entsprechende Datei für CentOS 7 runtergeladen. Diese ist: Nessus-6.11.3-es7.x86\_64.rpm. Nach dem Runterladen muss man sich noch registrieren, damit man einen Aktivierungs Code bekommt. Diesen erhält man per Email. Nach dem Herunterladen wird die Binary, wie man unten im Bild sieht, in die virtuelle Maschine reinkopiert. \\
+
+\textbf{Solution of 2)} Install the Nessus-6.11.2-es7.x86\_64.rpm Binary on your Centos7 Virtual Machine \\
+
+Um die Binary zu installieren wird der Befehl: rpm -Uvh /home/hanifka/Schreibtisch/Nessus-6.11.2-es7.x86\_64.rpm  im Terminal ausgeführt.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/install_nessus.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3 installation Nessus]{Installation von Nessus im Terminal}
+\end{figure}
+
+Nach erfolgreicher Installation kann Nessus mit folgendem Befehl gestartet warden: /bin/systemctl start nessusd.service. Anschließend wird der Browser geöffnet und man gibt folgenden Link ein: https://localhost.localdomain:8834/, um den Scanner konfigurieren zu können. \\
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus_config.PNG} 
+\end{center}
+
+Damit dies funktioniert muss man auf den Button, Ausnahme hinzufügen, klicken. Danach muss man die Sicherheits-Ausnahmeregel bestätigen. Auch auf diesen Button wird geklickt.
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus_config2.PNG} 
+\end{center}
+
+Jetzt kann mit der Konfiguration gestartet warden.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/3.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3 Konfiguration Nessus]{Nessus Konfiguration Startseite}
+\end{figure}
+
+\textbf{Solution of 3)} Register Nessus to obtain the plugins (note: choose the offline method) \\
+
+Damit man sich erfolgreich registrieren kann, wählt man die offline Methode. Dann erhält man einen challenge code, den man fürs weitere Vorgehen benötigen wird.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/4.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Registrierung Nessus]{Nessus Registrierung}
+\end{figure}
+
+Im Browser wird nun folgender Tab geöffnet. Hier wird zuerst unser zu eben erzeugter challenge code eingegeben und unten wird der der Aktivierungs Code eingegeben, den man per Email nach der Registrierung erhalten hat. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/activeKey.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Aktivierung Nessus]{Nessus Aktivierungskey}
+\end{figure}
+
+Nach dem Klicken auf Submit erhalten wir unsere Nessus License. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/activeKey.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  License Nessus]{Nessus License}
+\end{figure}
+
+Die Nessus License kopieren wir und fügen diese ein, da sie für die erfolgreiche Registrierung notwendig ist. \\
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/5.PNG} 
+\end{center}
+
+Nach dem alles erfolgreich konfiguriert wurde und man sich erfolgreich registriert hat, kann man sich anmelden.
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/6.PNG} 
+\end{center}
+
+\textbf{Solution of 4)} Install the plugins \\
+
+Um die Plugins zu installieren, laden wir die notwendige Datei all-2.0.tar.gz runter und kopieren diese anschließend in die virtuelle Machine. Dort kann sie wie folgt installiert werden übers Terminal oder manuell über die GUI. \\
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/7.PNG} 
+\end{center}
+
+Zunächst melden wir uns bei Nessus an. Unter dem Reiter Software Update können wir über den Button Manual Software Update unsere Datei all-2.0.tar.gz mit den ganzen Plugins reinladen.
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/8.PNG} 
+\end{center}
+
+Hier sieht man, dass die Datei all-2.0.tar.gz ausgewählt wird und anschließend geladen werden kann.
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/9.PNG} 
+\end{center}
+
+\textbf{Solution of 5)} \\ % TODO\\
+\textbf{Solution of 6)} \\% TODO\\
+\textbf{Solution of 7)} \\% TODO\\
 
 \section*{Exercise 4: OpenVAS Network device identification}
 \addcontentsline{toc}{section}{Exercise 4: OpenVAS Network device identification} 
