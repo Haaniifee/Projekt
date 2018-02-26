@@ -164,6 +164,13 @@ Dozent: Robert Olotu
 
 \textbf{Answer 1:} Mit dem Filter: \textit{ip.addr == 10.88.40.70} können wir alle Netzwerkpakete, welche über die Schnittstelle 10.88.40.70 gesendet oer empfangen werden, abfangen und anzeigen lassen.\\
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q1.PNG} 
+\end{center}
+\caption[Abbildung X1 Wireshark Filter 1]{Wireshark Filter ip.addr == 10.88.40.70}
+\end{figure}
+
 \textbf{Question 2:} Please type and examine the syntax for a Wireshark display filter that shows IP datagrams with destination IP address equal to 10.88.X.? and frame size greater than 400 bytes. \\
 
 \textbf{Answer 2:} Um alle Datenpakete abzufangen, die mindestens 400 Byte groß sind, bedarf eine kleine Erweiterung des vorherigen Befehls. Der Filter lautet nun: \textit{ip.addr == 10.88.40.70 \&\& frame.len > 400}. Mit dem Teil \textit{frame.len > X} können wir die Datenpakete nach Bytegröße X Filtern. Für X gilt, X $< 2^{32}$ $\wedge$ X $\in \mathbb{N}$. \\
