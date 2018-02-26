@@ -120,7 +120,20 @@ Dozent: Robert Olotu
 
 \section*{Exercise 6: Managing Services (Please use pnidX-svr-mu)}
 \addcontentsline{toc}{section}{Exercise 6: Managing Services (Please use pnidX-svr-mu} 
-Please type and explain the meaning of the following commands:\\1)\# chkconfig \\2)\# \verb|chkonfig --list iptables| \\3)\# \verb|chkconfig --level 2 iptables off| \\4)\# \verb|chkconfig --level 2345 iptables off| \\5)\# chkconfig iptables on | off \\6)\# chkconfig tftp on \\7)\# \verb|chkconfig --level 2 vsftpd off| \\8)\# \verb|chkconfig --level 2345 vsftpd off| \\9)\# Explain the function of xinetd \\The super server xinetd controlled services are automatically enabled or disabled by chkconfig. \\Please type and explain the meaning of the following commands: \\10)\# service network stop \\11)\# service network start \\ \\ 
+Please type and explain the meaning of the following commands:\\
+1)\# chkconfig \\
+2)\# \verb|chkonfig --list iptables| \\
+3)\# \verb|chkconfig --level 2 iptables off| \\
+4)\# \verb|chkconfig --level 2345 iptables off| \\
+5)\# chkconfig iptables on | off \\
+6)\# chkconfig tftp on \\
+7)\# \verb|chkconfig --level 2 vsftpd off| \\
+8)\# \verb|chkconfig --level 2345 vsftpd off| \\
+9)\# Explain the function of xinetd \\
+The super server xinetd controlled services are automatically enabled or disabled by chkconfig. \\
+Please type and explain the meaning of the following commands: \\
+10)\# service network stop \\
+11)\# service network start \\ \\ 
 Please type and explain the meaning of the following commands: \\
 1) \# chkconfig \\
 Die folgenden Kommandos wurden auf Rechner pnid4-svr-mu mit dem Betriebssystem Centos-6.5-x86\_64 ausgeführt. \\
@@ -286,7 +299,17 @@ Der command stoppt alle konfigurierten Netzwerk interfaces.
 
 \section*{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}
 \addcontentsline{toc}{section}{Exercise 7: Configure the following network (figure 1) using ifconfig and route add} 
-You need to set the network depicted on figure 1 by doing the following: \\Use the \dq ifconfig\dq and the \dq route add\dq commands to configure all the subnets 10.88.X.32/27, 10.88.X.64/27, 10.88.X.96/27 and 10.88.X.128/27. For this exercise you will use the hosts pnidX-svr-mu, pnidX-WEB-hn, pnidX-svr-bln and pnidX-svr-hh. Furthermore you have to configure the routers pnidX-rou-1, pnidX-rou-2 and pnidX-rou-3 \\Hint 1: Remember after rebooting the system, the ifconfig and route add configuration will disappear\\Hint 2: Do not forget to flush the firewall by issuing the command \dq iptables -F\dq \\Please use Kali Linux as root:\\\# zenmap\\Scan the networks: \\10.88.X.32/27 \\10.88.X.64/27 \\10.88.X.96/27 \\and 10.88.X.128/27 \\\\
+You need to set the network depicted on figure 1 by doing the following: \\
+Use the \dq ifconfig\dq and the \dq route add\dq commands to configure all the subnets 10.88.X.32/27, 10.88.X.64/27, 10.88.X.96/27 and 10.88.X.128/27. For this exercise you will use the hosts pnidX-svr-mu, pnidX-WEB-hn, pnidX-svr-bln and pnidX-svr-hh. Furthermore you have to configure the routers pnidX-rou-1, pnidX-rou-2 and pnidX-rou-3 \\
+Hint 1: Remember after rebooting the system, the ifconfig and route add configuration will disappear\\
+Hint 2: Do not forget to flush the firewall by issuing the command \dq iptables -F\dq \\
+Please use Kali Linux as root:\\
+\# zenmap\\
+Scan the networks: \\
+10.88.X.32/27 \\
+10.88.X.64/27 \\
+10.88.X.96/27 \\
+and 10.88.X.128/27 \\\\
 Ziel der Aufgaben 7, 8 und 9 ist, das folgende Netzwerk [Abb. 21] mithilfe verschiedener Kommandos aufzubauen um alle zugehörigen Subnetze zu konfigurieren. 
 \begin{figure}[H]
 \begin{center}
@@ -409,7 +432,13 @@ Mit ifconfig ens33 und ens37 weißt man den Netzwerkkarten die zugehörige IP-Adre
 \end{center}
 \caption[Abbildung 35: ]{}
 \end{figure}
-Please use Kali Linux as root:\# zenmap\\Scan the networks:\\10.88.X.32/27\\10.88.X.64/27\\10.88.X.96/27\\and 10.88.X.128/27\\
+Please use Kali Linux as root:
+\# zenmap\\
+Scan the networks:\\
+10.88.X.32/27\\
+10.88.X.64/27\\
+10.88.X.96/27\\
+and 10.88.X.128/27\\
 \textbf{Zenmap}\\
 Zenmap ist eine grafische Ansicht für Nmap, der Ports scannen kann. Wenn man einen Rechner auf offene Ports checken möchte, dann kommt Nmap zum Einsatz. Der Network Mapper ist dafür da, um alle aktiven Hosts in der Netzwerkumgebung (über Ping) sowie deren Betriebssystem und Versionsnummern installierter Dienste herauszufinden. \\
 Infolgedessen konnten wir mit dem Kommando zenmap die Verbindungen von Netzwerk 10.88.40.32, 10.88.40.64, 10.88.40.96 und 10.88.40.128 grafisch darstellen und demonstrieren, dass wir die oben aufgeführte Abbildung und somit unser Ziel erreicht haben.
@@ -1014,7 +1043,8 @@ Die Ausgabe des letzten Logins zeigt uns, dass die Anmeldung erfolgreich war.
 
 \section*{Exercise 6: Set up a host-to-host VPN using preshared key}
 \addcontentsline{toc}{section}{Exercise 6: Set up a host-to-host VPN using preshared key} 
-To create a host-to-host VPN as shown in Figure 1 using preshared keys both systems must have OPENS/WAN properly installed and tested. Next, you must ensure that IP networking is functioning. For this exercise you will capture http packets between the hosts. This capture will allow you to compare and prove that IPSec is functioning after the tunnel is created between the hosts. Make sure Apache and Wireshark are installed. See Figure 1. \\Hints: CREATING PRESHARED KEY use ipsec ranbits 256 > filename
+To create a host-to-host VPN as shown in Figure 1 using preshared keys both systems must have OPENS/WAN properly installed and tested. Next, you must ensure that IP networking is functioning. For this exercise you will capture http packets between the hosts. This capture will allow you to compare and prove that IPSec is functioning after the tunnel is created between the hosts. Make sure Apache and Wireshark are installed. See Figure 1. \\
+Hints: CREATING PRESHARED KEY use ipsec ranbits 256 > filename
 
 \section*{Exercise 7: Set up a host-to-host VPN using RSA keys}
 \addcontentsline{toc}{section}{Exercise 7: Set up a host-to-host VPN using RSA keys}

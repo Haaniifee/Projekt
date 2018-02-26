@@ -1,98 +1,75 @@
 \select@language {ngerman}
-\contentsline {figure}{\numberline {1}{\ignorespaces Abbildung 1: aktivierte bzw. deaktivierte Dienste eines runlevels}}{6}{figure.caption.5}
-\contentsline {figure}{\numberline {2}{\ignorespaces Abbildung 2: Runlevel, in denen iptables eingeschaltet bzw. ausgeschaltet sind}}{6}{figure.caption.6}
-\contentsline {figure}{\numberline {3}{\ignorespaces Abbildung 3: }}{6}{figure.caption.7}
-\contentsline {figure}{\numberline {4}{\ignorespaces Abbildung 4: Runlevel 2,3,4,5 werden deaktiviert}}{7}{figure.caption.8}
-\contentsline {figure}{\numberline {5}{\ignorespaces Abbildung 5: chkconfig iptables on | off}}{7}{figure.caption.9}
-\contentsline {figure}{\numberline {6}{\ignorespaces Abbildung 6: vi /etc/yum.repos.d/local.repo}}{8}{figure.caption.10}
-\contentsline {figure}{\numberline {7}{\ignorespaces Abbildung 7: mounten}}{8}{figure.caption.11}
-\contentsline {figure}{\numberline {8}{\ignorespaces Abbildung 8: yum install tftp}}{8}{figure.caption.12}
-\contentsline {figure}{\numberline {9}{\ignorespaces Abbildung 9: yum install tftp}}{9}{figure.caption.13}
-\contentsline {figure}{\numberline {10}{\ignorespaces Abbildung 10: service xinetd start}}{9}{figure.caption.14}
-\contentsline {figure}{\numberline {11}{\ignorespaces Abbildung 11: }}{9}{figure.caption.15}
-\contentsline {figure}{\numberline {12}{\ignorespaces Abbildung 12: }}{10}{figure.caption.16}
-\contentsline {figure}{\numberline {13}{\ignorespaces Abbildung 13: }}{11}{figure.caption.17}
-\contentsline {figure}{\numberline {14}{\ignorespaces Abbildung 14: yum install vsftpd}}{11}{figure.caption.18}
-\contentsline {figure}{\numberline {15}{\ignorespaces Abbildung 15: Runlevel 2 von vsftpd wird deaktiviert}}{12}{figure.caption.19}
-\contentsline {figure}{\numberline {16}{\ignorespaces Abbildung 16: }}{12}{figure.caption.20}
-\contentsline {figure}{\numberline {17}{\ignorespaces Abbildung 17: }}{12}{figure.caption.21}
-\contentsline {figure}{\numberline {18}{\ignorespaces Abbildung 18: }}{12}{figure.caption.22}
-\contentsline {figure}{\numberline {19}{\ignorespaces Abbildung 19: }}{12}{figure.caption.23}
-\contentsline {figure}{\numberline {20}{\ignorespaces Abbildung 20: }}{13}{figure.caption.24}
-<<<<<<< HEAD
-\contentsline {figure}{\numberline {21}{\ignorespaces Abbildung 21: }}{15}{figure.caption.26}
-\contentsline {figure}{\numberline {22}{\ignorespaces Abbildung 22: }}{16}{figure.caption.27}
-\contentsline {figure}{\numberline {23}{\ignorespaces Abbildung 23: }}{16}{figure.caption.28}
-\contentsline {figure}{\numberline {24}{\ignorespaces Abbildung 24: }}{17}{figure.caption.29}
-\contentsline {figure}{\numberline {25}{\ignorespaces Abbildung 25: }}{17}{figure.caption.30}
-\contentsline {figure}{\numberline {26}{\ignorespaces Abbildung 26: }}{18}{figure.caption.31}
-\contentsline {figure}{\numberline {27}{\ignorespaces Abbildung 27: }}{18}{figure.caption.32}
-\contentsline {figure}{\numberline {28}{\ignorespaces Abbildung 28: }}{18}{figure.caption.33}
-\contentsline {figure}{\numberline {29}{\ignorespaces Abbildung 29: }}{19}{figure.caption.34}
-\contentsline {figure}{\numberline {30}{\ignorespaces Abbildung 30: }}{19}{figure.caption.35}
-\contentsline {figure}{\numberline {31}{\ignorespaces Abbildung 31: }}{20}{figure.caption.36}
-\contentsline {figure}{\numberline {32}{\ignorespaces Abbildung 32: }}{20}{figure.caption.37}
-\contentsline {figure}{\numberline {33}{\ignorespaces Abbildung 33: }}{20}{figure.caption.38}
-\contentsline {figure}{\numberline {34}{\ignorespaces Abbildung 34: }}{21}{figure.caption.39}
-\contentsline {figure}{\numberline {35}{\ignorespaces Abbildung 35: }}{21}{figure.caption.40}
-\contentsline {figure}{\numberline {36}{\ignorespaces Abbildung 36: Netz: 10.88.40.32/27}}{22}{figure.caption.41}
-\contentsline {figure}{\numberline {37}{\ignorespaces Abbildung 37: Netz: 10.88.40.64/27}}{23}{figure.caption.42}
-\contentsline {figure}{\numberline {38}{\ignorespaces Abbildung 38: Netz: 10.88.40.96/27}}{23}{figure.caption.43}
-\contentsline {figure}{\numberline {39}{\ignorespaces Abbildung 39: Netz: 10.88.40.128/27}}{24}{figure.caption.44}
-\contentsline {figure}{\numberline {40}{\ignorespaces Abbildung P4 figure 1 LAN}}{26}{figure.caption.48}
-\contentsline {figure}{\numberline {41}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 64}}{27}{figure.caption.50}
-\contentsline {figure}{\numberline {42}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 96}}{28}{figure.caption.51}
-\contentsline {figure}{\numberline {43}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 128}}{28}{figure.caption.52}
-\contentsline {figure}{\numberline {44}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 160}}{29}{figure.caption.53}
-\contentsline {figure}{\numberline {45}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 32}}{29}{figure.caption.54}
-\contentsline {figure}{\numberline {46}{\ignorespaces Abbildung P5 ex. 1 Zenmap alle Subnetze}}{30}{figure.caption.55}
-\contentsline {figure}{\numberline {47}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 1}}{30}{figure.caption.57}
-\contentsline {figure}{\numberline {48}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 1}}{33}{figure.caption.65}
-\contentsline {figure}{\numberline {49}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 2}}{33}{figure.caption.66}
-\contentsline {figure}{\numberline {50}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 3}}{34}{figure.caption.67}
-\contentsline {figure}{\numberline {51}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 4}}{34}{figure.caption.68}
-\contentsline {figure}{\numberline {52}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 5}}{35}{figure.caption.69}
-\contentsline {figure}{\numberline {53}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 7}}{36}{figure.caption.70}
-\contentsline {figure}{\numberline {54}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 8}}{37}{figure.caption.71}
-\contentsline {figure}{\numberline {55}{\ignorespaces Abbildung P5 ex. 4 Wireshark ftp Login Passwort}}{37}{figure.caption.72}
-\contentsline {figure}{\numberline {56}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 9}}{38}{figure.caption.73}
-\contentsline {figure}{\numberline {57}{\ignorespaces Abbildung P5 ex. 4 Wireshark ssh Datenpaket}}{39}{figure.caption.74}
-\contentsline {figure}{\numberline {58}{\ignorespaces Abbildung P5 ex. 5 nmap offene Ports anzeigen}}{39}{figure.caption.76}
-\contentsline {figure}{\numberline {59}{\ignorespaces Abbildung P5 ex. 5 Telnet login}}{40}{figure.caption.77}
-=======
-\contentsline {figure}{\numberline {21}{\ignorespaces Abbildung P4 figure 1 LAN}}{17}{figure.caption.29}
-\contentsline {figure}{\numberline {22}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 64}}{18}{figure.caption.31}
-\contentsline {figure}{\numberline {23}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 96}}{19}{figure.caption.32}
-\contentsline {figure}{\numberline {24}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 128}}{19}{figure.caption.33}
-\contentsline {figure}{\numberline {25}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 160}}{20}{figure.caption.34}
-\contentsline {figure}{\numberline {26}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 32}}{20}{figure.caption.35}
-\contentsline {figure}{\numberline {27}{\ignorespaces Abbildung P5 ex. 1 Zenmap alle Subnetze}}{21}{figure.caption.36}
-\contentsline {figure}{\numberline {28}{\ignorespaces Abbildung P4 ex. 2 nmap command 1}}{22}{figure.caption.38}
-\contentsline {figure}{\numberline {29}{\ignorespaces Abbildung P4 ex. 2 nmap command 2}}{22}{figure.caption.39}
-\contentsline {figure}{\numberline {30}{\ignorespaces Abbildung P4 ex. 2 nmap externes Logfile}}{23}{figure.caption.40}
-\contentsline {figure}{\numberline {31}{\ignorespaces Abbildung P4 ex. 2 nmap command 3}}{23}{figure.caption.41}
-\contentsline {figure}{\numberline {32}{\ignorespaces Abbildung P4 ex. 2 nmap command 4}}{24}{figure.caption.42}
-\contentsline {figure}{\numberline {33}{\ignorespaces Abbildung P4 ex. 2 nmap command 5}}{24}{figure.caption.43}
-\contentsline {figure}{\numberline {34}{\ignorespaces Abbildung P4 ex. 2 nmap command 6}}{24}{figure.caption.44}
-\contentsline {figure}{\numberline {35}{\ignorespaces Abbildung P4 ex. 2 nmap command 7}}{25}{figure.caption.45}
-\contentsline {figure}{\numberline {36}{\ignorespaces Abbildung P4 ex. 2 nmap command 8}}{25}{figure.caption.46}
-\contentsline {figure}{\numberline {37}{\ignorespaces Abbildung P4 ex. 2 nmap command 9}}{26}{figure.caption.47}
-\contentsline {figure}{\numberline {38}{\ignorespaces Abbildung P4 ex. 2 nmap command 10}}{26}{figure.caption.48}
-\contentsline {figure}{\numberline {39}{\ignorespaces Abbildung P4 ex. 3 installation Nessus}}{29}{figure.caption.50}
-\contentsline {figure}{\numberline {40}{\ignorespaces Abbildung P4 ex. 3 Konfiguration Nessus}}{30}{figure.caption.51}
-\contentsline {figure}{\numberline {41}{\ignorespaces Abbildung P4 ex. 3 Registrierung Nessus}}{31}{figure.caption.52}
-\contentsline {figure}{\numberline {42}{\ignorespaces Abbildung P4 ex. 3 Aktivierung Nessus}}{31}{figure.caption.53}
-\contentsline {figure}{\numberline {43}{\ignorespaces Abbildung P4 ex. 3 License Nessus}}{32}{figure.caption.54}
-\contentsline {figure}{\numberline {44}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 1}}{36}{figure.caption.61}
-\contentsline {figure}{\numberline {45}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 2}}{36}{figure.caption.62}
-\contentsline {figure}{\numberline {46}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 3}}{37}{figure.caption.63}
-\contentsline {figure}{\numberline {47}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 4}}{37}{figure.caption.64}
-\contentsline {figure}{\numberline {48}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 5}}{38}{figure.caption.65}
-\contentsline {figure}{\numberline {49}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 7}}{39}{figure.caption.66}
-\contentsline {figure}{\numberline {50}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 8}}{40}{figure.caption.67}
-\contentsline {figure}{\numberline {51}{\ignorespaces Abbildung P5 ex. 4 Wireshark ftp Login Passwort}}{40}{figure.caption.68}
-\contentsline {figure}{\numberline {52}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 9}}{41}{figure.caption.69}
-\contentsline {figure}{\numberline {53}{\ignorespaces Abbildung P5 ex. 4 Wireshark ssh Datenpaket}}{42}{figure.caption.70}
-\contentsline {figure}{\numberline {54}{\ignorespaces Abbildung P5 ex. 5 nmap offene Ports anzeigen}}{42}{figure.caption.72}
-\contentsline {figure}{\numberline {55}{\ignorespaces Abbildung P5 ex. 5 Telnet login}}{43}{figure.caption.73}
->>>>>>> c4acd66c96b869adacd797d073bd3a16bd68967d
+\contentsline {figure}{\numberline {1}{\ignorespaces Abbildung 1: aktivierte bzw. deaktivierte Dienste eines runlevels}}{7}{figure.caption.5}
+\contentsline {figure}{\numberline {2}{\ignorespaces Abbildung 2: Runlevel, in denen iptables eingeschaltet bzw. ausgeschaltet sind}}{7}{figure.caption.6}
+\contentsline {figure}{\numberline {3}{\ignorespaces Abbildung 3: }}{7}{figure.caption.7}
+\contentsline {figure}{\numberline {4}{\ignorespaces Abbildung 4: Runlevel 2,3,4,5 werden deaktiviert}}{8}{figure.caption.8}
+\contentsline {figure}{\numberline {5}{\ignorespaces Abbildung 5: chkconfig iptables on | off}}{8}{figure.caption.9}
+\contentsline {figure}{\numberline {6}{\ignorespaces Abbildung 6: vi /etc/yum.repos.d/local.repo}}{9}{figure.caption.10}
+\contentsline {figure}{\numberline {7}{\ignorespaces Abbildung 7: mounten}}{9}{figure.caption.11}
+\contentsline {figure}{\numberline {8}{\ignorespaces Abbildung 8: yum install tftp}}{9}{figure.caption.12}
+\contentsline {figure}{\numberline {9}{\ignorespaces Abbildung 9: yum install tftp}}{10}{figure.caption.13}
+\contentsline {figure}{\numberline {10}{\ignorespaces Abbildung 10: service xinetd start}}{10}{figure.caption.14}
+\contentsline {figure}{\numberline {11}{\ignorespaces Abbildung 11: }}{10}{figure.caption.15}
+\contentsline {figure}{\numberline {12}{\ignorespaces Abbildung 12: }}{11}{figure.caption.16}
+\contentsline {figure}{\numberline {13}{\ignorespaces Abbildung 13: }}{12}{figure.caption.17}
+\contentsline {figure}{\numberline {14}{\ignorespaces Abbildung 14: yum install vsftpd}}{12}{figure.caption.18}
+\contentsline {figure}{\numberline {15}{\ignorespaces Abbildung 15: Runlevel 2 von vsftpd wird deaktiviert}}{13}{figure.caption.19}
+\contentsline {figure}{\numberline {16}{\ignorespaces Abbildung 16: }}{13}{figure.caption.20}
+\contentsline {figure}{\numberline {17}{\ignorespaces Abbildung 17: }}{13}{figure.caption.21}
+\contentsline {figure}{\numberline {18}{\ignorespaces Abbildung 18: }}{13}{figure.caption.22}
+\contentsline {figure}{\numberline {19}{\ignorespaces Abbildung 19: }}{13}{figure.caption.23}
+\contentsline {figure}{\numberline {20}{\ignorespaces Abbildung 20: }}{14}{figure.caption.24}
+\contentsline {figure}{\numberline {21}{\ignorespaces Abbildung 21: }}{16}{figure.caption.26}
+\contentsline {figure}{\numberline {22}{\ignorespaces Abbildung 22: }}{17}{figure.caption.27}
+\contentsline {figure}{\numberline {23}{\ignorespaces Abbildung 23: }}{17}{figure.caption.28}
+\contentsline {figure}{\numberline {24}{\ignorespaces Abbildung 24: }}{18}{figure.caption.29}
+\contentsline {figure}{\numberline {25}{\ignorespaces Abbildung 25: }}{18}{figure.caption.30}
+\contentsline {figure}{\numberline {26}{\ignorespaces Abbildung 26: }}{19}{figure.caption.31}
+\contentsline {figure}{\numberline {27}{\ignorespaces Abbildung 27: }}{19}{figure.caption.32}
+\contentsline {figure}{\numberline {28}{\ignorespaces Abbildung 28: }}{19}{figure.caption.33}
+\contentsline {figure}{\numberline {29}{\ignorespaces Abbildung 29: }}{20}{figure.caption.34}
+\contentsline {figure}{\numberline {30}{\ignorespaces Abbildung 30: }}{20}{figure.caption.35}
+\contentsline {figure}{\numberline {31}{\ignorespaces Abbildung 31: }}{21}{figure.caption.36}
+\contentsline {figure}{\numberline {32}{\ignorespaces Abbildung 32: }}{21}{figure.caption.37}
+\contentsline {figure}{\numberline {33}{\ignorespaces Abbildung 33: }}{21}{figure.caption.38}
+\contentsline {figure}{\numberline {34}{\ignorespaces Abbildung 34: }}{22}{figure.caption.39}
+\contentsline {figure}{\numberline {35}{\ignorespaces Abbildung 35: }}{22}{figure.caption.40}
+\contentsline {figure}{\numberline {36}{\ignorespaces Abbildung 36: Netz: 10.88.40.32/27}}{23}{figure.caption.41}
+\contentsline {figure}{\numberline {37}{\ignorespaces Abbildung 37: Netz: 10.88.40.64/27}}{24}{figure.caption.42}
+\contentsline {figure}{\numberline {38}{\ignorespaces Abbildung 38: Netz: 10.88.40.96/27}}{24}{figure.caption.43}
+\contentsline {figure}{\numberline {39}{\ignorespaces Abbildung 39: Netz: 10.88.40.128/27}}{25}{figure.caption.44}
+\contentsline {figure}{\numberline {40}{\ignorespaces Abbildung P4 figure 1 LAN}}{28}{figure.caption.48}
+\contentsline {figure}{\numberline {41}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 64}}{29}{figure.caption.50}
+\contentsline {figure}{\numberline {42}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 96}}{30}{figure.caption.51}
+\contentsline {figure}{\numberline {43}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 128}}{30}{figure.caption.52}
+\contentsline {figure}{\numberline {44}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 160}}{31}{figure.caption.53}
+\contentsline {figure}{\numberline {45}{\ignorespaces Abbildung P5 ex. 1 Zenmap Subnetz 32}}{31}{figure.caption.54}
+\contentsline {figure}{\numberline {46}{\ignorespaces Abbildung P5 ex. 1 Zenmap alle Subnetze}}{32}{figure.caption.55}
+\contentsline {figure}{\numberline {47}{\ignorespaces Abbildung P4 ex. 2 nmap command 1}}{33}{figure.caption.57}
+\contentsline {figure}{\numberline {48}{\ignorespaces Abbildung P4 ex. 2 nmap command 2}}{33}{figure.caption.58}
+\contentsline {figure}{\numberline {49}{\ignorespaces Abbildung P4 ex. 2 nmap externes Logfile}}{34}{figure.caption.59}
+\contentsline {figure}{\numberline {50}{\ignorespaces Abbildung P4 ex. 2 nmap command 3}}{34}{figure.caption.60}
+\contentsline {figure}{\numberline {51}{\ignorespaces Abbildung P4 ex. 2 nmap command 4}}{35}{figure.caption.61}
+\contentsline {figure}{\numberline {52}{\ignorespaces Abbildung P4 ex. 2 nmap command 5}}{35}{figure.caption.62}
+\contentsline {figure}{\numberline {53}{\ignorespaces Abbildung P4 ex. 2 nmap command 6}}{35}{figure.caption.63}
+\contentsline {figure}{\numberline {54}{\ignorespaces Abbildung P4 ex. 2 nmap command 7}}{36}{figure.caption.64}
+\contentsline {figure}{\numberline {55}{\ignorespaces Abbildung P4 ex. 2 nmap command 8}}{36}{figure.caption.65}
+\contentsline {figure}{\numberline {56}{\ignorespaces Abbildung P4 ex. 2 nmap command 9}}{37}{figure.caption.66}
+\contentsline {figure}{\numberline {57}{\ignorespaces Abbildung P4 ex. 2 nmap command 10}}{37}{figure.caption.67}
+\contentsline {figure}{\numberline {58}{\ignorespaces Abbildung P4 ex. 3 installation Nessus}}{40}{figure.caption.69}
+\contentsline {figure}{\numberline {59}{\ignorespaces Abbildung P4 ex. 3 Konfiguration Nessus}}{41}{figure.caption.70}
+\contentsline {figure}{\numberline {60}{\ignorespaces Abbildung P4 ex. 3 Registrierung Nessus}}{42}{figure.caption.71}
+\contentsline {figure}{\numberline {61}{\ignorespaces Abbildung P4 ex. 3 Aktivierung Nessus}}{42}{figure.caption.72}
+\contentsline {figure}{\numberline {62}{\ignorespaces Abbildung P4 ex. 3 License Nessus}}{43}{figure.caption.73}
+\contentsline {figure}{\numberline {63}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 1}}{47}{figure.caption.80}
+\contentsline {figure}{\numberline {64}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 2}}{47}{figure.caption.81}
+\contentsline {figure}{\numberline {65}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 3}}{48}{figure.caption.82}
+\contentsline {figure}{\numberline {66}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 4}}{48}{figure.caption.83}
+\contentsline {figure}{\numberline {67}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 5}}{49}{figure.caption.84}
+\contentsline {figure}{\numberline {68}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 7}}{50}{figure.caption.85}
+\contentsline {figure}{\numberline {69}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 8}}{51}{figure.caption.86}
+\contentsline {figure}{\numberline {70}{\ignorespaces Abbildung P5 ex. 4 Wireshark ftp Login Passwort}}{51}{figure.caption.87}
+\contentsline {figure}{\numberline {71}{\ignorespaces Abbildung P5 ex. 4 Wireshark Filter 9}}{52}{figure.caption.88}
+\contentsline {figure}{\numberline {72}{\ignorespaces Abbildung P5 ex. 4 Wireshark ssh Datenpaket}}{53}{figure.caption.89}
+\contentsline {figure}{\numberline {73}{\ignorespaces Abbildung P5 ex. 5 nmap offene Ports anzeigen}}{53}{figure.caption.91}
+\contentsline {figure}{\numberline {74}{\ignorespaces Abbildung P5 ex. 5 Telnet login}}{54}{figure.caption.92}
