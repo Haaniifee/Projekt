@@ -1,5 +1,0 @@
-Kernel IP routing table
-Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
-10.88.40.96     10.88.40.129    255.255.255.224 UG    0      0        0 eth5
-10.88.40.128    0.0.0.0         255.255.255.224 U     1      0        0 eth5
-0.0.0.0         10.88.40.129    0.0.0.0         UG    0      0        0 eth5

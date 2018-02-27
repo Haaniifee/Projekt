@@ -1,7 +1,0 @@
-pnid4-cnt-bln Thu Jan 25 15:53:02 CET 2018
-IPSEC TABLE
-ROUTING TABLE
-10.88.40.96/27 dev eth5  proto kernel  scope link  src 10.88.40.97 
-10.88.40.128/27 via 10.88.40.98 dev eth5 
-169.254.0.0/16 dev eth5  scope link  metric 1002 
-default via 10.88.40.98 dev eth5  proto static 
