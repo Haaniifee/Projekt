@@ -1,22 +1,22 @@
 \select@language {ngerman}
 \contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{3}{chapter*.2}
-\contentsline {chapter}{Part 3: Network Troubleshooting Utilities}{6}{chapter*.3}
-\contentsline {section}{Exercise 6: Managing Services (Please use pnidX-svr-mu}{6}{section*.4}
-\contentsline {section}{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}{14}{section*.25}
-\contentsline {section}{Exercise 8: Configure the following network (figure 1) using ip and nmcli}{25}{section*.45}
-\contentsline {section}{Exercise 9: Configure the following network (figure 1) using GUI}{25}{section*.46}
-\contentsline {chapter}{Part 4: Network Scanning}{27}{chapter*.47}
-\contentsline {section}{Exercise 1: Configure the networks of figure 1}{28}{section*.49}
-\contentsline {section}{Exercise 2: NMAP}{31}{section*.56}
-\contentsline {section}{Exercise 3: Nessus network device identification}{36}{section*.68}
-\contentsline {section}{Exercise 4: OpenVAS Network device identification}{44}{section*.74}
-\contentsline {chapter}{Part 5: Sniffing, Virtual Private Network (VPN)}{45}{chapter*.75}
-\contentsline {section}{Exercise 1: Configure and set the networks shown below (figure1 and 2)}{45}{section*.76}
-\contentsline {section}{Exercise 2: Getting started with network monitoring tools}{45}{section*.77}
-\contentsline {section}{Exercise 3: TCPDUMP}{45}{section*.78}
-\contentsline {section}{Exercise 4: Wireshark}{45}{section*.79}
-\contentsline {section}{Exercise 5: Experimenting with network monitoring tools}{52}{section*.90}
-\contentsline {section}{Exercise 6: Set up a host-to-host VPN using preshared key}{53}{section*.93}
-\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{69}{section*.126}
-\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{69}{section*.127}
-\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{69}{section*.128}
+\contentsline {chapter}{Part 3: Network Troubleshooting Utilities}{7}{chapter*.3}
+\contentsline {section}{Exercise 6: Managing Services (Please use pnidX-svr-mu}{7}{section*.4}
+\contentsline {section}{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}{15}{section*.25}
+\contentsline {section}{Exercise 8: Configure the following network (figure 1) using ip and nmcli}{26}{section*.45}
+\contentsline {section}{Exercise 9: Configure the following network (figure 1) using GUI}{34}{section*.56}
+\contentsline {chapter}{Part 4: Network Scanning}{48}{chapter*.57}
+\contentsline {section}{Exercise 1: Configure the networks of figure 1}{49}{section*.59}
+\contentsline {section}{Exercise 2: NMAP}{52}{section*.66}
+\contentsline {section}{Exercise 3: Nessus network device identification}{57}{section*.78}
+\contentsline {section}{Exercise 4: OpenVAS Network device identification}{73}{section*.97}
+\contentsline {chapter}{Part 5: Sniffing, Virtual Private Network (VPN)}{84}{chapter*.110}
+\contentsline {section}{Exercise 1: Configure and set the networks shown below (figure1 and 2)}{84}{section*.111}
+\contentsline {section}{Exercise 2: Getting started with network monitoring tools}{84}{section*.112}
+\contentsline {section}{Exercise 3: TCPDUMP}{84}{section*.113}
+\contentsline {section}{Exercise 4: Wireshark}{84}{section*.114}
+\contentsline {section}{Exercise 5: Experimenting with network monitoring tools}{91}{section*.125}
+\contentsline {section}{Exercise 6: Set up a host-to-host VPN using preshared key}{92}{section*.128}
+\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{108}{section*.161}
+\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{108}{section*.162}
+\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{108}{section*.163}

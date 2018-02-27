@@ -478,6 +478,7 @@ Das Netz 10.88.40.96/27 wird gescannt:
 \begin{center}
 Das Netz 10.88.40.128/27 wird gescannt:
 \end{center}
+
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b19.png}
@@ -488,8 +489,379 @@ Das Netz 10.88.40.128/27 wird gescannt:
 \section*{Exercise 8: Configure the following network (figure 1) using ip and nmcli}
 \addcontentsline{toc}{section}{Exercise 8: Configure the following network (figure 1) using ip and nmcli} 
 
+You need to set the network depicted on figure 1 by doing the following: \\
+
+Use the ?ifconfig? and the ?route add? commands to configure all the subnets 10.88.X.32/27, 10.88.X.64/27, 10.88.X.96/27 and 10.88.X.128/27. For this exercise you will use the hosts pnidX-svr-mu, pnidX-WEB-hn, pnidX-svr-bln and pnidX-svr-hh. Furthermore you have to configure the routers pnidX-rou-1, pnidX-rou-2 and pnidX- rou-3 \\
+
+\textbf{Hint 1:} Remember after rebooting the system, the ifconfig and route add configuration will disappear \\
+
+\textbf{Hint 2:} Do not forget to flush the firewall by issuing the command iptables -F \\
+
+\textbf{Please use Kali Linux as root:} \\ 
+\textbf{\# zenmap} \\
+\textbf{Scan the networks:}  \\
+10.88.X.32/27 \\
+10.88.X.64/27  \\
+10.88.X.96/27\\
+10.88.X.128/27\\
+
+\textbf{Einleitung:} \\
+
+In dieser Aufgabe geht es darum das Netzwerk mittels ip und nmcli zu konfigurieren. Ip ist die neuere Version des Kommandozeilenprogramms von ifconfig. Demzufolge ist Sie leistungsfähiger und wird irgendwann ifconfig ersetzen. Man muss sich nur mit der Syntax vertraut machen. In den nächsten Schritten wird gezeigt, wie man mittels ip die Netze konfiguriert. In dieser Aufgabe gehen wir vom Aufbau her wie in Exercise 7 vor. Deswegen betrachten wir der übersichtshalber nur die vi-Datei, die entsprechend angepasst werden muss.\\
+
+\textbf{Vergleich von Nmcli und IP:} \\
+
+Nmcli auch bekannt als Network Manager hat viele Vorteile gegenüber anderen Verfahren, insbesondere bei einer WLAN-Verbindung. Denn Nmcli regelt die Verbindung zum Netzwerk nicht ausschließlich beim Hochfahren, sondern überwacht auch im Laufe eines Betriebes die Verbindung und wenn nötig stellt nmcli die Verbindung nach Unterbrechungen wieder her. Deswegen ist der Network Manager auch für Server-Installationen interessant, quasi als Ersatz für die Netzwerkkonfiguration. Auch bei der Fehlersuche spielt nmcli eine bedeutende Rolle.
+Die Möglichkeiten von nmcli und die dabei zu verwendende Kommandosprache sind versionsabhängig. Zunächst betrachten wir die für CentOS 7 verwendete Kommandosprache. \\
+
+Ähnlich wie bei ip wird zunächst die IP-Adresse festgelegt. Dies geschieht mit dem Befehl nmcli con add con-name mit dem jeweiligen Namen der Netzwerkkarte. In diesem Fall ist es ens33 mit dem Typen type ethernet ifname, wie man der Abbildung 48 entnehmen kann. Anschließend folgt die IP-Adresse in Version 4. Deswegen schreibt man ip4 und direkt danach die dazugehörige IP-Adresse mit der entsprechenden Subnetzmaske. In diesem Fall wieder 255.255.255.224 und vereinfacht dargestellt als /27 direkt hinter der IP-Adresse.\\
+
+Die nächsten Zeilen legen fest, durch welches Gateway ein Datenpaket weitergeleitet werden soll, wenn es nicht im entsprechenden Subnetz ist, sprich wenn die Netzadresse nicht dieselbe ist. Der Befehl nmcli connection modify dient dazu die entsprechenden Routen zu bestimmen. Im Anschluss steht der Name der Netzwerkkarte. Der Befehl +ipv4.routes sorgt dafür, dass das entsprechende Subnetz angegeben wird, in das geroutet werden soll. Dafür muss man noch das jeweilige Gateway angeben, durch welches man in das entsprechende Subnetz gelangt. Dies geschieht mittels ipv4.gateway. Am Ende wird noch mit dem Befehl iptables -F die Firewall ausgeschaltet.  \\
+
+\textbf{Konfigurationsdatei von Server München mittles ip addr (Routing-Tabelle)}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/1svrmuip.png}
+\end{center}
+\caption[Abbildung 39: Konfig. Server München mit ip addr]{Konfig. Server München ip addr}
+\end{figure}
+
+\textbf{Konfigurationsdatei von Router 3 mittels ip addr (Routing-Tabelle)}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/2rou3ip.png}
+\end{center}
+\caption[Abbildung 39: Konfig. Router 3 mit ip addr]{Konfig. Router 3 ip addr}
+\end{figure}
+
+\textbf{Gleiche Konfigurationsdatei von Router 3 mittels nmcli (Routing-Tabelle)}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/2rou3nmcli.png}
+\end{center}
+\caption[Abbildung 39: Konfig. Router 3 mit nmcli]{Konfig. Router 3 nmcli}
+\end{figure}
+
+Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgreich hinzugefügt. Mit nmcli con up wird die Verbindung aktiviert und anschließend wird über netstat -nr die Routing-Tabelle angezeigt.
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/2rou3routingTabelle.png}
+\end{center}
+
+\textbf{Konfigurationsdatei von Router 2 mittels ip addr (Routing-Tabelle)}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/3rou2ip.png}
+\end{center}
+\caption[Abbildung 39: Konfig. Router 2 mit ip addr]{Konfig. Router 2 ip addr}
+\end{figure}
+
+\textbf{Gleiche Konfigurationsdatei von Router 2 mittels nmcli (Routing-Tabelle)}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/3rou2nmcli.png}
+\end{center}
+\caption[Abbildung 39: Konfig. Router 2 mit nmcli]{Konfig. Router 2 nmcli}
+\end{figure}
+
+\textbf{Konfigurationsdatei von Router 1 mittels ip addr (Routing-Tabelle)}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/4rou1ip.png}
+\end{center}
+\caption[Abbildung 39: Konfig. Router 1 mit ip addr]{Konfig. Router 1 ip addr}
+\end{figure}
+
+\textbf{Gleiche Konfigurationsdatei von Router 1 mittels nmcli (Routing-Tabelle)}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/4rou1nmcli.png}
+\end{center}
+\caption[Abbildung 39: Konfig. Router 1 mit nmcli]{Konfig. Router 1 nmcli}
+\end{figure}
+
+\textbf{Konfigurationsdatei von Webserver Hannover mittels ip addr (Routing-Tabelle)}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/5webhnip.png}
+\end{center}
+\caption[Abbildung 39: Konfig. Webserver Hannover mit ip addr]{Konfig.  Webserver Hannover ip addr}
+\end{figure}
+
+\textbf{Konfigurationsdatei von Server Berlin mittels nmcli (Routing-Tabelle)}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/6svrblnnmcli.png}
+\end{center}
+\caption[Abbildung 39: Konfig. Server Berlin mit nmcli]{Konfig.  Server Berlin nmcli}
+\end{figure}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/6svrblnroutingTabelle.png}
+\end{center}
+
+\textbf{Konfigurationsdatei von Server Hamburg mittels ip addr (Routing-Tabelle)}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/7svrhhip.png}
+\end{center}
+\caption[Abbildung 39: Konfig. Server Hamburg mit ip addr]{Konfig. Server Hamburg ip addr}
+\end{figure}
+
+\textbf{Zenmap Ergebnisse der gescannten Subnetze: }
+
+\begin{center}
+Scan des Subnetztes 10.88.40.32/27
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/zenmap/z32.png}
+\end{center}
+
+\begin{center}
+Scan des Subnetztes 10.88.40.64/27
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/zenmap/z64.png}
+\end{center}
+
+\begin{center}
+Scan des Subnetztes 10.88.40.96/27
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/zenmap/z96.png}
+\end{center}
+
+\begin{center}
+Scan des Subnetztes 10.88.40.128/27
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/zenmap/z128.png}
+\end{center}
+
 \section*{Exercise 9: Configure the following network (figure 1) using GUI}
 \addcontentsline{toc}{section}{Exercise 9: Configure the following network (figure 1) using GUI} 
+
+Damit die Konfiguration problemlos gelingen kann, sollte auf jedem Host, im Terminal, mit dem Kommando iptables -F die Firewall deaktiviert werden.
+
+\textbf{Konfiguration von Server München über die GUI:} \\
+
+Wir starten die Netzwerkkonfiguration auf dem Host pnid4-svr-mu mit dem Betriebssystem Centos 6. Zunächst gehen wir im Auswahlmenü auf System -> Preferences und wählen Network Connections aus.
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_3/exercise_9/svr-mu/1.png}
+\end{center}
+
+Es öffnet sich ein Fenster in der wir die Bezeichner alle verfügbaren Netzwerk Interfaces sehen. Wir Wählen Auto eth3 aus und bestätigen mit Edit. Mit Add lässt sich ein neues Interface einrichten. 
+
+\begin{center}
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_3/exercise_9/svr-mu/2.png}
+\end{center}
+
+Wir können nun unser bereits vorhandenes Netzwerk Interface Auto eth3 bearbeiten. Dazu Wählen wir in der Navigation IPv4 Settings aus und erhalten folgende Ansicht. Falls Auto ausgewählt ist, ändern wie dieses auf Manual, damit wir eine statische IP Adresse eintragen können. Wir können im Bereich Addresses mit Add eine statische IPv4 Adresse für den Host eintragen. Da wir auf pnid4-svr-mu, vergeben wir die Adresse 10.88.40.129 mit der Subnetzmaske 255.255.255.224. Zuletzt müssen wir noch die jeweiligen Subnetze Eintragen und das Gateway über das wir die anderen Hosts erreichen. Dazu bestätigen wir den Button Routes.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/svr-mu/3.png}
+\end{center}
+
+Der Button Routes, öffnet ein neues Fenster. Mit Add können wir nun die Subnetze, dessen Subnetzmaske und das Gateway unseres Edge Routers (Router 3) eintragen. Da wir von pnid4-svr-mu über Router 3 alle anderen Subnetze erreichen können ist das Gateway für alle Subnetze gleich und lautet 10.88.40.130. Abschließend bestätigen wir mit OK.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/svr-mu/4.png}
+\end{center}
+
+Damit alle Änderungen für diesen Host übernommen werden bestätigen wir noch mal mit Apply.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/svr-mu/5.png}
+\end{center}
+
+Das Netzwerk ist für den Host pnid4-svr-mu nun erfolgreich eingerichtet.
+
+\textbf{Konfiguration von Router 3 über die GUI:}
+
+Router 1, 2 und 3 laufen mit dem Betriebssystem Linux Centos 7. Dementsprechend ist die Netzwerkkonfiguration auf allen Routern die gleiche. Wir erläutern die Konfiguration von Router 3 ausführlich und zeigen dann, welche IP Adressen Router 2 und Router 1 besitzen.
+
+Wir Wählen zuerst unter dem Menüpunkt Anwendungen -> Systemsteuerung die Option Einstellungen aus. Im Auswahlmenü der Systemsteuerung wählen wir Netzwerk aus. Wir erhalten nun eine Netzwerkansicht bei der wir alle Netzwerk Interfaces ansehen können. Zurzeit existieren die Interfaces ens37 und ens33, da wir sie bereits beim Kopieren des Betriebssystems in der VMware Workstation festgelegt haben.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou3/3.png}
+\end{center}
+
+Mit dem Einstellungssymbol können wir die Schnittstellen konfigurieren. Wir wählen also ens37 aus und bestätigen mit Einstellungssymbol. Danach Navigieren wir an der linken Seite zu dem Namen IPv4. Falls noch nicht ausgewählt, stellen wir Adressen auf Manuell, damit wir eine statische IP Adresse vergeben können. Nun tragen wir die IP Adresse für die erste Schnittstelle des Routers ein. Als Gateway wählen wir 0.0.0.0 aus.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou3/4.png}
+\end{center}
+
+In der gleichen Ansicht wie zuvor scrollen wir etwas runter bis zum Abschnitt Routen und tragen nun die Adressen der Subnetze, die Subnetzmaske und das Gateway, über welches wir die Subnetze erreichen können, ein. Zuletzt bestätigen wir die Konfiguration mit Anwenden.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou3/5.png}
+\end{center}
+
+Damit haben wir das Interface mit dem Namen ens37 konfiguriert und müssen uns der zweiten Schnittstelle ens33 zuwenden. Wie eben können wir das Interface über den Button mit dem Einstellungssymbol konfigurieren.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou3/6.png}
+\end{center}
+
+Dieses Mal tragen wir die zweite statische IP Adresse für die zweite Schnittstelle ens33 ein.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou3/7.png}
+\end{center}
+
+Analog zum vorherigen Schritt scrollen wir runter und tragen die IP Adressen für die Subnetze, Subnetzmasken und das Gateway ein. Die Subnetze, Subnetzmasken und das Gateway sind bei ens33 und ens37 absolut identisch.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou3/8.png}
+\end{center}
+
+Zuletzt bestätigen wir die Konfiguration mit Anwenden. Der Router mit dem Namen pnid4-rou3 ist jetzt vollständig konfiguriert. Es folgen noch pnid4-rou2 (Router 2) und pnid4-rou1 (Router 1). \\
+
+\textbf{Konfiguration von Router 2 über die GUI:}  \\
+
+Die Konfiguration auf allen Routern ist identisch. Lediglich die IP Adressen und das Routen unterscheidet sich, deshalb zeigen wir von nun an jeweils die Vergabe der statischen IP Adressen. \\
+
+IP Adresse für das Interface ens37 festlegen: \\
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou2/1.png}
+\end{center}
+
+Adressen für die Subnetze festlegen und das jeweilige Gateway einstellen. Zuletzt mit Anwenden bestätigen.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou2/2.png}
+\end{center}
+
+IP Adresse für das Interface ens33 festlegen: \\
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou2/3.png}
+\end{center}
+
+Adressen für die Subnetze festlegen und das jeweilige Gateway einstellen. Zuletzt mit Anwenden bestätigen.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou2/4.png}
+\end{center}
+
+Damit ist die Konfiguration von Router 1 abgeschlossen. \\
+
+\textbf{Konfiguration von Webserver Hannover über die GUI:}  \\
+
+Dieser Host hat ebenfalls Linux Centos 7 als Betriebssystem, deshalb sind die Konfigurationsschritte dieselben wie bei den Routern. \\
+
+IP Adresse für das Interface ens33 festlegen: \\
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/WEB-hn/1.png}
+\end{center}
+
+Adressen für die Subnetze festlegen, das jeweilige Gateway einstellen und die Routen eintragen. 
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/WEB-hn/2.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/WEB-hn/3.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/WEB-hn/4.png}
+\end{center}
+
+Zuletzt mit Anwenden bestätigen. Damit ist auch der Host pnid4-WEB-hn vollständig für die Subnetze konfiguriert. \\
+
+\textbf{Konfiguration von Server Berlin über die GUI:}  \\
+
+IP Adresse für das Interface ens33 festlegen: \\
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/svr-bln/1.png}
+\end{center}
+
+Adressen für die Subnetze festlegen, das jeweilige Gateway einstellen und die Routen eintragen. 
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/svr-bln/2.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/svr-bln/3.png}
+\end{center}
+
+Zuletzt mit Anwenden bestätigen. Damit ist auch der Host pnid4-svr-bln vollständig für die Subnetze konfiguriert. \\
+
+\textbf{Konfiguration von Server Hamburg über die GUI:}  \\
+
+IP Adresse für das Interface ens33 festlegen: \\
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/svr-hh/1.png}
+\end{center}
+
+Adressen für die Subnetze festlegen, das jeweilige Gateway einstellen und die Routen eintragen. 
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/svr-hh/2.png}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/svr-hh/3.png}
+\end{center}
+
+Zuletzt mit Anwenden bestätigen. Damit ist auch der Host pnid4-svr-hh vollständig für die Subnetze konfiguriert. \\
+
+\textbf{Zenmap Ergebnisse der gescannten Subnetze über die GUI: } \\
+
+Alle Hosts sind jetzt in ihren jeweiligen Subnetzen konfiguriert. Um einen Visuellen überblick über die Netzwerktopologie der einzelnen Subnetze zu erhalten, können wir mithilfe der Zenmap die einzelnen Netzwerke scannen. Dazu melden wir uns auf dem Host mit dem Betriebssystem Kali Linux an, welcher die IP Adresse 10.88.40.69/27 hält und geben in das Terminal den Befehl \# zenmap ein.\\
+
+\textbf{Scan des Subnetztes 10.88.40.64/27}\\
+
+In der Suchleiste Target können wir nun die IP Adresse des Subnetzes eingeben, welchen wir scannen möchten. Wir starten mit dem Subnetz 10.88.40.128 und bestätigen den Vorgang mit Scan.
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_9/zenmap/n128.png}
+\end{center}
+
+\textbf{Scan des Subnetztes 10.88.40.96/27}\\
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_9/zenmap/n96.png}
+\end{center}
+
+\textbf{Scan des Subnetztes 10.88.40.64/27}\\
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_9/zenmap/n64.png}
+\end{center}
+
+\textbf{Scan des Subnetztes 10.88.40.32/27}\\
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_9/zenmap/n32.png}
+\end{center}
+
+
+
+
 
 \chapter*{Part 4: Network Scanning}
 \addcontentsline{toc}{chapter}{Part 4: Network Scanning} 
@@ -852,12 +1224,377 @@ Hier sieht man, dass die Datei all-2.0.tar.gz ausgewählt wird und anschließend g
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/9.PNG} 
 \end{center}
 
-\textbf{Solution of 5)} \\ % TODO\\
-\textbf{Solution of 6)} \\% TODO\\
-\textbf{Solution of 7)} \\% TODO\\
+\textbf{Solution of 5)} Perform a host identification of the localhost and \textbf{Solution of 6)} Please scan the following networks: 10.88.40.64/27, 10.88.40.96/27, 10.88.40.128/27, 10.88.40.160/27 and 10.88.40.32/27 using nessus \\
+
+Das Netz 10.88.40.32/27 wird gescannt. Wir führen eine Host Discovery durch. Die Scans verlaufen alle sehr schnell.
+Unter einer Host-Discovery versteht man Methoden oder Maßnahmen, um die erreichbaren Rechner in einem Netzwerk zu identifizieren. Im Allgemeinen versucht man die Rechner zu ermitteln, die über eine IP-Adresse erreichbar sind. Zuerst versucht man alle Hosts in einem Netzwerk zu identifizieren und danach erfolgt eine differenzierte Untersuchung des entsprechenden Hosts. Dadurch erhält man Informationen über die Hardware, das Betriebssystem, laufende Dienste und offene Ports, welches man als Host-Scan bezeichnet. \\
+
+\textbf{Scan des Subnetzes 10.88.40.32/27:} \\
+Wir geben bei Targets das zugehörige Netz an, welches gescannt werden soll. Diesem können wir einen Namen und eine Beschreibung hinzufügen
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/32/s32.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Scan Hosts in Subnetzt 10.88.40.32/27]{Scan des Subnetztes 10.88.40.32/27}
+\end{figure}
+
+Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.32/27 gehören, die durch Host-Discovery ermittelt wurden.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/32/s322.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Ergebnis des Scans im Subnetz 10.88.40.32/27]{Alle Hosts im Subnetz 10.88.40.32/27}
+\end{figure}
+
+\textbf{Scan des Subnetzes 10.88.40.64/27:} \\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/64/s64.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Scan Hosts in Subnetzt 10.88.40.64/27]{Scan des Subnetztes 10.88.40.64/27}
+\end{figure}
+
+Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.64/27 gehören, die durch Host-Discovery ermittelt wurden.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/64/s642.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Ergebnis des Scans im Subnetz 10.88.40.64/27]{Alle Hosts im Subnetz 10.88.40.64/27}
+\end{figure}
+
+\textbf{Scan des Subnetzes 10.88.40.96/27:} \\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/96/s96.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Scan Hosts in Subnetzt 10.88.40.96/27]{Scan des Subnetztes 10.88.40.96/27}
+\end{figure}
+
+Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.96/27 gehören, die durch Host-Discovery ermittelt wurden.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/96/s962.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Ergebnis des Scans im Subnetz 10.88.40.96/27]{Alle Hosts im Subnetz 10.88.40.96/27}
+\end{figure}
+
+\textbf{Scan des Subnetzes 10.88.40.128/27:} \\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/128/s128.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Scan Hosts in Subnetzt 10.88.40.128/27]{Scan des Subnetztes 10.88.40.128/27}
+\end{figure}
+
+Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.128/27 gehören, die durch Host-Discovery ermittelt wurden.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/128/s1282.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Ergebnis des Scans im Subnetz 10.88.40.128/27]{Alle Hosts im Subnetz 10.88.40.128/27}
+\end{figure}
+
+\textbf{Scan des Subnetzes 10.88.40.160/27:} \\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/160/s160.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Scan Hosts in Subnetzt 10.88.40.160/27]{Scan des Subnetztes 10.88.40.160/27}
+\end{figure}
+
+Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.160/27 gehören, die durch Host-Discovery ermittelt wurden.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/160/s1602.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Ergebnis des Scans im Subnetz 10.88.40.160/27]{Alle Hosts im Subnetz 10.88.40.160/27}
+\end{figure}
+
+\textbf{Alle Subnetze:} \\
+Im folgenden Bild wurden alle Subnetze gescannt, nämlich 10.88.40.64/27, 10.88.40.96/27, 10.88.40.128/27, 10.88.40.160/27 und 10.88.40.32/27.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/alle_Subnetze.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3  Ergebnis des Scans aller Subnetze]{Alle Subnetze}
+\end{figure}
+
+\textbf{Ergebnis aller Scans:} Die Scans wurden als PDF-Datei extrahiert. Darin stehen alle relevanten Informationen, die über das erfolgreiche Scannen der Host Discovery ermittelt wurden. Die gesamte Datei befindet sich im Anhang der Email. \\
+
+\textbf{Solution of 7)} Perform a network device identification on your subnet 10.88.X.P/27, see figure 1\\
+
+set the ip for this machine to 172.16.15.P, where P stands for the ip address for your reserved ip, see below and change the dns to 134.100.9.61  \\ \\
+group 1 will be 172.16.15.13  \\
+group 2 will be 172.16.15.23  \\
+group 3 will be 172.16.15.33  \\
+group 4 will be 172.16.15.43  \\
+group 5 will be 172.16.15.53 \\
+group 6 will be 172.16.15.63  \\
+group 7 will be 172.16.15.73 \\
+group 8 will be 172.16.15.83 \\
+group 9 will be 172.16.15.93 \\
+group 10 will be 172.16.15.103 \\
+group 11 will be 172.16.15.113 \\
+group 12 will be 172.16.15.123 \\ \\
+Please download the installation guide and the user guide and read the Linux section carefully to solve the exercise. \\
+
+\textbf{Solution:} 
+Damit wir eine Internetverbindung von einem Hostrechner herstellen können wählen wir zuerst einen Host aus. Wir entschieden uns für pnid4-svr-hh mit dem Betriebssystem Centos 7. Als nächstes öffnen wir auf diesem Host die Netzwerkeinstellungen und fügen ein neue Schnittstelle (hier Profil 1) hinzu. \\ 
+
+Da wir die Gruppe 4 sind, vergeben wir die IP Adresse 172.16.15.43 und tragen als Vorgaberoute die IP Adresse 172.16.15.249 ein. Der öffentliche DNS server der Uni-Hamburg läuft unter der IP Adresse 134.100.9.61, welche wir ebenfalls eintragen. Die Konfiguration über die GUI sieht dann folgendermaßen aus:
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/sol71.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3 Netzwerkkonfiguration über die GUI]{Netzwerkkonfiguration über die GUI}
+\end{figure}
+
+Die Internetverbindung ist nun erfolgreich hergestellt, sodass wir beliebige Webseiten, wie zum Beispiel www.google.de, auf unserer virtuellen Maschine (pnid4-svr-hh -> Server Hamburg) aufrufen können.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/sol72.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 3 erfolgreiche Internetverbindung]{erfolgreiche Internetverbindung}
+\end{figure}
 
 \section*{Exercise 4: OpenVAS Network device identification}
 \addcontentsline{toc}{section}{Exercise 4: OpenVAS Network device identification} 
+
+OpenVAS is a free scanner program. Look at the website
+https://www.bsi.bund.de/DE/ Themen/ProdukteTools/OpenVAS/OpenVAS\_node.html\#doc2450430bodyText2 for more information or Google \\
+
+\textbf{OpenVAS includes following features: }\\
+a) It is a vulnerability scanner \\
+b) It is a port scanner\\
+c) It is a host/device detection program\\
+d) It can be used to scan Netbios Servers e.g. Windows Servers and Samba Servers e) OpenVAS can be used as a penetrating testing tool\\
+f) It is a client-server-system. The server performs the actual scan but it is controlled through the client. Both client and server can be run on the same system\\
+
+\textbf{Do the following steps to install and run OpenVAS:}\\
+\textbf{1.} Create a new Nessus virtual machine as shown in figure 1.\\
+\textbf{2.} Login with your user name if not existent, please create it.\\
+\textbf{3.} \#su- <cr>
+\textbf{4.} \# vi /etc/selinux/config Set SELINUX=permissive
+\textbf{5.} \# set the ip for this machine to 172.16.15.P, where P stands for the ip address for your reserved ip, see below and change the dns to 134.100.9.61\\
+
+group 1 will be 172.16.15.13 \\
+group 2 will be 172.16.15.23\\
+group 3 will be 172.16.15.33 \\
+group 4 will be 172.16.15.43 \\
+group 5 will be 172.16.15.53 \\
+group 6 will be 172.16.15.63 \\
+group 7 will be 172.16.15.73 \\
+group 8 will be 172.16.15.83 \\
+group 9 will be 172.16.15.93 \\
+group 10 will be 172.16.15.102\\ 
+group 11 will be 172.16.15.113 \\
+group 12 will be 172.16.15.123\\
+
+\# apt-get update \&\& apt-get install -y openvas \\
+\# openvas-setup \\
+\# openvasmd --user=admin --new-password=admin \\
+\# openvas-start\\
+
+\textbf{6.} Use your webbrowser https:// 10.88.X.P:9392/\\
+\textbf{7.} Now you must use openVAS to identify all the devices running on the following network as depicted on figure 1:\\
+10.88.X.32/27\\
+10.88.X.64/27\\
+10.88.X.96/27\\
+10.88.X.128/27\\
+10.88.X.160/27\\
+
+\textbf{Einleitung OpenVas} \\
+
+OpenVAS (Open Vulnerability Assessment System[1]) ist eine Open Source Software (OSS), die Sicherheitslücken im Netzwerk sammelt und grafisch darstellt. Dabei kann der Benutzer dieses Dienstes die Prüftiefen der Sicherheitsuntersuchungen individuell konfigurieren. Sobald ein Scan durchgeführt ist, stellt OpenVAS eine Vielzahl von informationsreichen Abbildungen dar. Ebenso hat der Benutzer die Möglichkeit in den Prüfberichten zu sehen, um noch genauere und detailliertere Auskünfte einzusehen. Die, durch den Scan, gefundenen Probleme werden in Sicherheitsklassen wie Low und Medium eingestuft, sodass eine Priorität der zu behebenden Schwachstellen sich automatisch erschließen lässt. Es gibt eine Menge Funktionalitäten die ein OpenVAS ermöglicht, einige dieser Funktionalitäten werden in folgedem Absatz stichpunktartig ausgelegt: \\
+
+- Security-Scanning von ganzen Netzwerken \\
+- Einbindung verschiedener Sicherheits-Tools dank entsprechender Schnittstellen und Steuerprotokolle \\
+- Zentrale Sammlung und Auswertung der Prüfergebnisse \\
+- Prüfung von Web Anwendungen möglich\\
+- Management von Scan-Aufgaben\\
+- Vergleich von Berichten \\
+- Benutzeroberfla?che -, GUI- und Web-basiert\\
+- Alarmierung bei Richtlinien-Verstoß oder Gefahr \\
+
+\textbf{Installation:} Um OpenVAS zu installieren, sollten wir nach Angaben im Skript folgende Aufgaben lösen: \\
+ 
+1. Create a new Nessus virtual machine as shown in figure 1.  \\
+2. Login with your user name if not existent, please create it. \\
+3. \# su - <cr>  \\
+4. \# vi /etc/selinux/config \\
+Set SELINUX=permissive \\
+
+So wie die Anleitung beschreibt haben wir die Schritte durchgeführt und SELINUX = permissive gesetzt. 
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/1.PNG} 
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/2.PNG} 
+\end{center}
+
+SELinux (Securtiy-Enhanced Linux) ist in allgemeinen eine Erweiterung des Linux Kernels. Es verwaltet die Berechtigungen von unterschiedlichen Unix-Systemen. Die Berechtigung kann von dem Benutzer selbst gesetzt werden. \\
+
+Es ist möglich SELinux im Enforcing oder Permissive Modus zu setzten. Enforcing, wie der name selbst sagt, ist der Modus wo die SELinux Policy erzwungen wird. Im Gegenteil dazu werden im Permissive Modus alle Verletzungen protokolliert, aber nicht verhindert. \\
+
+\textbf{5. \#} set the ip for this machine to 172.16.15.P, where P stands for the ip address for your reserved ip, see below and change the dns to 134.100.9.61, group 4 will be 172.16.15.43  \\
+
+Wie die Aufgabe appelliert, haben wir die IP-Addresse 172.16.15.43 über den DNS 134.100.9.61 für pnid4-klnx1 konfiguriert. 
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/3.PNG} 
+\end{center}
+
+Infolgedessen konnten wir über diese VM eine Verbindung zum Internet aufbauen, als Beispiel hier zu Google.
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/4.PNG} 
+\end{center}
+
+Nachdem wir IPv4 für diese VM eingerichtet haben, lassen wir die Paketlisten (sources.list)  durch den Kommando apt-get update neu einlesen. Es wird auf die Signature dieser Paketlisten gepürft. 
+
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/5.PNG} 
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/52.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 apt-get update]{apt-get update}
+\end{figure}
+
+Nachdem wir das update durchgeführt haben, installieren wir Pakete wenn es welche gibt auf eine aktuelle Version durch den Kommando apt-get upgrade.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/6.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 apt-get upgrade]{apt-get upgrade}
+\end{figure}
+
+Und um openVas vollständig zu installieren, haben wir den Kommendo apt -get install -y openvas genutzt. Das Installieren hat sehr viel Zeit in Anspruch genommen, denn über diesen Kommando werden nicht nur die Pakete installiert, sondern darüber hinaus noch nicht installierte Abhängigkeiten werden ebenfalls installiert. Man sieht dann auch im Terminal welche Packete installisiert wurden.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/7.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 OpenVas Installation]{OpenVas Installation}
+\end{figure}
+
+Anschließend haben wir OpenVas eingerichtet, indem wir folgenden Kommando in den Terminal eingegeben haben: openvas-setup. Wie der Name bereits verrät ist dieser Kommando für die Einrichtung für OpenVAS da.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/8.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 OpenVas Konfiguration]{OpenVas Konfiguration}
+\end{figure}
+
+Im nächsten Schritt haben wir uns einen Benutzer und das dazugehörige Passwort für den Manager daemon über den Kommendaro openvasmd --user=admin --new-password=admin angelegt. Im Anschluss dessen haben wir die Services anhand Eingabe des openvas-start Kommando gestartet.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/10.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 OpenVas user anlegen]{user anlegen}
+\end{figure}
+
+\textbf{6.} Use your webbrowser https:// 127.0.0.1:9392/ \\
+
+Im nächsten Schritt haben wir https://127.0.0.1:9392/ in die Adresszeile unseres Browsers eingegeben und haben unsere Login-Daten eingetippt.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/11.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 OpenVas Login]{Login OpenVas}
+\end{figure} 
+
+\textbf{7. }Now you must use openVAS to identify all the devices running on the following network as depicted on figure 1:  \\
+
+Daraufhin haben wir OpenVAS genutzt um alle VM in unserem Netz zu scannen. In Folgenden Bildausschnitten ist zu erkennen, welche VM (mit Angabe der IP-Adresse) gescannt wurde. \\
+
+\textbf{Scan des Subnetzes 10.88.40.32/27:}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n32.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 OpenVas Scan des Subnetzes 10.88.40.32/27]{Scan des Subnetzes 10.88.40.32/27}
+\end{figure} 
+
+\textbf{Scan des Subnetzes 10.88.40.64/27:} 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n64.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 OpenVas Scan des Subnetzes 10.88.40.64/27]{Scan des Subnetzes 10.88.40.64/27}
+\end{figure} 
+
+\textbf{Scan des Subnetzes 10.88.40.96/27:} 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n96.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 OpenVas Scan des Subnetzes 10.88.40.96/27]{Scan des Subnetzes 10.88.40.96/27}
+\end{figure} 
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n962.PNG} 
+\end{center}
+
+\textbf{Scan des Subnetzes 10.88.40.128/27:} 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n128.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 OpenVas Scan des Subnetzes 10.88.40.128/27]{Scan des Subnetzes 10.88.40.128/27}
+\end{figure} 
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n1282.PNG} 
+\end{center}
+
+\textbf{Scan des Subnetzes 10.88.40.160/27:} 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n160.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 OpenVas Scan des Subnetzes 10.88.40.160/27]{Scan des Subnetzes 10.88.40.160/27}
+\end{figure} 
+
+\begin{center}
+\includegraphics[width=0.9\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n1602.PNG} 
+\end{center}
+
+Ebenfalls ist hier eine Übersicht aller (10.88.40.32/27 ,10.88.40.64/27 ,10.88.40.96/27 10.88.40.128/27 und 10.88.40.160/27) gescannten Netze. Wir haben 5 Berichte durch den Scan erhalten, welche wir als PDF im Anhang beifügen werden.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/13.PNG} 
+\end{center}
+\caption[Abbildung P4 ex. 4 OpenVas Scan alle Subnetze]{Scan aller Subnetze}
+\end{figure} 
+
 
 \chapter*{Part 5: Sniffing, Virtual Private Network (VPN)}
 \addcontentsline{toc}{chapter}{Part 5: Sniffing, Virtual Private Network (VPN)} 
