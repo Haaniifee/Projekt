@@ -76,9 +76,10 @@ germandbls={ß},
 \vspace*{2.0cm}\\
 {\LARGE \textbf{Projekt Netzwerk-Infrastruktur WS 2017/18}}
 \vspace*{2.0cm}\\
+\textbf{Dozent: Robert Olotu}\\ 
 vorgelegt von
 \vspace*{0.4cm}\\
-\textbf{Dewin Bagci:} 5bagci@informatik.uni-hamburg.de\\ \textbf{Karan Popat:} karan.popat@outlook.de \\ \textbf{ Hanife Demircioglu:} h.demircioglu@hotmail.de \\ 
+\textbf{Dewin Bagci:} 5bagci@informatik.uni-hamburg.de (6815336)\\ \textbf{Karan Popat:} karan.popat@outlook.de (6600283) \\ \textbf{ Hanife Demircioglu:} h.demircioglu@hotmail.de (6816065) \\ 
 \end{center}
 \vspace*{3.9cm}
 
@@ -86,7 +87,7 @@ vorgelegt von
 MIN-Fakultät \vspace*{0.4cm} \\ 
 Fachbereich Informatik \\
 Abgabedatum: 01.03.2018\\
-Dozent: Robert Olotu
+
 
 \end{titlepage}
 
@@ -1780,6 +1781,12 @@ Die Ausgabe des letzten Logins zeigt uns, dass die Anmeldung erfolgreich war.
 
 \section*{Exercise 6: Set up a host-to-host VPN using preshared key}
 \addcontentsline{toc}{section}{Exercise 6: Set up a host-to-host VPN using preshared key} 
+\textbf{VPN: Host-to-host} \\
+Bei einem Host-to-Host-VPN greift ein Client auf einen anderen Clienten in einem entfernten Netzwerk zu. Dabei wird ein VPN-Tunnel aufgebaut, der die zwei Hosts miteinander verbindet. Auf beiden Seiten muss eine entsprechende VPN-Software installiert und konfiguriert sein. Der Verbindungsaufbau geschieht im Allgemeinen nur durch die Unterstützung einer zwischengeschalteten Station. Das bedeutet, eine direkter Verbindungsaufbau von Host zu Host ist nicht möglich. Daher bauen beide Seiten eine Verbindung zu einem Router auf, dass die beiden Verbindungen dann zusammenbringt.\\
+Da man die Daten sicher über das Internet übertragen möchte, versucht man mittels eines Tunneling-Protokolls eine verschlüsselte Verbindung, den VPN-Tunnel aufzubauen. Wenn der Tunnel aufgebaut ist, ist der Inhalt der Daten für andere nicht sichtbar. Einzelne Clients bindet man in der Regel per Tunnelmodus an. \\\\
+\textbf{Preshared-Key:}\\
+Ein \textbf{symmetrisches }Verschlüsselungsverfahren, bei dem die Schlüssel schon zu Beginn der Kommunikation beiden Partnern bekannt ist. Vorher müssen diese Schlüssel jedoch im Geheimen ausgetauscht werden. Für viele Anwendungen im Internet ist dieses Verfahren ungeeignet, da hierfür ein großer Aufwand notwendig wäre.\\
+
 To create a host-to-host VPN as shown in Figure 1 using preshared keys both systems must have OPENS/WAN properly installed and tested. Next, you must ensure that IP networking is functioning. For this exercise you will capture http packets between the hosts. This capture will allow you to compare and prove that IPSec is functioning after the tunnel is created between the hosts. Make sure Apache and Wireshark are installed. See Figure 1. \\
 Hints: CREATING PRESHARED KEY use ipsec ranbits 256 > filename \\ \\
 \textbf{Installation von Openswan auf beiden Rechnern Hamburg (pnid4-mid-hh) und Berlin (pnid4-cnt-bln)}
@@ -1915,7 +1922,7 @@ iii) Secure the computer traffic by creating iptables rules to permit only IPSec
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iii/1.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5 iptables rules]{iptables rules}
 \end{figure}
 
 \begin{figure}[H]
@@ -1947,8 +1954,8 @@ ipsec look > ipsec\_look.dump \\
 File ipsec\_route.dump \\
 Route -n > ipsec\_route.dump \\
 The following files must be included with the lab report: \\
-1) /etc/ipse.secrets \\
-2) /etc/ipse.conf \\
+1) /etc/ipsec.secrets \\
+2) /etc/ipsec.conf \\
 3) /etc/ipsec\_iptables - a file which contains your iptables rules \\
 4) ipsec\_ifconfig.dump \\
 5) ipsec\_look.dump \\
@@ -1962,46 +1969,52 @@ The following files must be included with the lab report: \\
 %\caption[Abbildung P5]{}
 \end{figure}
 
+\textbf{1) /etc/ipsec.secrets }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/2.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
+\textbf{2) /etc/ipsec.conf }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/3.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
 \end{figure}
 
+\textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/4.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
+\textbf{4) ipsec\_ifconfig.dump }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/5.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
 \end{figure}
 
+\textbf{5) ipsec\_look.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/6.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
+\textbf{6) ipsec\_route.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/7.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
 \textbf{Files from Hamburg:}
@@ -2012,58 +2025,813 @@ The following files must be included with the lab report: \\
 %\caption[Abbildung P5]{}
 \end{figure}
 
+\textbf{1) /etc/ipsec.secrets }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/2.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
+\textbf{2) /etc/ipsec.conf}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/3.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
 \end{figure}
 
+\textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/4.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5 /etc/ipsec\_iptables]{/etc/ipsec\_iptables}
 \end{figure}
 
+\textbf{4) ipsec\_ifconfig.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/5.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5 ipsec\_ifconfig.dump]{ipsec\_ifconfig.dump}
 \end{figure}
 
+\textbf{5) ipsec\_look.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/6.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5 ipsec\_look.dump]{ipsec\_look.dump}
 \end{figure}
 
+\textbf{6) ipsec\_route.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/7.PNG} 
 \end{center} 
-%\caption[Abbildung P5]{}
+\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
 \section*{Exercise 7: Set up a host-to-host VPN using RSA keys}
 \addcontentsline{toc}{section}{Exercise 7: Set up a host-to-host VPN using RSA keys}
 
+\textbf{RSA ist ein asymmetrisches Verschlüsselungsverfahren.} Diese verwendet man zum Verschlüsseln und Signieren. Es besteht aus einem Schlüsselpaar, weclhes sich zusammensetzt aus einem öffentlichen und privaten Schlüssel. Mit dem \textbf{öffentlichen Schlüssel verschlüsselt} man die Nachricht oder prüft Signaturen. Mit dem \textbf{privaten Schlüssel} hingegen \textbf{entschlüsselt} man die Nachricht.\\
+
+Hints: CREATING RSA PRIVATE KEYS SECRETS do the following:\\
+a) certutil -N -d /etc/ipsec.d\\
+b) \verb|ipsec newhostkey --configdir /etc/ipsec.d/ --output /etc/ipsec.d/keys.secrets|\\
+To create a host-to-host VPN as shown in figure 1, using RSA keys both systems must have OPENS/WAN properly installed and tested. Next, you must ensure that IP networking is functioning. For this exercise you will capture http packets between the hosts. This capture will allow you to compare and prove that IPSec is functioning after the tunnel is created between the hosts. Make sure Apache and Wireshark are installed.\\
+i) Capture http packets between pnidX-mid-hh and pnidX-cnt-bln using
+Wireshark before establishing a tunnel and save the packet captured. Please include this with your lab report\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/i/1.PNG} 
+\end{center} 
+\caption[Abbildung P5 dst 10.88.40.130 \&\& tcp port 80]{dst 10.88.40.130 \&\& tcp port 80}
+\end{figure}
+ii) Establish a tunnelled IPSec connection, using RSA Method between the two computers.\\
+Confirm that the connection is established.\\
+Capture again http packets between pnidX-mid-hh and pnidX-cnt-bln
+using Wireshark after establishing a tunnel and save the packet captured. Please include this with your lab report\\
+
+\textbf{Berlin:}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/1.PNG} 
+\end{center} 
+\caption[Abbildung P5 certutil -N -d /etc/ipsec.d]{certutil -N -d /etc/ipsec.d}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/2.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets]{ipsec newhostkey - - configdir /etc/ipsec.d/ - -output /etc/ipsec.d/keys.secrets}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 rsa.conf]{rsa.conf}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/4.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec setup reload]{ipsec setup reload}
+\end{figure}
+
+\textbf{Hamburg:}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/1.PNG} 
+\end{center} 
+\caption[Abbildung P5 certutil -N -d /etc/ipsec.d]{certutil -N -d /etc/ipsec.d}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/2.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets]{ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 rsa.conf]{rsa.conf}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/4.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec setup reload]{ipsec setup reload}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/5.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec auto - - add rsa]{ipsec auto - - add rsa}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/6.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec auto - - up rsa]{ipsec auto - - up rsa}
+\end{figure}
+
+iii) Secure the computer traffic by creating iptables rules to permit only IPSec traffic between the two computers. All other, non-IPSec packets must be denied. \\
+
+\textbf{Hamburg:}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iii/mid/1.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec auto - - up rsa]{ipsec auto - - up rsa}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iii/mid/2.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec auto - - up rsa]{ipsec auto - - up rsa}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iii/mid/3.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec auto - - up rsa]{ipsec auto - - up rsa}
+\end{figure}
+
+\textbf{Berlin:}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iii/bln/1.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec auto - - up rsa]{ipsec auto - - up rsa}
+\end{figure}
+
+iv) After a successful IPSec connection has been established, create the following files using the given commands: \\
+File ipsec\_ifconfig.dump \\
+ifconfig > ipsec\_fconfig.dump \\
+File ipsec\_look.dump \\
+ipsec look > ipsec\_look.dump\\
+File ipsec\_route.dump\\
+\verb|Route -n > ipsec\_route.dump|\\
+The following files must be included with the lab report:\\
+1) /etc/ipsec.secrets\\
+2) /etc/ipsec.conf\\
+4) ipsec\_ifconfig.dump\\
+4) ipsec\_look.dump\\
+5) ipsec\_route.dump \\
+
+\textbf{Files from Berlin:}
+
+\textbf{1) /etc/ipsec.secrets }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/bln/4.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\end{figure}
+
+\textbf{2) /etc/ipsec.conf }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\end{figure}
+
+\textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iii/bln/1.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\end{figure}
+
+\textbf{4) ipsec\_ifconfig.dump }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/bln/1.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\end{figure}
+
+\textbf{5) ipsec\_look.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/bln/2.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\end{figure}
+
+\textbf{6) ipsec\_route.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/bln/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\textbf{Files from Hamburg:}\\
+\textbf{1) /etc/ipsec.secrets }\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/4.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\end{figure}
+
+\textbf{2) /etc/ipsec.conf }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\end{figure}
+
+\textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iii/mid/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\end{figure}
+
+\textbf{4) ipsec\_ifconfig.dump }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/1.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\end{figure}
+
+\textbf{5) ipsec\_look.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/2.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\end{figure}
+
+\textbf{6) ipsec\_route.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
 \section*{Exercise 8: Set up a network-to-network VPN using preshared key}
 \addcontentsline{toc}{section}{Exercise 8: Set up a network-to-network VPN using preshared key}
+To create a network-to-network VPN as shown in Figure 3 using preshared key both systems must have OPENS/WAN properly installed and tested. Next, you must ensure that IP networking is functioning. For this exercise you will capture http packets between the hosts. This capture will allow you to compare and prove that IPSec is functioning after the tunnel is created between the hosts. Make sure Apache and Wireshark are installed.\\\\
+i) Test connectivity between pnidX-mid-hh and pnidX-cnt-bln using ping,
+see figure 3 and save the result.\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/1.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/2.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+ii) Capture http packets from pnidX-mid-hh to pnidX-cnt-bln
+see figure 3, by using Wireshark on pnidX-kln-st before establishing a tunnel and save the packet captured.\\Please include this with your lab report\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/3.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/4.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+iii) Establish a tunnelled IPSec connection, using the preshared key Method between the two gateways. Confirm that the connection is established.
+Capture again http packets from pnidX-mid-hh to pnidX-cnt-bln
+see figure 3, by using Wireshark on pnidX-kln-st after establishing a tunnel and save the packet captured. Please include this with your lab report\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/01.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/02.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/03.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/04.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/05.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/06.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/07.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/08.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/09.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+iv) Secure the computer traffic by creating iptables rules to permit only IPSec traffic between the two gateways. All other, non-IPSec packets must be denied.\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iv/01.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iv/02.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iv/03.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+v) After a successful IPSec connection has been established, create the following files using the given commands:\\
+File ipsec\_ifconfig\_shared.dump \\
+ifconfig > ipsec\_ifconfig\_Shared.dump\\
+File ipsec\_look\_shared.dump\\
+ipsec look > ipsec\_look\_shared.dump\\
+File ipsec\_route\_shared.dump\\
+route - n > ipsec\_route\_shared.dump\\
+The following files must be included with the lab report:\\
+1) /etc/ipsec.secrets (shared key)\\
+2) /etc/ipsec.conf (shared key)\\
+3) ipsec\_ifconfig\_shared.dump\\
+4) ipsec\_look\_shared.dump\\
+5) ipsec\_route\_shared.dump\\
+
+\textbf{Files from Berlin:}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/1.PNG} 
+\end{center} 
+%\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\end{figure}
+
+\textbf{1) /etc/ipsec.secrets }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/2.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\end{figure}
+
+\textbf{2) /etc/ipsec.conf }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\end{figure}
+
+\textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iv/03.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\end{figure}
+
+\textbf{4) ipsec\_ifconfig.dump }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/4.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\end{figure}
+
+\textbf{5) ipsec\_look.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/5.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\end{figure}
+
+\textbf{6) ipsec\_route.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/6.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\textbf{Files from Hamburg:}\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/1.PNG} 
+\end{center} 
+%\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\end{figure}
+
+\textbf{1) /etc/ipsec.secrets }\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/2.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\end{figure}
+
+\textbf{2) /etc/ipsec.conf }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\end{figure}
+
+\textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iv/02.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\end{figure}
+
+\textbf{4) ipsec\_ifconfig.dump }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/4.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\end{figure}
+
+\textbf{5) ipsec\_look.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/5.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\end{figure}
+
+\textbf{6) ipsec\_route.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/6.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
 
 \section*{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}
 \addcontentsline{toc}{section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}
+To create a network-to-network VPN as shown in Figure 2 using RSA keys both systems must have OPENS/WAN properly installed and tested. Next, you must ensure that IP networking is functioning. For this exercise you will capture http packets between the hosts. This capture will allow you to compare and prove that IPSec is functioning after the tunnel is created between the hosts. Make sure Apache and Wireshark are installed. \\\\
+i) Test connectivity between pnidX-mid-hh and pnidX-cnt-bln using ping,
+see figure 2 and save the result.\\
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/1.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
 
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/2.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+ii) Capture http packets from pnidX-mid-hh to pnidX-cnt-bln
+see figure 2, by using Wireshark on pnidX-kln-st before establishing a tunnel and save the packet captured. Please include this with your lab report\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/3.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/4.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+iii) Establish a tunnelled IPSec connection, using the RSA Method between the
+two gateways pnidX-gw-hh and pnidX-gw-bln \\
+Confirm that the connection is established. \\
+Capture again http packets from pnidX-mid-hh to pnidX-cnt-bln
+see figure 2, by using Wireshark on pnidX-kln-st after establishing a tunnel and save the packet captured. Please include this with your lab report.\\\\
+\textbf{Berlin:}\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/1.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/2.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/3.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/4.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/5.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+\textbf{Hamburg:}\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/1.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/2.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/3.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/4.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/5.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/6.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+iv) Secure the computer traffic by creating iptables rules to permit only IPSec traffic between the two gateways. All other, non-IPSec packets must be denied.\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iv/1.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iv/2.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+v) After a successful IPSec connection has been established, create the following files using the given commands:\\
+File ipsec\_ifconfig\_rsa.dump\\
+ifconfig > ipsec\_ifconfig\_rsa.dump\\
+File ipsec\_look\_rsa.dump\\
+ipsec look > ipsec\_look\_rsa.dump\\
+File ipsec\_route\_rsa.dump\\
+route - n > ipsec\_route\_rsa.dump\\
+The following files must be included with the lab report:\\
+1) /etc/ipsec.secrets (rsa key)\\
+2) /etc/ipsec.conf (rsa key)\\
+3) ipsec\_ifconfig\_rsa.dump\\
+4) ipsec\_look\_rsa.dump\\
+5) ipsec\_route\_rsa.dump\\
+
+\textbf{Files from Berlin:}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/1.PNG} 
+\end{center} 
+%\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\end{figure}
+
+\textbf{1) /etc/ipsec.secrets }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/2.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\end{figure}
+
+\textbf{2) /etc/ipsec.conf }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\end{figure}
+
+\textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iv/1.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\end{figure}
+
+\textbf{4) ipsec\_ifconfig.dump }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/4.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\end{figure}
+
+\textbf{5) ipsec\_look.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/5.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\end{figure}
+
+\textbf{6) ipsec\_route.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/6.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
+\textbf{Files from Hamburg:}\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/1.PNG} 
+\end{center} 
+%\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\end{figure}
+
+\textbf{1) /etc/ipsec.secrets }\\
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/2.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\end{figure}
+
+\textbf{2) /etc/ipsec.conf }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\end{figure}
+
+\textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iv/2.PNG} 
+\end{center} 
+\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\end{figure}
+
+\textbf{4) ipsec\_ifconfig.dump }
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/4.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\end{figure}
+
+\textbf{5) ipsec\_look.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/5.PNG} 
+\end{center} 
+\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\end{figure}
+
+\textbf{6) ipsec\_route.dump}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/6.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
 
 %\backmatter 
 
