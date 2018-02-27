@@ -1600,14 +1600,451 @@ Ebenfalls ist hier eine Übersicht aller (10.88.40.32/27 ,10.88.40.64/27 ,10.88.4
 \chapter*{Part 5: Sniffing, Virtual Private Network (VPN)}
 \addcontentsline{toc}{chapter}{Part 5: Sniffing, Virtual Private Network (VPN)} 
 
+
+{\Large \textbf{Theoretische Grundlagen}}\\\\
+\textbf{Sniffing}\\\\
+Der Begriff Sniffing stammt aus dem englischen und bedeutet übersetzt schnüffeln.
+Mit Hilfe eines Tools der Netzwerkanalyse, welches als ein Sniffer bezeichnet wird, ist das Sniffen möglich. Dies bedeutet unter anderem, dass der Datenverkehr eines Netzwerks auf Abnormitäten und potenziellen Gefahren überprüft werden kann. In Detail kann jedes übertragene Paket gelesen werden, Information der Quelle von Paketen und Zielort der Pakete festgestellt werden. Beispielweise kann man mit einem Sniffer Passwörter oder andere Daten auskundschaften.\\\\\\
+\textbf{Virtual Private Network}\\\\
+Virtual Private Network (kurz: VPN) ist eine Verschlüsselung, die es ermöglicht eine Verbindung über einen VPN-Server zu einem privaten Netzwerk in Echtzeit herzustellen. Dabei ist der Ort von dem man sich Verbinden möchte völlig irrelevant. Demzufolge ist beispielweise die Verbindung vom einem Rechner, welches sich in einem anderen Ort befindet als das Unternehmensnetzwerk, zum Unternehmensnetzwerk realisierbar. Da dies verschlüsselt funktioniert, ist es einem Dritten nicht möglich die übertragenen Informationen abzufangen.
+
 \section*{Exercise 1: Configure and set the networks shown below (figure1 and 2)}
 \addcontentsline{toc}{section}{Exercise 1: Configure and set the networks shown below (figure1 and 2)} 
+
+a) Please configure the networks depicted on figure 1 and 2. 
+Please scan the Network below( Figure 2) from pnidX-mid-hh to pnidX-cnt-bln and from pnidX-cnt-bln to pnidX-mid-hh.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/1.PNG} 
+\end{center}
+\caption[ Figur 1]{ Abbildung Figur 1}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/2.PNG} 
+\end{center}
+\caption[ Figur 2]{ Abbildung Figur 2}
+\end{figure}
+
+Wie in der Aufgabe gefordert, haben wir die Netze genauso konfiguriert wie in es im Figur 1 und Figur 2 vorgegeben ist.
+Anschließend war es notwendig Zenmap auf beiden virtuellen Maschinen (pnid4-mid-hh und pnid4-cnlt-bln) zu installieren.\\
+Zenmap ist ein Nmap Sicherheitsscanner - weitere Infos sind bereits auf S. 19 hinterlegt. Für die Installation von Zenmap haben wir folgendes Kommando genutzt:\\\\
+\textbf{yum install nmap-frontend}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/3.PNG} 
+\end{center}
+\caption[install nmap-frontend] {Abbildung install nmap-frontend}
+\end{figure}
+
+Doch wie auf der letzten Abbildung zu sehen ist, konnte ein Paket nicht geladen werden. Dieses Paket haben wir dann auf der nächsten Abbildung explizit installiert, sodass wir Zenmap vollständig installiert haben.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/4.PNG} 
+\end{center}
+\caption[install nmap-frontend 2] {Abbildung install nmap-frontend 2}
+\end{figure}
+
+Folglich haben wir wie in der Aufgabe das Netz von \textbf{pnid4-mid-hh} nach \textbf{pnid4-cnt-bln} gescannt. Somit sah es wie folgt aus:
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/5.PNG} 
+\end{center}
+\caption[pnid4-mid-hh nach pnid4-cnt-bln] {pnid4-mid-hh nach pnid4-cnt-bln}
+\end{figure}
+
+Im folgendem Screenshot ist das Netz \textbf{pnid4-mid-hh} nach \textbf{pnid4-cnt-bln} gescannt:
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/6.PNG} 
+\end{center}
+\caption[pnid4-mid-hh nach pnid4-cnt-bln 2] {Abbildung pnid4-mid-hh nach pnid4-cnt-bln 2}
+\end{figure}
+
+Dasselbe taten wir dann auch für das Netz von \textbf{pnid4-cnt-bln} nach \textbf{pnid4-mid-hh}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/7.PNG} 
+\end{center}
+\caption[pnid4-cnt-bln nach pnid4-mid-hh] {Abbildung pnid4-cnt-bln nach pnid4-mid-hh}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/8.PNG} 
+\end{center}
+\caption[pnid4-cnt-bln nach pnid4-mid-hh 2] {Abbildung pnid4-cnt-bln nach pnid4-mid-hh 2}
+\end{figure}
 
 \section*{Exercise 2: Getting started with network monitoring tools}
 \addcontentsline{toc}{section}{Exercise 2: Getting started with network monitoring tools} 
 
+
+\textbf{Installation of network monitoring tools }\\\\
+Install Wireshark, Wireshark-gnome, vsftpd and telnetd from the Centos6.5 ISO on pnid4-mid-hh and pnid4-cnt-bln. Get familiar (e.g. by using the manuals) with the\\\\
+following tools: tcpdump Wireshark \\\\
+The tools and manuals are available on the Centos6.5 ISO. Please refer to the internet for more information. You need tcpdump and Wireshark on at least one workstation and on your server.\\\\
+For each exercise, analyze the traffic with different tools. \\\\
+a) Start the virtual machines as depicted in figure 2 (pnidX-mid-hh server and pnidX- cnt-bln server) connected. Connect from the pnidX-mid-hh to the webserver running on the server pnidX-cnt-bln, if the httpd server on pnidX-cnt-bln is not available, you have to start the httpd server (search google to find out how to do this). \\\\
+Follow several links on the server while watching packets flow (with Wireshark and tcpdump). Try other services as well (ftp, ssh, ...). \\\\
+Note: Do not forget to install Wireshark and Telnetd Service on server pnidX-mid- hh and pnidX-cnt-bln. \\\\
+Connect to the webserver running on 10.88.X.?, (? is an integer >0<254) from a virtual machine. Set filters so you will see only the traffic from your virtual machine to the webserver. Set another filter so you can see only http traffic. Save the TCP-handshake with 10.88.X.? in a file, where X is your group number and ? is your subnet ip address. \\\\\\
+
+In den theoretischen Grundlagen wurde bereits der Ausdruck Sniffing erklärt.Dies wird in diesem Aufgabenteil nochmal aufgegriffen, da wir hier die Sniffing-Tools Wireshark und Tcpdump nutzen.\\\\
+
+Wireshark ist eine freizugängliche Software, welches für die Netzwerküberwachung und grafische Aufbereitung von Sniffern dient. Dabei kann der Anwender sich die Inhalte und die Protokollheader der transportierten Datenpakete anzeigen lassen.\\\\
+
+Auch das Tcpdump ist ein weltweit bekanntes Sniffing-Programm, welches Datenpakete mitschneiden kann. Tcpdump gibt es für die meisten Unix-Betriebssysteme. Doch Tcpdump stellt im Gegensatz zu Wireshark keine grafische Oberfläche für die Analyse bereit. Stattdessen besteht die Möglichkeit, den Netzwerkverkehr über Kommandozeilen mitzuschneiden und diese dann in Wireshark grafisch zu analysieren.\\\\
+
+
+Um die Analyse der Netzwerkpakete zwischen den Kommunikationsmedien ausarbeiten zu können, haben wir zunächst Wireshark installiert.
+Zusätzlich haben wir Libsmi, eine C Biblothek welche den Zugang zu Informationen von MIB Modulen bietet, installiert. 
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/9.PNG} 
+\end{center}
+\caption[installation wireshark] {Abbildung installation wireshark}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/10.PNG} 
+\end{center}
+\caption[installation libsmi] {Abbildung installation libsmi}
+\end{figure}
+
+Anschließend haben wir in exakt dieser Reihenfolge folgendes installiert:\\
+
+
+\begin{center}
+ Httpd - ein freinutzbarer Webserver im Internet von Apache Software Foundation
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/11.PNG} 
+\end{center}
+\caption[installation httpd] {Abbildung installation httpd}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/12.PNG} 
+\end{center}
+\caption[installation httpd 2] {Abbildung installation httpd 2}
+\end{figure}
+
+\begin{center}
+Tcpdump - schneidet transportierte Datenpakete mit
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/13.PNG} 
+\end{center}
+\caption[installation tcpdump] {Abbildung installation tcpdump}
+\end{figure}
+
+\begin{center}
+Telnet - ein Netzwerkprotokoll für die Verbindung zu einem anderen Rechner über den Telnet-Server
+\end{center}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/14.PNG} 
+\end{center}
+\caption[installation telnet] {Abbildung installation telnet}
+\end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/15.PNG} 
+\end{center}
+\caption[installation wireshark] {Abbildung installation wireshark}
+\end{figure}
+
+Nach den sämtlichen Installationen haben wir für den nächsten Schritt den Kommando \textit{service httpd start} genutzt, somit sind die Dienste von Apache aktiviert worden.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/16.PNG} 
+\end{center}
+\caption[Apache aktivieren] {Abbildung Apache aktivieren}
+\end{figure}
+
+Infolgedessen ist uns gelungen eine Verbindung zum Apache http Server herzustellen, wie man auf dem folgenden Screenshot sehen kann. Um dieses aufzurufen, haben wir in der Adresszeile die IP-Adresse unseres lokalen Host eingegeben.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/17.PNG} 
+\end{center}
+\caption[ Abbildung Verbindung zum http Server] {  Verbindung zum http Server}
+\end{figure}
+
+Schließlich haben wir Wireshark gestartet und nach httpd gefiltert, sodass dann die Netzwerkpakete zum Server demonstriert wurden.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/18.PNG} 
+\end{center}
+\caption[ Abbildung Wireshark Analyse] {Wireshark Analyse}
+\end{figure}
+
+Wie in der Abbildung 116 zu erkennen, haben wir ebenfalls über Tcpdump den Netzverkehr im Terminal lassen.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/19.PNG} 
+\end{center}
+\caption[ Abbildung Tcpdump Analyse] {Tcpdump Analyse}
+\end{figure}
+
+
 \section*{Exercise 3: TCPDUMP}
 \addcontentsline{toc}{section}{Exercise 3: TCPDUMP} 
+
+In this part of the exercise, you are going to explore tcpdump in more detail. In particular, you will answer more questions involving the use of tcpdump. \\\\
+Q1:  Please type and explain the syntax of a tcpdump command that captures packets containing IP datagram with source or destination IP address equal to 10.88.X.$\Delta$ where $\Delta$ is the IP address of pnidX-svr-hh(Centos7). \\
+Der Kommando tcpdump -i ens33 gibt an, dass die Netzwerkschnittstelle ens33 analysiert werden soll. Dieses wird solange durchgeführt bis der Service nicht explizit gestoppt wird.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/20.PNG} 
+\end{center}
+%\caption[Abbildung tcpdump -i ens33] {tcpdump -i ens33}
+\end{figure}
+
+Q2:  Please type and explain the syntax of a tcpdump command that captures 12 packets from the eth1 interface of your roudX1-st. \\
+Der Kommando tcpdump -c 12 -i ens33 analysiert ebenfalls die Netzwerkschnittstelle ens33,  jedoch nicht wie beim Kommando von Q1 unendlich lang, sondern die Untersuchung wird nach dem 12 Packet automatisch abgebrochen. Dieses ist wegen dem -c praktikabel.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/21.PNG} 
+\end{center}
+%\caption[Abbildung tcpdump -c 12 -i ens33 ] {tcpdump -c 12 -i ens33}
+\end{figure}
+
+Q3:  Please type and explain the syntax of a tcpdump command that captures packets containing ICMP messages with source or destination IP address equal to e.g. 10.88.X.?. 
+Durch das eingeben von tcpdump -i ens33 "ip host 10.88.40.130 and icmp" werden die Pakete, die ICMP Nachrichten enthalten, beim Netzwerkverkehr mit IP-Host 10.88.40.130 analysiert.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/22.PNG} 
+\end{center}
+%\caption[Abbildung tcpdump -c 12 -i ens33 ] {tcpdump -c 12 -i ens33}
+\end{figure}
+
+Q4:  Please type and explain the syntax of a tcpdump command that captures packets containing IP datagram between pnidX-mid-hh and pnidX-cnt-bln with IP addresses 10.88.X.? and 10.88.X.P.\\\\
+Hier wird die Netzwerkschnittstelle eth4, die Netzwerkpakete zwischen pnid4-mid-hh und pnid4-cnt-bln transportiert analysiert.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/23.PNG} 
+\end{center}
+%\caption[ ] {}
+\end{figure}
+
+Q5: Please type and explain a tcpdump filter expression that captures packets containing TCP segments with source or destination IP address equal to 10.88.X.$\Delta$, where $\Delta$ is the ip address of pnidX-svr-bln. \\\\
+
+Auch bei diesem Kommando ist es notwendig erst tcpdump zu tippen, sodass verstanden wird worum es sich handeln soll. Anschließend muss durch -i Name der Netzwerkschnitte wird verdeutlich um welche Netzwerkschnittstelle es sich handeln soll. Des Weiteren ist leicht zu erkennen, dass zwischen TCP Abschnitte und Ausgangs- bzw. die Zieladresse analysiert werden soll.\\\\
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/24.PNG} 
+\end{center}
+%\caption[ ] {}
+\end{figure}
+
+Q6:  Please type and explain a tcpdump filter expression that, in addition to the constraints in Q5, only captures packets using port number 23. What is port number 23, which file in Linux/Windows contains port 23 and which path? \\\\
+Mit Hilfe des Kommando tcpdump -i ens33 tcp and scr 10.88.50.67 or dst 10.88.40.67 and tcp and port 23 erreichen wir im Grunde dasselbe wie bei Q5, nur mit der Ausnahme das hier nur der Port 23 berücksichtigt wird. Port 23 steht für Telnet und in Linux findet man diesen unter diesem Pfad: /etc/services/telnet 23/tcp
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/25.PNG} 
+\end{center}
+%\caption[ ] {}
+\end{figure}
+
+Q7:  Please type and explain a tcpdump command that collects all ICMP packets with destination IP address 10.88.X.$\Delta$. \\\\
+
+Der Kommando tcpdump -I ens33 -v dst net 10.88.40.67 and icmp fängt alle ICMP-Pakete die als Ziel die IP-Adresse 10.88.40.67 haben.
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/26.PNG} 
+\end{center}
+%\caption[ ] {}
+\end{figure}
+
+Q8:  Assume we are about to capture all telnet packets destined to IP address 10.88.X.H on port 23 (telnet port). Type and examine the following command and explain if it is correct or not: tcpdump host 10.88.X.$\Delta$ and dst port 23
+Accordingly, if not correct, please provide the syntax.\\\\
+
+Dieses Kommando ist richtig, wenn man alle Telnet-Pakete die 10.88.40.35 auf dem Port 23 als Ziel erreichen möchte.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/27.PNG} 
+\end{center}
+%\caption[ ] {}
+\end{figure}
+
+
+Q9:  Please type and explain the syntax of a tcpdump command that collects all IP packets between host 10.88.X.$\Delta$ and host 10.88.X.P on each interface.\\\\
+Tcpdump -i any host 10.88.40.34 and host 10.88.40.38 and icmp bewirkt, dass jedes einzeln übertragenes Netzwerkpaket zwischen 10.88.40.34 und 10.88.40.38 auf beiden Interfaces aufgezeichnet wird.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/28.PNG} 
+\end{center}
+%\caption[ ] {}
+\end{figure}
+
+
+
+1.	Start your virtual machine pnidX-mid-hh with IP-address 10.88.X.$\Delta$\\\\
+
+2.	Login as root. \\\\
+
+3.	Create a non-privileged account with the name e.g. "trumpX". \\\\
+
+4.	Create a password for the above user. Make the password "clintonX". \\\\
+
+5.	Try to ping another machine on your network from pnidX-mid-hh to 
+pnidX-cnt-bln. \\\\
+
+Um die Frage 10 (Q10) beantworten zu können haben wir zunächst die virtuelle Maschine pnid4-mid-hh gestartet, mit dem Kommando su - und dann das zugehörige Passwort eingegeben. Anschließend haben wir ein Konto mit dem Namen "trump4" und Passwort als "clinton4" eingerichtet. Mit einem ping von pnid4-mid-hh nach pnid4-cnt-bln haben wir bestätigt, dass beide virtuellen Maschinen erreichbar sind und wir mit den folgenden Schritten fortfahren können.\\\\
+6.	Try to telnet from pnidX-mid-hh to the virtual machine pnidX-cnt-bln, you 
+should be able to login as trumpX. If successful, just log out of pnidX-mid-hh. \\\\
+
+
+Hier haben wir von der virtuellen Maschine pnid4-mid-hh die virtuelle Maschine pnid4-cnt-cln "getelnet". Dies war durchführbar mit dem Kommando telnet 10.88.40.37.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/29.PNG} 
+\end{center}
+\caption[Abbildung Telnet mid-hh to cnt-bln ] {Telnet mid-hh to cnt-bln}
+\end{figure}
+
+7.	Now, as root on virtual machine pnidX-mid-hh, start tcpdump with the 
+command tcpdump -vvv > pnidX-mid-hh-dump.1 \\\\
+
+Dieser Kommando gibt sehr viele Informationen. Je mehr V´s desto mehr Information, wobei das Erste V für very steht, das Zweite V auch für very steht und das Dritte V für verbose.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/30.PNG} 
+\end{center}
+\caption[Abbildung tcpdump -vvv ] {tcpdump -vvv}
+\end{figure}
+
+8. On pnidX-mid-hh, open another shell and telnet from pnidX-mid-hh to pnidX- cnt-bln and login as user "trumpX". Logout of pnidX-cnt-bln. \\\\
+Auch in diesem Schritt haben wir uns (pnid4-mid-hh) Mithilfe von telnet unter trump4 angemeldet. Hinterher haben wir uns vom pnid4-cnt-bln abgemeldet.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/31.PNG} 
+\end{center}
+\caption[Abbildung telnet trump4 ] {telnet trump4 }
+\end{figure}
+
+9. 	Stop tcpdump, examine the file pnidX-mid-hh-dump.1 with vi.\\\\
+	Durch den Kommand vi pnid4-mid-hh-dump.1 haben wir den folgenden Inhalt anzeigen können:
+	
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/32.PNG} 
+\end{center}
+\caption[Abbildung pnidX-mid-hh-dump.1 ] {pnidX-mid-hh-dump.1}
+\end{figure}
+
+10. Now, as root on pnidX-mid-hh, again start tcpdump with the command tcpdump -a -i ethX (X for your interface) > pnidX-mid-hh-dump.2 \\\\
+	Hier haben wir den Kommando tcpdump -a -I eth4 > pnid4-cnt-bln-dump.2 ausgeführt.
+	
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/33.PNG} 
+\end{center}
+%\caption[Abbildung  ] {pnidX-mid-hh-dump.1}
+\end{figure}
+
+11.	 Again, open another shell on pnidX-mid-hh and ssh from pnidX-mid-hh to pnidX-cnt-bln.
+After logging in to pnidX-cnt-bln just logout again.\\\\
+
+Hier haben wir den Kommand ssh an 10.88.40.37 ausgeführt.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/34.PNG} 
+\end{center}
+%\caption[Abbildung ssh 10.88.40.37 ] {ssh 10.88.40.37}
+\end{figure}
+
+12.	Examine the pnidX-mid-hh-dump.2 \\\\
+Wie in diesem Schritt gefordert, haben wir die durch vi pnidX-mid-hh-dump.2 den Inhalt angezeigt
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/35.PNG} 
+\end{center}
+\caption[Abbildung  pnidX-mid-hh-dump.2] {pnidX-mid-hh-dump.2}
+\end{figure}
+
+
+13.	Finally, again as root on pnidX-mid-hh, again start the tcpdump with the command tcpdump -x > pnidX-mid-hh-dump.3 \\\\
+
+Hier haben wir durch den Kommando tcpdump -I eth4 -x > pnid4-cnt-bln-dump.3 die Datenpakete der Netzwerkschnittstelle eth4 mitgeschnitten.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/36.PNG} 
+\end{center}
+%\caption[Abbildung  pnidX-mid-hh-dump.2] {pnidX-mid-hh-dump.2}
+\end{figure}
+
+14.	Again, open another shell on pnidX-mid-hh and from pnidX-mid-hh ftp to pnidX- cnt-bln. When you login to pnidX-cnt-bln, just logout.\\\\
+In diesem Fall haben wir ftp 10.88.40.37 ausgeführt.
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/37.PNG} 
+\end{center}
+%\caption[Abbildung  pnidX-mid-hh-dump.2] {pnidX-mid-hh-dump.2}
+\end{figure}
+
+15.	Examine the pnidX-mid-hh-dump.3 \\\\
+
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/38.PNG} 
+\end{center}
+\caption[Abbildung  pnidX-mid-hh-dump.3] {pnidX-mid-hh-dump.3}
+\end{figure}
+
+Q10: Now answer the following questions: \\\\
+1.	What is the difference in the three tcpdump commands? In their outputs?
+\\Der Kommand tcpdump -i eth4 -vvv  > pnid4-cnt-bln-dump.1 gibt sehr viele Infromationen aus. Bei je mehr V im Kommando werden desto mehr Details bereitgestellt. \\\\
+Für tcpdump -a -i eth4 > pnid4-cnt-bln.dump.2 hier werden alle Pakete von der Netzwerkschnittstelle angesammelt und als ASCII ausgegeben.\\\\
+2.	Is it possible to discover "trumplX" password with tcpdump? 
+How would you do this? \\
+Theoretisch kann man mit tcpdump ein Passwort "sniffen". Mit egrep kann man dies beispielweise durch folgenden Kommando Passwörter aufspüren: \\
+\textit{tcpdump port http or port ftp or port smtp or port imap or port pop3\\ -l -A | egrep -i 'pass=|pwd=|log=|login=|user=|username=|pw=|passw=|passwd=|\\password=|pass:|user:|username:|password:|login:|pass |user ' --color=auto --line-buffered -B20}\\\\
+3.	How can you tell if a network interface is running in "promiscuous mode"? \\Anhand dem Kommando netstat -i kann man sehen ob ein Interface auf "promiscuous mode" abläuft. Falls ein P unter der Bezeichnung "Flg" bedeutet dies, dass für dieses Interface "promiscuous mode" angeschaltet ist.\\\\
+4.	Can a normal, unprivileged user, run tcpdump?\\
+	 Nur root kann tcpdump ausführen, da andere User keine Rechte dafür haben.
+
+
+
 
 \section*{Exercise 4: Wireshark}
 \addcontentsline{toc}{section}{Exercise 4: Wireshark} 
