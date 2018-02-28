@@ -97,7 +97,7 @@ Abgabedatum: 01.03.2018\\
 
 %\chapter{Abkürzungsverzeichnis}
 
-\listoffigures
+%\listoffigures
 %\mainmatter 
 
 
@@ -138,7 +138,7 @@ Please type and explain the meaning of the following commands: \\
 Please type and explain the meaning of the following commands: \\
 1) \# chkconfig \\
 Die folgenden Kommandos wurden auf Rechner pnid4-svr-mu mit dem Betriebssystem Centos-6.5-x86\_64 ausgeführt. \\
-Zeigt an welche Dienste in ihren jeweiligen runlevels aktiviert bzw. deaktiviert sind [siehe Abb. 1] 
+Zeigt an welche Dienste in ihren jeweiligen runlevels aktiviert bzw. deaktiviert sind.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{bilder/screens/Part_3/b1.PNG}
@@ -147,7 +147,7 @@ Zeigt an welche Dienste in ihren jeweiligen runlevels aktiviert bzw. deaktiviert
 \end{figure}
 
 2)\# \verb|chkonfig -- list iptables|\\
-Zeigt an in welchen runlevel iptables eingeschaltet bzw. ausgeschaltet ist. [Abb. 2]
+Zeigt an in welchen runlevel iptables eingeschaltet bzw. ausgeschaltet ist.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b2.png}
@@ -156,7 +156,7 @@ Zeigt an in welchen runlevel iptables eingeschaltet bzw. ausgeschaltet ist. [Abb
 \end{figure}
 
 3)\# \verb|chkconfig --level 2 iptables off| \\
-Deaktiviert iptables im runlevel 2. [Abb. 3]. Wir sehen, dass zuvor iptables im runlevel 2 aktiviert war. 
+Deaktiviert iptables im runlevel 2 Wir sehen, dass zuvor iptables im runlevel 2 aktiviert war. 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b3.png}
@@ -165,7 +165,7 @@ Deaktiviert iptables im runlevel 2. [Abb. 3]. Wir sehen, dass zuvor iptables im 
 \end{figure}
 
 4)\# \verb|chkconfig --level 2345 iptables off|\\
-Deaktiviert iptables im runlevel 2, 3, 4 und 5. [Abb. 4]
+Deaktiviert iptables im runlevel 2, 3, 4 und 5
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b4.png}
@@ -182,7 +182,7 @@ Deaktiviert iptables im runlevel 2, 3, 4 und 5. [Abb. 4]
 \end{figure}
 
 6)\# chkconfig tftp on \\
-Tftp ist ein Vorgänger des FTP-Protokolls. Dieser service ist nicht automatisch auf Centos-6.5-x86\_64 vorinstalliert und wird durch den Superserver xinetd, welcher ebenfalls nicht automatisch vorinstalliert ist, verwaltet. Damit wir die gewissen Pakete mit allen Abhängigkeiten für tftp und xinetd über das Terminal mit yum (Yellow dog Updater, Modified) installieren können, müssen wir ein Quellpaket Repository einrichten. \\ Zuerst erstellen wir einen Ordner mit \# mkdir /dvdrom im Verzeichnis /etc/yum.repos.d \\ Danach fügen wir das Verzeichnis als neues Repository hinzu, indem wir die Konfigurationsdatei mit dem vi Editor öffnen \# vi /etc/yum.repos.d/local.repo und das Repository hinzufügen. [Abb. 6]
+Tftp ist ein Vorgänger des FTP-Protokolls. Dieser service ist nicht automatisch auf Centos-6.5-x86\_64 vorinstalliert und wird durch den Superserver xinetd, welcher ebenfalls nicht automatisch vorinstalliert ist, verwaltet. Damit wir die gewissen Pakete mit allen Abhängigkeiten für tftp und xinetd über das Terminal mit yum (Yellow dog Updater, Modified) installieren können, müssen wir ein Quellpaket Repository einrichten. \\ Zuerst erstellen wir einen Ordner mit \# mkdir /dvdrom im Verzeichnis /etc/yum.repos.d \\ Danach fügen wir das Verzeichnis als neues Repository hinzu, indem wir die Konfigurationsdatei mit dem vi Editor öffnen \# vi /etc/yum.repos.d/local.repo und das Repository hinzufügen.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_1.png}
@@ -298,7 +298,7 @@ Der command stoppt alle konfigurierten Netzwerk interfaces.
 \caption[Abbildung 20: Netzwek Interface aktivieren]{Netzwek Interface aktivieren}
 \end{figure}
 
-\section*{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}
+\newpage \section*{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}
 \addcontentsline{toc}{section}{Exercise 7: Configure the following network (figure 1) using ifconfig and route add} 
 You need to set the network depicted on figure 1 by doing the following: \\
 Use the \dq ifconfig\dq and the \dq route add\dq commands to configure all the subnets 10.88.X.32/27, 10.88.X.64/27, 10.88.X.96/27 and 10.88.X.128/27. For this exercise you will use the hosts pnidX-svr-mu, pnidX-WEB-hn, pnidX-svr-bln and pnidX-svr-hh. Furthermore you have to configure the routers pnidX-rou-1, pnidX-rou-2 and pnidX-rou-3 \\
@@ -321,6 +321,7 @@ Ziel der Aufgaben 7, 8 und 9 ist, das folgende Netzwerk mithilfe verschiedener K
 Zunächst haben wir das Netzwerk für den pnid4-svr-mu (Sever München) konfiguriert, indem wir die Ethernetkarte eth0 zustehende Adresse 10.88.40.129 zugewiesen haben und die Netmask-Adresse mit einbinden. Dieses haben wir ermöglicht, indem wir /27 im Anschluss hinzugefügt haben, jedoch ist es auch über dem Schlüsselwort netmask und die komplette Adresse realisierbar. \\
 Anschließend haben wir die Routing tables über dem Kommando route add erstellt. Hier haben wir die Netze 10.88.40.96, 10.88.40.64 und 10.88.40.32 mit dem Kommando versehen, da wir über alle drei Netze eine Verbindung herstellen möchten. \\
 Nachstehend haben wir die Firewall dieses Servers ausgeschaltet, da wir später eine Verbindung mit anderen Servern und Routern aufbauen möchten. Wir haben die ganze Konfiguration in einer txt-Datei geschrieben und im Anschluss einmal ausgeführt, sodass wir die Konfiguration gespeichert haben und nicht bei jedem Shut-Down erneut einstellen müssen. \\
+
 \textbf{Konfigurationsdatei von Server-München:(Routing-Tabelle)} \\
 ifconfig eth0 weißt der Netzwerkkarte die zugehörige IP-Adresse zu. \\ Mit dem Befehl route add werden statische Routen zu Rechnern und Netzwerken festgeleget.
 \begin{figure}[H]
@@ -337,7 +338,7 @@ ifconfig eth0 weißt der Netzwerkkarte die zugehörige IP-Adresse zu. \\ Mit dem B
 \caption[Abbildung 23: Server München Routing-Tabelle anwenden]{Server München Routing-Tabelle anwenden}
 \end{figure}
 
-\textbf{Konfigurationsdatei von WEB-Hannover:(Routing-Tabelle)} \\
+\newpage \textbf{Konfigurationsdatei von WEB-Hannover:(Routing-Tabelle)} \\
 ifconfig ens33 weißt der Netzwerkkarte die zugehörige IP-Adresse zu. \\ Mit dem Befehl route add werden statische Routen zu Rechnern und Netzwerken festgeleget.
 \begin{figure}[H]
 \begin{center}
@@ -440,7 +441,7 @@ Scan the networks:\\
 10.88.X.64/27\\
 10.88.X.96/27\\
 and 10.88.X.128/27\\
-\textbf{Zenmap}\\
+\newpage \textbf{Zenmap}\\
 Zenmap ist eine grafische Ansicht für Nmap, der Ports scannen kann. Wenn man einen Rechner auf offene Ports checken möchte, dann kommt Nmap zum Einsatz. Der Network Mapper ist dafür da, um alle aktiven Hosts in der Netzwerkumgebung (über Ping) sowie deren Betriebssystem und Versionsnummern installierter Dienste herauszufinden. \\
 Infolgedessen konnten wir mit dem Kommando zenmap die Verbindungen von Netzwerk 10.88.40.32, 10.88.40.64, 10.88.40.96 und 10.88.40.128 grafisch darstellen und demonstrieren, dass wir die oben aufgeführte Abbildung und somit unser Ziel erreicht haben.
 \begin{center}
@@ -455,7 +456,7 @@ Das Netz 10.88.40.32/27 wird gescannt:
 \end{figure}
 \begin{center}
 
-Das Netz 10.88.40.64/27 wird gescannt:
+\newpage Das Netz 10.88.40.64/27 wird gescannt:
 \end{center}
 
 \begin{figure}[H]
@@ -471,7 +472,7 @@ Das Netz 10.88.40.96/27 wird gescannt:
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b18.png}
+\includegraphics[width=0.6\textwidth]{bilder/screens/Part_3/exercise_7/b18.png}
 \end{center}
 \caption[Abbildung 38: Netz: 10.88.40.96/27]{Netz: 10.88.40.96/27}
 \end{figure}
@@ -537,7 +538,7 @@ Die nächsten Zeilen legen fest, durch welches Gateway ein Datenpaket weitergelei
 \caption[Abbildung 41: Konfig. Router 3 mit ip addr]{Konfig. Router 3 ip addr}
 \end{figure}
 
-\textbf{Gleiche Konfigurationsdatei von Router 3 mittels nmcli (Routing-Tabelle)}
+\newpage \textbf{Gleiche Konfigurationsdatei von Router 3 mittels nmcli (Routing-Tabelle)}
 
 \begin{figure}[H]
 \begin{center}
@@ -561,7 +562,7 @@ Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgre
 \caption[Abbildung 43: Konfig. Router 2 mit ip addr]{Konfig. Router 2 ip addr}
 \end{figure}
 
-\textbf{Gleiche Konfigurationsdatei von Router 2 mittels nmcli (Routing-Tabelle)}
+\newpage \textbf{Gleiche Konfigurationsdatei von Router 2 mittels nmcli (Routing-Tabelle)}
 
 \begin{figure}[H]
 \begin{center}
@@ -588,7 +589,7 @@ Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgre
 \caption[Abbildung 46: Konfig. Router 1 mit nmcli]{Konfig. Router 1 nmcli}
 \end{figure}
 
-\textbf{Konfigurationsdatei von Webserver Hannover mittels ip addr (Routing-Tabelle)}
+\newpage \textbf{Konfigurationsdatei von Webserver Hannover mittels ip addr (Routing-Tabelle)}
 
 \begin{figure}[H]
 \begin{center}
@@ -610,7 +611,7 @@ Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgre
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/6svrblnroutingTabelle.png}
 \end{center}
 
-\textbf{Konfigurationsdatei von Server Hamburg mittels ip addr (Routing-Tabelle)}
+\newpage \textbf{Konfigurationsdatei von Server Hamburg mittels ip addr (Routing-Tabelle)}
 
 \begin{figure}[H]
 \begin{center}
@@ -629,7 +630,7 @@ Scan des Subnetztes 10.88.40.32/27
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/zenmap/z32.png}
 \end{center}
 
-\begin{center}
+\newpage  \begin{center}
 Scan des Subnetztes 10.88.40.64/27
 \end{center}
 
@@ -645,6 +646,7 @@ Scan des Subnetztes 10.88.40.96/27
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/zenmap/z96.png}
 \end{center}
 
+\newpage
 \begin{center}
 Scan des Subnetztes 10.88.40.128/27
 \end{center}
@@ -683,8 +685,7 @@ Der Button Routes, öffnet ein neues Fenster. Mit Add können wir nun die Subnetze
 \begin{center}
 \includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/svr-mu/4.png}
 \end{center}
-
-Damit alle Änderungen für diesen Host übernommen werden bestätigen wir noch mal mit Apply.
+\newpage Damit alle Änderungen für diesen Host übernommen werden bestätigen wir noch mal mit Apply.
 
 \begin{center}
 \includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/svr-mu/5.png}
@@ -738,7 +739,7 @@ Zuletzt bestätigen wir die Konfiguration mit Anwenden. Der Router mit dem Namen 
 
 Die Konfiguration auf allen Routern ist identisch. Lediglich die IP Adressen und das Routen unterscheidet sich, deshalb zeigen wir von nun an jeweils die Vergabe der statischen IP Adressen. \\
 
-IP Adresse für das Interface ens37 festlegen: \\
+\newpage IP Adresse für das Interface ens37 festlegen: \\
 
 \begin{center}
 \includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou2/1.png}
@@ -756,15 +757,13 @@ IP Adresse für das Interface ens33 festlegen: \\
 \includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou2/3.png}
 \end{center}
 
-Adressen für die Subnetze festlegen und das jeweilige Gateway einstellen. Zuletzt mit Anwenden bestätigen.
+Adressen für die Subnetze festlegen und das jeweilige Gateway einstellen. Zuletzt mit Anwenden bestätigen. Damit ist die Konfiguration von Router 1 abgeschlossen. 
 
 \begin{center}
 \includegraphics[width=0.4\textwidth]{bilder/screens/Part_3/exercise_9/rou2/4.png}
 \end{center}
 
-Damit ist die Konfiguration von Router 1 abgeschlossen. \\
-
-\textbf{Konfiguration von Webserver Hannover über die GUI:}  \\
+\newpage \textbf{Konfiguration von Webserver Hannover über die GUI:}  \\
 
 Dieser Host hat ebenfalls Linux Centos 7 als Betriebssystem, deshalb sind die Konfigurationsschritte dieselben wie bei den Routern. \\
 
@@ -837,33 +836,38 @@ Alle Hosts sind jetzt in ihren jeweiligen Subnetzen konfiguriert. Um einen Visue
 \textbf{Scan des Subnetztes 10.88.40.64/27}\\
 
 In der Suchleiste Target können wir nun die IP Adresse des Subnetzes eingeben, welchen wir scannen möchten. Wir starten mit dem Subnetz 10.88.40.128 und bestätigen den Vorgang mit Scan.
+\newpage
+\begin{center}
+\textbf{Scan des Subnetztes 10.88.40.128/27}\\
+\end{center}
 
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_9/zenmap/n128.png}
 \end{center}
 
+\begin{center}
 \textbf{Scan des Subnetztes 10.88.40.96/27}\\
+\end{center}
 
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_9/zenmap/n96.png}
 \end{center}
-
+\newpage
+\begin{center}
 \textbf{Scan des Subnetztes 10.88.40.64/27}\\
+\end{center}
 
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_9/zenmap/n64.png}
 \end{center}
 
+\begin{center}
 \textbf{Scan des Subnetztes 10.88.40.32/27}\\
+\end{center}
 
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_9/zenmap/n32.png}
 \end{center}
-
-
-
-
-
 \chapter*{Part 4: Network Scanning}
 \addcontentsline{toc}{chapter}{Part 4: Network Scanning} 
 
@@ -899,7 +903,7 @@ Scan des Subnetztes 10.88.40.64/27
 \caption[Abbildung 51: Zenmap Subnetz 64]{Subnetz 10.88.40.64/27}
 \end{figure}
 
-\begin{center}
+\newpage \begin{center}
 Scan des Subnetztes 10.88.40.96/27
 \end{center}
 
@@ -921,6 +925,7 @@ Scan des Subnetztes 10.88.40.128/27
 \caption[Abbildung 53: Zenmap Subnetz 128]{Subnetz 10.88.40.128/27}
 \end{figure}
 
+\newpage
 \begin{center}
 Scan des Subnetztes 10.88.40.160/27
 \end{center}
@@ -943,7 +948,7 @@ Scan des Subnetztes 10.88.40.32/27
 \caption[Abbildung 55: Zenmap Subnetz 32]{Subnetz 10.88.40.32/27}
 \end{figure}
 
-\textbf{Solution of c) Use Zenmap to scan all the above networks}
+\newpage \textbf{Solution of c) Use Zenmap to scan all the above networks}
 
 \begin{figure}[H]
 \begin{center}
@@ -1056,7 +1061,7 @@ Mit dem Befehl  -sF werden die Ports, die gescannt werden manipuliert, in dem ve
 \caption[Abbildung 64: nmap command 7]{nmap -sP -PS80 10.88.40.130/27}
 \end{figure}
 
-\textbf{Question 8:}  Please type and explain the nmap command: nmap -sP -PS53 10.88.X.?/27\\ 
+\newpage \textbf{Question 8:}  Please type and explain the nmap command: nmap -sP -PS53 10.88.X.?/27\\ 
 
 \textbf{Answer 8:}  Hier wird ebenso ein TCP SYN-Scan auf dem Port 53 durchgeführt. Port 53 wird verwendet für das Domain Name System (DNS) und wird meist über UDP verwendet.
 
@@ -1125,7 +1130,7 @@ Then you will perform a scan on all subnet as below and analyze the result. Exer
 
 Nessus beruht auf einem Client-Server-Prinzip. Hierbei wird auf einem Rechner der Nessusserver gestartet und im Anschluss wird eine Verbindung zu anderen Rechnern hergestellt. Sobald der Server gestartet wird, werden die Plug-ins geladen. Diese sind notwendig, da man Sicherheitslücken des Betriebssystems finden kann während des Scanns eines Hostes. Nessus kann als Penetrationstest verwendet werden. Darunter versteht man Sicherheitstests eines Rechners oder von Netzwerken. Dabei wird die Sicherheit der Systembestandteile und Anwendungen eines Netzwerks überprüft. Die Mittel, die dafür verwendet werden sind Methoden, die ein Angreifer verwenden würden, um unautorisiert in das System einzudringen, weshalb dies Penetration bezeichnet wird. Man möchte somit vor Angriffen schützen. \\
 
-\textbf{Solution of 1)} Download Nessus from www.nessus.org (Linux Version Nessus-6.11.2-
+\newpage \textbf{Solution of 1)} Download Nessus from www.nessus.org (Linux Version Nessus-6.11.2-
 es7.x86\_64.rpm) \\
 
 Zunächst geht man zur folgenden Webseite: https://www.tenable.com/products/nessus/select-your-operating-system. \\
@@ -1155,7 +1160,7 @@ Damit dies funktioniert muss man auf den Button, Ausnahme hinzufügen, klicken. D
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus_config2.PNG} 
 \end{center}
 
-Jetzt kann mit der Konfiguration gestartet warden.
+\newpage Jetzt kann mit der Konfiguration gestartet warden.
 
 \begin{figure}[H]
 \begin{center}
@@ -1267,7 +1272,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.64/27 gehören, d
 \caption[Abbildung 76:  Ergebnis des Scans im Subnetz 10.88.40.64/27]{Alle Hosts im Subnetz 10.88.40.64/27}
 \end{figure}
 
-\textbf{Scan des Subnetzes 10.88.40.96/27:} \\
+\newpage \textbf{Scan des Subnetzes 10.88.40.96/27:} \\
 
 \begin{figure}[H]
 \begin{center}
@@ -1285,7 +1290,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.96/27 gehören, d
 \caption[Abbildung 78:  Ergebnis des Scans im Subnetz 10.88.40.96/27]{Alle Hosts im Subnetz 10.88.40.96/27}
 \end{figure}
 
-\textbf{Scan des Subnetzes 10.88.40.128/27:} \\
+\newpage \textbf{Scan des Subnetzes 10.88.40.128/27:} \\
 
 \begin{figure}[H]
 \begin{center}
@@ -1303,7 +1308,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.128/27 gehören, 
 \caption[Abbildung 80:  Ergebnis des Scans im Subnetz 10.88.40.128/27]{Alle Hosts im Subnetz 10.88.40.128/27}
 \end{figure}
 
-\textbf{Scan des Subnetzes 10.88.40.160/27:} \\
+\newpage \textbf{Scan des Subnetzes 10.88.40.160/27:} \\
 
 \begin{figure}[H]
 \begin{center}
@@ -1384,7 +1389,7 @@ c) It is a host/device detection program\\
 d) It can be used to scan Netbios Servers e.g. Windows Servers and Samba Servers e) OpenVAS can be used as a penetrating testing tool\\
 f) It is a client-server-system. The server performs the actual scan but it is controlled through the client. Both client and server can be run on the same system\\
 
-\textbf{Do the following steps to install and run OpenVAS:}\\
+\newpage \textbf{Do the following steps to install and run OpenVAS:}\\
 \textbf{1.} Create a new Nessus virtual machine as shown in figure 1.\\
 \textbf{2.} Login with your user name if not existent, please create it.\\
 \textbf{3.} \#su- <cr>
@@ -1497,7 +1502,7 @@ Und um openVas vollständig zu installieren, haben wir den Kommendo apt -get inst
 \caption[Abbildung 88: OpenVas Installation]{OpenVas Installation}
 \end{figure}
 
-Anschließend haben wir OpenVas eingerichtet, indem wir folgenden Kommando in den Terminal eingegeben haben: openvas-setup. Wie der Name bereits verrät ist dieser Kommando für die Einrichtung für OpenVAS da.
+\newpage Anschließend haben wir OpenVas eingerichtet, indem wir folgenden Kommando in den Terminal eingegeben haben: openvas-setup. Wie der Name bereits verrät ist dieser Kommando für die Einrichtung für OpenVAS da.
 
 \begin{figure}[H]
 \begin{center}
@@ -1530,7 +1535,7 @@ Im nächsten Schritt haben wir https://127.0.0.1:9392/ in die Adresszeile unseres
 
 Daraufhin haben wir OpenVAS genutzt um alle VM in unserem Netz zu scannen. In Folgenden Bildausschnitten ist zu erkennen, welche VM (mit Angabe der IP-Adresse) gescannt wurde. \\
 
-\textbf{Scan des Subnetzes 10.88.40.32/27:}
+\newpage \textbf{Scan des Subnetzes 10.88.40.32/27:}
 
 \begin{figure}[H]
 \begin{center}
@@ -1548,7 +1553,7 @@ Daraufhin haben wir OpenVAS genutzt um alle VM in unserem Netz zu scannen. In Fo
 \caption[Abbildung 93: OpenVas Scan des Subnetzes 10.88.40.64/27]{Scan des Subnetzes 10.88.40.64/27}
 \end{figure} 
 
-\textbf{Scan des Subnetzes 10.88.40.96/27:} 
+\newpage \textbf{Scan des Subnetzes 10.88.40.96/27:} 
 
 \begin{figure}[H]
 \begin{center}
@@ -1565,7 +1570,7 @@ Daraufhin haben wir OpenVAS genutzt um alle VM in unserem Netz zu scannen. In Fo
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n128.PNG} 
+\includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n128.PNG} 
 \end{center}
 \caption[Abbildung 95: OpenVas Scan des Subnetzes 10.88.40.128/27]{Scan des Subnetzes 10.88.40.128/27}
 \end{figure} 
@@ -1623,19 +1628,19 @@ Please scan the Network below( Figure 2) from pnidX-mid-hh to pnidX-cnt-bln and 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/2.PNG} 
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/karan/2.PNG} 
 \end{center}
 \caption[Abbildung 99: Figur 2]{ Abbildung Figur 2}
 \end{figure}
 
 Wie in der Aufgabe gefordert, haben wir die Netze genauso konfiguriert wie in es im Figur 1 und Figur 2 vorgegeben ist.
 Anschließend war es notwendig Zenmap auf beiden virtuellen Maschinen (pnid4-mid-hh und pnid4-cnlt-bln) zu installieren.\\
-Zenmap ist ein Nmap Sicherheitsscanner - weitere Infos sind bereits auf S. 19 hinterlegt. Für die Installation von Zenmap haben wir folgendes Kommando genutzt:\\\\
+Zenmap ist ein Nmap Sicherheitsscanner - weitere Infos sind bereits auf S. 19 hinterlegt. Für die Installation von Zenmap haben wir folgendes Kommando genutzt:\\
 \textbf{yum install nmap-frontend}
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/3.PNG} 
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_5/karan/3.PNG} 
 \end{center}
 \caption[Abbildung 100: install nmap-frontend] {Abbildung install nmap-frontend}
 \end{figure}
@@ -1644,7 +1649,7 @@ Doch wie auf der letzten Abbildung zu sehen ist, konnte ein Paket nicht geladen 
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/4.PNG} 
+\includegraphics[width=0.4\textwidth]{bilder/screens/Part_5/karan/4.PNG} 
 \end{center}
 \caption[Abbildung 101: install nmap-frontend 2] {Abbildung install nmap-frontend 2}
 \end{figure}
@@ -1683,7 +1688,7 @@ Dasselbe taten wir dann auch für das Netz von \textbf{pnid4-cnt-bln} nach \textb
 \caption[Abbildung 105: pnid4-cnt-bln nach pnid4-mid-hh 2] {Abbildung pnid4-cnt-bln nach pnid4-mid-hh 2}
 \end{figure}
 
-\section*{Exercise 2: Getting started with network monitoring tools}
+\newpage \section*{Exercise 2: Getting started with network monitoring tools}
 \addcontentsline{toc}{section}{Exercise 2: Getting started with network monitoring tools} 
 
 
@@ -1695,14 +1700,13 @@ For each exercise, analyze the traffic with different tools. \\\\
 a) Start the virtual machines as depicted in figure 2 (pnidX-mid-hh server and pnidX- cnt-bln server) connected. Connect from the pnidX-mid-hh to the webserver running on the server pnidX-cnt-bln, if the httpd server on pnidX-cnt-bln is not available, you have to start the httpd server (search google to find out how to do this). \\\\
 Follow several links on the server while watching packets flow (with Wireshark and tcpdump). Try other services as well (ftp, ssh, ...). \\\\
 Note: Do not forget to install Wireshark and Telnetd Service on server pnidX-mid- hh and pnidX-cnt-bln. \\\\
-Connect to the webserver running on 10.88.X.?, (? is an integer >0<254) from a virtual machine. Set filters so you will see only the traffic from your virtual machine to the webserver. Set another filter so you can see only http traffic. Save the TCP-handshake with 10.88.X.? in a file, where X is your group number and ? is your subnet ip address. \\\\\\
+Connect to the webserver running on 10.88.X.?, (? is an integer >0<254) from a virtual machine. Set filters so you will see only the traffic from your virtual machine to the webserver. Set another filter so you can see only http traffic. Save the TCP-handshake with 10.88.X.? in a file, where X is your group number and ? is your subnet ip address. 
 
-In den theoretischen Grundlagen wurde bereits der Ausdruck Sniffing erklärt.Dies wird in diesem Aufgabenteil nochmal aufgegriffen, da wir hier die Sniffing-Tools Wireshark und Tcpdump nutzen.\\\\
+\newpage In den theoretischen Grundlagen wurde bereits der Ausdruck Sniffing erklärt.Dies wird in diesem Aufgabenteil nochmal aufgegriffen, da wir hier die Sniffing-Tools Wireshark und Tcpdump nutzen.\\
 
-Wireshark ist eine freizugängliche Software, welches für die Netzwerküberwachung und grafische Aufbereitung von Sniffern dient. Dabei kann der Anwender sich die Inhalte und die Protokollheader der transportierten Datenpakete anzeigen lassen.\\\\
+Wireshark ist eine freizugängliche Software, welches für die Netzwerküberwachung und grafische Aufbereitung von Sniffern dient. Dabei kann der Anwender sich die Inhalte und die Protokollheader der transportierten Datenpakete anzeigen lassen.\\
 
-Auch das Tcpdump ist ein weltweit bekanntes Sniffing-Programm, welches Datenpakete mitschneiden kann. Tcpdump gibt es für die meisten Unix-Betriebssysteme. Doch Tcpdump stellt im Gegensatz zu Wireshark keine grafische Oberfläche für die Analyse bereit. Stattdessen besteht die Möglichkeit, den Netzwerkverkehr über Kommandozeilen mitzuschneiden und diese dann in Wireshark grafisch zu analysieren.\\\\
-
+Auch das Tcpdump ist ein weltweit bekanntes Sniffing-Programm, welches Datenpakete mitschneiden kann. Tcpdump gibt es für die meisten Unix-Betriebssysteme. Doch Tcpdump stellt im Gegensatz zu Wireshark keine grafische Oberfläche für die Analyse bereit. Stattdessen besteht die Möglichkeit, den Netzwerkverkehr über Kommandozeilen mitzuschneiden und diese dann in Wireshark grafisch zu analysieren.\\
 
 Um die Analyse der Netzwerkpakete zwischen den Kommunikationsmedien ausarbeiten zu können, haben wir zunächst Wireshark installiert.
 Zusätzlich haben wir Libsmi, eine C Biblothek welche den Zugang zu Informationen von MIB Modulen bietet, installiert. 
@@ -1908,23 +1912,16 @@ Tcpdump -i any host 10.88.40.34 and host 10.88.40.38 and icmp bewirkt, dass jede
 %\caption[ ] {}
 \end{figure}
 
-
-
-1.	Start your virtual machine pnidX-mid-hh with IP-address 10.88.X.$\Delta$\\\\
-
-2.	Login as root. \\\\
-
-3.	Create a non-privileged account with the name e.g. "trumpX". \\\\
-
-4.	Create a password for the above user. Make the password "clintonX". \\\\
-
+\newpage 1.	Start your virtual machine pnidX-mid-hh with IP-address 10.88.X.$\Delta$\\
+2.	Login as root. \\
+3.	Create a non-privileged account with the name e.g. "trumpX". \\
+4.	Create a password for the above user. Make the password "clintonX". \\
 5.	Try to ping another machine on your network from pnidX-mid-hh to 
-pnidX-cnt-bln. \\\\
+pnidX-cnt-bln. \\
 
 Um die Frage 10 (Q10) beantworten zu können haben wir zunächst die virtuelle Maschine pnid4-mid-hh gestartet, mit dem Kommando su - und dann das zugehörige Passwort eingegeben. Anschließend haben wir ein Konto mit dem Namen "trump4" und Passwort als "clinton4" eingerichtet. Mit einem ping von pnid4-mid-hh nach pnid4-cnt-bln haben wir bestätigt, dass beide virtuellen Maschinen erreichbar sind und wir mit den folgenden Schritten fortfahren können.\\\\
 6.	Try to telnet from pnidX-mid-hh to the virtual machine pnidX-cnt-bln, you 
-should be able to login as trumpX. If successful, just log out of pnidX-mid-hh. \\\\
-
+should be able to login as trumpX. If successful, just log out of pnidX-mid-hh. \\
 
 Hier haben wir von der virtuellen Maschine pnid4-mid-hh die virtuelle Maschine pnid4-cnt-cln "getelnet". Dies war durchführbar mit dem Kommando telnet 10.88.40.37.
 
@@ -1936,7 +1933,7 @@ Hier haben wir von der virtuellen Maschine pnid4-mid-hh die virtuelle Maschine p
 \end{figure}
 
 7.	Now, as root on virtual machine pnidX-mid-hh, start tcpdump with the 
-command tcpdump -vvv > pnidX-mid-hh-dump.1 \\\\
+command tcpdump -vvv > pnidX-mid-hh-dump.1 \\
 
 Dieser Kommando gibt sehr viele Informationen. Je mehr V´s desto mehr Information, wobei das Erste V für very steht, das Zweite V auch für very steht und das Dritte V für verbose.
 
@@ -1989,7 +1986,7 @@ Hier haben wir den Kommand ssh an 10.88.40.37 ausgeführt.
 \caption[Abbildung 124: ssh 10.88.40.37 ] {ssh 10.88.40.37}
 \end{figure}
 
-12.	Examine the pnidX-mid-hh-dump.2 \\\\
+\newpage 12.	Examine the pnidX-mid-hh-dump.2 \\\\
 Wie in diesem Schritt gefordert, haben wir die durch vi pnidX-mid-hh-dump.2 den Inhalt angezeigt
 
 \begin{figure}[H]
@@ -2031,7 +2028,7 @@ In diesem Fall haben wir ftp 10.88.40.37 ausgeführt.
 \caption[Abbildung 128: pnidX-mid-hh-dump.3] {pnidX-mid-hh-dump.3}
 \end{figure}
 
-Q10: Now answer the following questions: \\\\
+\newpage Q10: Now answer the following questions: \\\\
 1.	What is the difference in the three tcpdump commands? In their outputs?
 \\Der Kommand tcpdump -i eth4 -vvv  > pnid4-cnt-bln-dump.1 gibt sehr viele Infromationen aus. Je mehr -v Paramaeter im Kommando verwendet werden desto, mehr Details werden bereitgestellt. \\\\
 Für tcpdump -a -i eth4 > pnid4-cnt-bln.dump.2 hier werden alle Pakete von der Netzwerkschnittstelle angesammelt und als ASCII ausgegeben.\\\\
@@ -2106,7 +2103,7 @@ Theoretisch kann man mit tcpdump ein Passwort "sniffen". Mit egrep kann man dies
 \caption[Abbildung 133: Wireshark Filter 5]{Wireshark Filter host 10.88.40.70 \&\& tcp port 23}
 \end{figure}
 
-\textbf{Question 6:} Please type and examine the syntax for a Wireshark command which, by default, collects packets with source or destination IP address 10.88.X.? on interface eth4. \\
+\newpage \textbf{Question 6:} Please type and examine the syntax for a Wireshark command which, by default, collects packets with source or destination IP address 10.88.X.? on interface eth4. \\
 
 \textbf{Answer 6:} Innerhalb des Terminals lässt sich der Filter: \textit{wireshark -i eth4 -k -f "host 10.88.40.70"}, anwenden. Die Argumente bedeuten dabei folgendes: -i eth4 steht für Interface, -k startet das Abfangen von Paketen und -f "host 10.88.40.70", ist der Paketfilter.\\
 
@@ -2155,7 +2152,7 @@ Wir schauen uns nun die Pakete genauer an und können die Logininformationen in e
 \end{center} 
 \end{figure}
 
-Sofort sehen wir den Benutzernamen trump4 und das Passwort clinton4. Dieses Szenario zeigt wie einfach es ist die Logininformationen herauszulesen, wenn die Datenpakete unverschlüsselt übertragen werden. 
+Sofort sehen wir den Benutzernamen trump4 und das Passwort clinton4. Dieses Szenario zeigt wie einfach es ist die Logininformationen herauszulesen, wenn die Datenpakete unverschlüsselt übertragen werden. \\
 
 \textbf{Question 9:} Please login to the server pnidX-mid-hh and start an ssh client to the server
 pnidX-cnt-bln(sshd daemon should be running on pnidX-cnt-bln). Please use wireshark on pnidX-mid-bln to sniff or capture the username and password of the ssh service between pnidX-mid-hh and pnidX-cnt-bln. Is this possible, show the result of the capture. \\
@@ -2711,7 +2708,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 181: /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
-\textbf{2) /etc/ipsec.conf }
+\newpage \textbf{2) /etc/ipsec.conf }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/3.PNG} 
@@ -2727,7 +2724,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 183: /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
-\textbf{4) ipsec\_ifconfig.dump }
+\newpage \textbf{4) ipsec\_ifconfig.dump }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/1.PNG} 
@@ -2735,7 +2732,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 184: ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
 \end{figure}
 
-\newpage \textbf{5) ipsec\_look.dump}
+ \textbf{5) ipsec\_look.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/2.PNG} 
@@ -2743,7 +2740,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 185: ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
-\textbf{6) ipsec\_route.dump}
+\newpage \textbf{6) ipsec\_route.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/3.PNG} 
@@ -2757,7 +2754,7 @@ To create a network-to-network VPN as shown in Figure 3 using preshared key both
 
 Network-to-network ist eine VPN-Situation, indem eine Vielzahl lokaler Netzwerke zu einem virtuellen Netzwerk zusammengeschaltet werden. Ebenfalls besteht die Möglichkeit eine Festverbindung zwischen den verschiedenen Netzwerken, die an unterschiedlichen Orten sind, herzustellen. Jedoch ist der Kostenaufwand hierfür deutlich höher als wenn man die Netzwerke mit einer VPN-Verbindung über das Internet aufbaut. 
 
-i) Test connectivity between pnidX-mid-hh and pnidX-cnt-bln using ping,
+\newpage i) Test connectivity between pnidX-mid-hh and pnidX-cnt-bln using ping,
 see figure 3 and save the result.\\
 \textbf{Ping between pnid4-mid-hh and pnid4-cnt-bln}
 \begin{figure}[H]
@@ -2871,7 +2868,7 @@ Da auf beiden Rechnern, dieselbe secrets und conf Datei ist, senden wir diese mi
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
-iv) Secure the computer traffic by creating iptables rules to permit only IPSec traffic between the two gateways. All other, non-IPSec packets must be denied.\\
+\newpage iv) Secure the computer traffic by creating iptables rules to permit only IPSec traffic between the two gateways. All other, non-IPSec packets must be denied.\\
 
 \begin{figure}[H]
 \begin{center}
@@ -2927,7 +2924,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 191: /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
-\textbf{2) /etc/ipsec.conf }
+\newpage \textbf{2) /etc/ipsec.conf }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/3.PNG} 
@@ -2943,7 +2940,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 193: /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
-\textbf{4) ipsec\_ifconfig.dump }
+\newpage \textbf{4) ipsec\_ifconfig.dump }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/4.PNG} 
@@ -2959,7 +2956,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 195: ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
-\textbf{6) ipsec\_route.dump}
+\newpage \textbf{6) ipsec\_route.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/6.PNG} 
@@ -2984,7 +2981,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 197: /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
-\textbf{2) /etc/ipsec.conf }
+\newpage \textbf{2) /etc/ipsec.conf }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/3.PNG} 
@@ -3000,7 +2997,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 199: /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
-\textbf{4) ipsec\_ifconfig.dump }
+\newpage \textbf{4) ipsec\_ifconfig.dump }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/4.PNG} 
@@ -3016,7 +3013,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 201: ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
-\textbf{6) ipsec\_route.dump}
+\newpage \textbf{6) ipsec\_route.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/6.PNG} 
@@ -3030,7 +3027,7 @@ To create a network-to-network VPN as shown in Figure 2 using RSA keys both syst
 i) Test connectivity between pnidX-mid-hh and pnidX-cnt-bln using ping,
 see figure 2 and save the result.\\
 
-\textbf{Ping between pnid4-mid-hh and pnid4-cnt-bln}
+\newpage \textbf{Ping between pnid4-mid-hh and pnid4-cnt-bln}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/1.PNG} 
@@ -3065,7 +3062,7 @@ see figure 2, by using Wireshark on pnidX-kln-st before establishing a tunnel an
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
-iii) Establish a tunnelled IPSec connection, using the RSA Method between the
+\newpage iii) Establish a tunnelled IPSec connection, using the RSA Method between the
 two gateways pnidX-gw-hh and pnidX-gw-bln \\
 Confirm that the connection is established. \\
 Capture again http packets from pnidX-mid-hh to pnidX-cnt-bln
@@ -3090,20 +3087,20 @@ see figure 2, by using Wireshark on pnidX-kln-st after establishing a tunnel and
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
-\textbf{b)} \verb|ipsec newhostkey --configdir /etc/ipsec.d/ --output /etc/ipsec.d/keys.secrets|\\
+\newpage \textbf{b)} \verb|ipsec newhostkey --configdir /etc/ipsec.d/ --output /etc/ipsec.d/keys.secrets|\\
 \textbf{Der Befehl generiert 2 RSA Authentifikationsschlüssel für die beiden Gateways.}
 
 \textbf{net-to-net-rsa.secrets}
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/2.PNG} 
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/2.PNG} 
 \end{center} 
 \caption[Abbildung P5 Berlin: net-to-net-rsa.secrets]{ net-to-net-rsa.secrets}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/2.PNG} 
+\includegraphics[width=0.8\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/2.PNG} 
 \end{center} 
 \caption[Abbildung P5 Hamburg: net-to-net-rsa.secrets]{net-to-net-rsa.secrets}
 \end{figure}
@@ -3229,7 +3226,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 206:  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
 \end{figure}
 
-\textbf{5) ipsec\_look.dump}
+\newpage \textbf{5) ipsec\_look.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/5.PNG} 
@@ -3254,7 +3251,7 @@ The following files must be included with the lab report:\\
 %\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
-\textbf{1) /etc/ipsec.secrets }\\
+\newpage \textbf{1) /etc/ipsec.secrets }\\
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/2.PNG} 
@@ -3278,7 +3275,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 211: /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
-\textbf{4) ipsec\_ifconfig.dump }
+\newpage \textbf{4) ipsec\_ifconfig.dump }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/4.PNG} 
@@ -3294,7 +3291,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung 213: ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
-\textbf{6) ipsec\_route.dump}
+\newpage \textbf{6) ipsec\_route.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/6.PNG} 
@@ -3305,6 +3302,6 @@ The following files must be included with the lab report:\\
 %\backmatter 
 
 %\chapter{Literaturverzeichnis und Quellenverzeichnis}
-
+\listoffigures
 
 \end{document}

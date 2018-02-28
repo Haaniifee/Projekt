@@ -1,21 +1,21 @@
-\BOOKMARK [0][]{chapter*.2}{Abbildungsverzeichnis}{}% 1
-\BOOKMARK [0][]{chapter*.3}{Part 3: Network Troubleshooting Utilities}{}% 2
-\BOOKMARK [1][]{section*.4}{Exercise 6: Managing Services \(Please use pnidX-svr-mu}{chapter*.3}% 3
-\BOOKMARK [1][]{section*.25}{Exercise 7: Configure the following network \(figure 1\) using ifconfig and route add}{chapter*.3}% 4
-\BOOKMARK [1][]{section*.45}{Exercise 8: Configure the following network \(figure 1\) using ip and nmcli}{chapter*.3}% 5
-\BOOKMARK [1][]{section*.56}{Exercise 9: Configure the following network \(figure 1\) using GUI}{chapter*.3}% 6
-\BOOKMARK [0][]{chapter*.57}{Part 4: Network Scanning}{}% 7
-\BOOKMARK [1][]{section*.59}{Exercise 1: Configure the networks of figure 1}{chapter*.57}% 8
-\BOOKMARK [1][]{section*.66}{Exercise 2: NMAP}{chapter*.57}% 9
-\BOOKMARK [1][]{section*.78}{Exercise 3: Nessus network device identification}{chapter*.57}% 10
-\BOOKMARK [1][]{section*.97}{Exercise 4: OpenVAS Network device identification}{chapter*.57}% 11
-\BOOKMARK [0][]{chapter*.110}{Part 5: Sniffing, Virtual Private Network \(VPN\)}{}% 12
-\BOOKMARK [1][]{section*.111}{Exercise 1: Configure and set the networks shown below \(figure1 and 2\)}{chapter*.110}% 13
-\BOOKMARK [1][]{section*.120}{Exercise 2: Getting started with network monitoring tools}{chapter*.110}% 14
-\BOOKMARK [1][]{section*.132}{Exercise 3: TCPDUMP}{chapter*.110}% 15
-\BOOKMARK [1][]{section*.152}{Exercise 4: Wireshark}{chapter*.110}% 16
-\BOOKMARK [1][]{section*.163}{Exercise 5: Experimenting with network monitoring tools}{chapter*.110}% 17
-\BOOKMARK [1][]{section*.166}{Exercise 6: Set up a host-to-host VPN using preshared key}{chapter*.110}% 18
-\BOOKMARK [1][]{section*.199}{Exercise 7: Set up a host-to-host VPN using RSA keys}{chapter*.110}% 19
-\BOOKMARK [1][]{section*.226}{Exercise 8: Set up a network-to-network VPN using preshared key}{chapter*.110}% 20
-\BOOKMARK [1][]{section*.257}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{chapter*.110}% 21
+\BOOKMARK [0][]{chapter*.2}{Part 3: Network Troubleshooting Utilities}{}% 1
+\BOOKMARK [1][]{section*.3}{Exercise 6: Managing Services \(Please use pnidX-svr-mu}{chapter*.2}% 2
+\BOOKMARK [1][]{section*.24}{Exercise 7: Configure the following network \(figure 1\) using ifconfig and route add}{chapter*.2}% 3
+\BOOKMARK [1][]{section*.44}{Exercise 8: Configure the following network \(figure 1\) using ip and nmcli}{chapter*.2}% 4
+\BOOKMARK [1][]{section*.55}{Exercise 9: Configure the following network \(figure 1\) using GUI}{chapter*.2}% 5
+\BOOKMARK [0][]{chapter*.56}{Part 4: Network Scanning}{}% 6
+\BOOKMARK [1][]{section*.58}{Exercise 1: Configure the networks of figure 1}{chapter*.56}% 7
+\BOOKMARK [1][]{section*.65}{Exercise 2: NMAP}{chapter*.56}% 8
+\BOOKMARK [1][]{section*.77}{Exercise 3: Nessus network device identification}{chapter*.56}% 9
+\BOOKMARK [1][]{section*.96}{Exercise 4: OpenVAS Network device identification}{chapter*.56}% 10
+\BOOKMARK [0][]{chapter*.109}{Part 5: Sniffing, Virtual Private Network \(VPN\)}{}% 11
+\BOOKMARK [1][]{section*.110}{Exercise 1: Configure and set the networks shown below \(figure1 and 2\)}{chapter*.109}% 12
+\BOOKMARK [1][]{section*.119}{Exercise 2: Getting started with network monitoring tools}{chapter*.109}% 13
+\BOOKMARK [1][]{section*.131}{Exercise 3: TCPDUMP}{chapter*.109}% 14
+\BOOKMARK [1][]{section*.151}{Exercise 4: Wireshark}{chapter*.109}% 15
+\BOOKMARK [1][]{section*.162}{Exercise 5: Experimenting with network monitoring tools}{chapter*.109}% 16
+\BOOKMARK [1][]{section*.165}{Exercise 6: Set up a host-to-host VPN using preshared key}{chapter*.109}% 17
+\BOOKMARK [1][]{section*.198}{Exercise 7: Set up a host-to-host VPN using RSA keys}{chapter*.109}% 18
+\BOOKMARK [1][]{section*.225}{Exercise 8: Set up a network-to-network VPN using preshared key}{chapter*.109}% 19
+\BOOKMARK [1][]{section*.256}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{chapter*.109}% 20
+\BOOKMARK [0][]{chapter*.287}{Abbildungsverzeichnis}{}% 21
