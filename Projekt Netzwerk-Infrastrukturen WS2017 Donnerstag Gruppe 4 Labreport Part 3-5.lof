@@ -136,71 +136,73 @@
 \contentsline {figure}{\numberline {135}{\ignorespaces Abbildung P5 Installation Openswan}}{118}{figure.caption.167}
 \contentsline {figure}{\numberline {136}{\ignorespaces Abbildung P5 Figure 1: HOST-TO-HOST-VPN}}{119}{figure.caption.168}
 \contentsline {figure}{\numberline {137}{\ignorespaces Abbildung P5 dst 10.88.40.130 \&\& tcp \&\& port 80}}{120}{figure.caption.169}
-\contentsline {figure}{\numberline {138}{\ignorespaces Abbildung P5 http://10.88.40.130}}{121}{figure.caption.170}
+\contentsline {figure}{\numberline {138}{\ignorespaces Abbildung P5 http://10.88.40.130}}{120}{figure.caption.170}
 \contentsline {figure}{\numberline {139}{\ignorespaces Abbildung P5 Filter: dst 10.88.40.130 \&\& tcp \&\& port 80}}{121}{figure.caption.171}
-\contentsline {figure}{\numberline {140}{\ignorespaces Abbildung P5 ipsec ranbits 256 >}}{122}{figure.caption.172}
-\contentsline {figure}{\numberline {141}{\ignorespaces Abbildung P5 psk.secrets}}{122}{figure.caption.173}
-\contentsline {figure}{\numberline {142}{\ignorespaces Abbildung P5: psk.conf}}{123}{figure.caption.174}
+\contentsline {figure}{\numberline {140}{\ignorespaces Abbildung P5 ipsec ranbits 256 >}}{121}{figure.caption.172}
+\contentsline {figure}{\numberline {141}{\ignorespaces Abbildung P5 psk.secrets}}{121}{figure.caption.173}
+\contentsline {figure}{\numberline {142}{\ignorespaces Abbildung P5: psk.conf}}{122}{figure.caption.174}
 \contentsline {figure}{\numberline {143}{\ignorespaces Abbildung P5 ipsec setup reload}}{124}{figure.caption.177}
-\contentsline {figure}{\numberline {144}{\ignorespaces Abbildung P5 ipsec auto --add}}{125}{figure.caption.178}
-\contentsline {figure}{\numberline {145}{\ignorespaces Abbildung P5 ipsec auto --up}}{125}{figure.caption.179}
-\contentsline {figure}{\numberline {146}{\ignorespaces Abbildung P5 iptables rules}}{126}{figure.caption.181}
-\contentsline {figure}{\numberline {147}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{129}{figure.caption.186}
-\contentsline {figure}{\numberline {148}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{129}{figure.caption.187}
-\contentsline {figure}{\numberline {149}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{130}{figure.caption.188}
-\contentsline {figure}{\numberline {150}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{130}{figure.caption.189}
-\contentsline {figure}{\numberline {151}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{131}{figure.caption.190}
-\contentsline {figure}{\numberline {152}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{131}{figure.caption.191}
-\contentsline {figure}{\numberline {153}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{131}{figure.caption.193}
-\contentsline {figure}{\numberline {154}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{132}{figure.caption.194}
-\contentsline {figure}{\numberline {155}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables}}{132}{figure.caption.195}
-\contentsline {figure}{\numberline {156}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{133}{figure.caption.196}
-\contentsline {figure}{\numberline {157}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{133}{figure.caption.197}
-\contentsline {figure}{\numberline {158}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{133}{figure.caption.198}
-\contentsline {figure}{\numberline {159}{\ignorespaces Abbildung P5 dst 10.88.40.130 \&\& tcp port 80}}{135}{figure.caption.200}
-\contentsline {figure}{\numberline {160}{\ignorespaces Abbildung P5 certutil -N -d /etc/ipsec.d}}{136}{figure.caption.201}
-\contentsline {figure}{\numberline {161}{\ignorespaces Abbildung P5 ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets}}{136}{figure.caption.202}
-\contentsline {figure}{\numberline {162}{\ignorespaces Abbildung P5 rsa.conf}}{136}{figure.caption.203}
-\contentsline {figure}{\numberline {163}{\ignorespaces Abbildung P5 ipsec setup reload}}{137}{figure.caption.204}
-\contentsline {figure}{\numberline {164}{\ignorespaces Abbildung P5 certutil -N -d /etc/ipsec.d}}{137}{figure.caption.205}
-\contentsline {figure}{\numberline {165}{\ignorespaces Abbildung P5 ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets}}{137}{figure.caption.206}
-\contentsline {figure}{\numberline {166}{\ignorespaces Abbildung P5 rsa.conf}}{138}{figure.caption.207}
-\contentsline {figure}{\numberline {167}{\ignorespaces Abbildung P5 ipsec setup reload}}{138}{figure.caption.208}
-\contentsline {figure}{\numberline {168}{\ignorespaces Abbildung P5 ipsec auto - - add rsa}}{138}{figure.caption.209}
-\contentsline {figure}{\numberline {169}{\ignorespaces Abbildung P5 ipsec auto - - up rsa}}{138}{figure.caption.210}
-\contentsline {figure}{\numberline {170}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{140}{figure.caption.215}
-\contentsline {figure}{\numberline {171}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{141}{figure.caption.216}
-\contentsline {figure}{\numberline {172}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{141}{figure.caption.217}
-\contentsline {figure}{\numberline {173}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{142}{figure.caption.218}
-\contentsline {figure}{\numberline {174}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{142}{figure.caption.219}
-\contentsline {figure}{\numberline {175}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{142}{figure.caption.220}
-\contentsline {figure}{\numberline {176}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{143}{figure.caption.221}
-\contentsline {figure}{\numberline {177}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{143}{figure.caption.222}
-\contentsline {figure}{\numberline {178}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{144}{figure.caption.223}
-\contentsline {figure}{\numberline {179}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{144}{figure.caption.224}
-\contentsline {figure}{\numberline {180}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{145}{figure.caption.225}
-\contentsline {figure}{\numberline {181}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{145}{figure.caption.226}
-\contentsline {figure}{\numberline {182}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{152}{figure.caption.245}
-\contentsline {figure}{\numberline {183}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{152}{figure.caption.246}
-\contentsline {figure}{\numberline {184}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{153}{figure.caption.247}
-\contentsline {figure}{\numberline {185}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{154}{figure.caption.248}
-\contentsline {figure}{\numberline {186}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{154}{figure.caption.249}
-\contentsline {figure}{\numberline {187}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{155}{figure.caption.250}
-\contentsline {figure}{\numberline {188}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{155}{figure.caption.252}
-\contentsline {figure}{\numberline {189}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{156}{figure.caption.253}
-\contentsline {figure}{\numberline {190}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{156}{figure.caption.254}
-\contentsline {figure}{\numberline {191}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{157}{figure.caption.255}
-\contentsline {figure}{\numberline {192}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{157}{figure.caption.256}
-\contentsline {figure}{\numberline {193}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{158}{figure.caption.257}
-\contentsline {figure}{\numberline {194}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{165}{figure.caption.277}
-\contentsline {figure}{\numberline {195}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{166}{figure.caption.278}
-\contentsline {figure}{\numberline {196}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{166}{figure.caption.279}
-\contentsline {figure}{\numberline {197}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{167}{figure.caption.280}
-\contentsline {figure}{\numberline {198}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{167}{figure.caption.281}
-\contentsline {figure}{\numberline {199}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{168}{figure.caption.282}
-\contentsline {figure}{\numberline {200}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{168}{figure.caption.284}
-\contentsline {figure}{\numberline {201}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{169}{figure.caption.285}
-\contentsline {figure}{\numberline {202}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{169}{figure.caption.286}
-\contentsline {figure}{\numberline {203}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{170}{figure.caption.287}
-\contentsline {figure}{\numberline {204}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{170}{figure.caption.288}
-\contentsline {figure}{\numberline {205}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{171}{figure.caption.289}
+\contentsline {figure}{\numberline {144}{\ignorespaces Abbildung P5 ipsec auto --add}}{124}{figure.caption.178}
+\contentsline {figure}{\numberline {145}{\ignorespaces Abbildung P5 ipsec auto --up}}{124}{figure.caption.179}
+\contentsline {figure}{\numberline {146}{\ignorespaces Abbildung P5 iptables rules}}{125}{figure.caption.181}
+\contentsline {figure}{\numberline {147}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{127}{figure.caption.186}
+\contentsline {figure}{\numberline {148}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{128}{figure.caption.187}
+\contentsline {figure}{\numberline {149}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{128}{figure.caption.188}
+\contentsline {figure}{\numberline {150}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{129}{figure.caption.189}
+\contentsline {figure}{\numberline {151}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{129}{figure.caption.190}
+\contentsline {figure}{\numberline {152}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{129}{figure.caption.191}
+\contentsline {figure}{\numberline {153}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{130}{figure.caption.193}
+\contentsline {figure}{\numberline {154}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{130}{figure.caption.194}
+\contentsline {figure}{\numberline {155}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables}}{131}{figure.caption.195}
+\contentsline {figure}{\numberline {156}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{131}{figure.caption.196}
+\contentsline {figure}{\numberline {157}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{132}{figure.caption.197}
+\contentsline {figure}{\numberline {158}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{132}{figure.caption.198}
+\contentsline {figure}{\numberline {159}{\ignorespaces Abbildung P5 dst 10.88.40.130 \&\& tcp port 80}}{133}{figure.caption.200}
+\contentsline {figure}{\numberline {160}{\ignorespaces Abbildung P5 Berlin: certutil -N -d /etc/ipsec.d}}{134}{figure.caption.201}
+\contentsline {figure}{\numberline {161}{\ignorespaces Abbildung P5 Hamburg: certutil -N -d /etc/ipsec.d}}{134}{figure.caption.202}
+\contentsline {figure}{\numberline {162}{\ignorespaces Abbildung P5 ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets}}{135}{figure.caption.203}
+\contentsline {figure}{\numberline {163}{\ignorespaces Abbildung P5 ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets}}{135}{figure.caption.204}
+\contentsline {figure}{\numberline {164}{\ignorespaces Abbildung P5 rsa.conf}}{135}{figure.caption.205}
+\contentsline {figure}{\numberline {165}{\ignorespaces Abbildung P5 ipsec setup reload}}{136}{figure.caption.206}
+\contentsline {figure}{\numberline {166}{\ignorespaces Abbildung P5 ipsec setup reload}}{136}{figure.caption.207}
+\contentsline {figure}{\numberline {167}{\ignorespaces Abbildung P5 ipsec auto - - add rsa}}{136}{figure.caption.208}
+\contentsline {figure}{\numberline {168}{\ignorespaces Abbildung P5 ipsec auto - - up rsa}}{136}{figure.caption.209}
+\contentsline {figure}{\numberline {169}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{138}{figure.caption.214}
+\contentsline {figure}{\numberline {170}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{139}{figure.caption.215}
+\contentsline {figure}{\numberline {171}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{139}{figure.caption.216}
+\contentsline {figure}{\numberline {172}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{140}{figure.caption.217}
+\contentsline {figure}{\numberline {173}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{140}{figure.caption.218}
+\contentsline {figure}{\numberline {174}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{141}{figure.caption.219}
+\contentsline {figure}{\numberline {175}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{141}{figure.caption.220}
+\contentsline {figure}{\numberline {176}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{142}{figure.caption.221}
+\contentsline {figure}{\numberline {177}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{142}{figure.caption.222}
+\contentsline {figure}{\numberline {178}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{143}{figure.caption.223}
+\contentsline {figure}{\numberline {179}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{144}{figure.caption.224}
+\contentsline {figure}{\numberline {180}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{144}{figure.caption.225}
+\contentsline {figure}{\numberline {181}{\ignorespaces Abbildung P5 ping-Ergebnis}}{145}{figure.caption.227}
+\contentsline {figure}{\numberline {182}{\ignorespaces Abbildung P5 zenmap for testing the connectivity}}{145}{figure.caption.228}
+\contentsline {figure}{\numberline {183}{\ignorespaces Abbildung P5 net-to-net-psk.secrets}}{147}{figure.caption.231}
+\contentsline {figure}{\numberline {184}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{151}{figure.caption.244}
+\contentsline {figure}{\numberline {185}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{151}{figure.caption.245}
+\contentsline {figure}{\numberline {186}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{152}{figure.caption.246}
+\contentsline {figure}{\numberline {187}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{153}{figure.caption.247}
+\contentsline {figure}{\numberline {188}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{153}{figure.caption.248}
+\contentsline {figure}{\numberline {189}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{154}{figure.caption.249}
+\contentsline {figure}{\numberline {190}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{154}{figure.caption.251}
+\contentsline {figure}{\numberline {191}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{155}{figure.caption.252}
+\contentsline {figure}{\numberline {192}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{155}{figure.caption.253}
+\contentsline {figure}{\numberline {193}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{156}{figure.caption.254}
+\contentsline {figure}{\numberline {194}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{156}{figure.caption.255}
+\contentsline {figure}{\numberline {195}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{157}{figure.caption.256}
+\contentsline {figure}{\numberline {196}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{164}{figure.caption.276}
+\contentsline {figure}{\numberline {197}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{165}{figure.caption.277}
+\contentsline {figure}{\numberline {198}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{165}{figure.caption.278}
+\contentsline {figure}{\numberline {199}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{166}{figure.caption.279}
+\contentsline {figure}{\numberline {200}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{166}{figure.caption.280}
+\contentsline {figure}{\numberline {201}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{167}{figure.caption.281}
+\contentsline {figure}{\numberline {202}{\ignorespaces Abbildung P5 /etc/ipsec.secrets}}{167}{figure.caption.283}
+\contentsline {figure}{\numberline {203}{\ignorespaces Abbildung P5 /etc/ipsec.conf}}{168}{figure.caption.284}
+\contentsline {figure}{\numberline {204}{\ignorespaces Abbildung P5 /etc/ipsec\_iptables }}{168}{figure.caption.285}
+\contentsline {figure}{\numberline {205}{\ignorespaces Abbildung P5 ipsec\_ifconfig.dump}}{169}{figure.caption.286}
+\contentsline {figure}{\numberline {206}{\ignorespaces Abbildung P5 ipsec\_look.dump}}{169}{figure.caption.287}
+\contentsline {figure}{\numberline {207}{\ignorespaces Abbildung P5 ipsec\_route.dump}}{170}{figure.caption.288}

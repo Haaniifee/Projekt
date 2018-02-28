@@ -2225,17 +2225,17 @@ Da man die Daten sicher über das Internet übertragen möchte, versucht man mittel
 Ein \textbf{symmetrisches }Verschlüsselungsverfahren, bei dem die Schlüssel schon zu Beginn der Kommunikation beiden Partnern bekannt ist. Vorher müssen diese Schlüssel jedoch im Geheimen ausgetauscht werden. Für viele Anwendungen im Internet ist dieses Verfahren ungeeignet, da hierfür ein großer Aufwand notwendig wäre.\\
 
 To create a host-to-host VPN as shown in Figure 1 using preshared keys both systems must have OPENS/WAN properly installed and tested. Next, you must ensure that IP networking is functioning. For this exercise you will capture http packets between the hosts. This capture will allow you to compare and prove that IPSec is functioning after the tunnel is created between the hosts. Make sure Apache and Wireshark are installed. See Figure 1. \\
-Hints: CREATING PRESHARED KEY use ipsec ranbits 256 > filename \\ \\
-\textbf{Installation von Openswan auf beiden Rechnern Hamburg (pnid4-mid-hh) und Berlin (pnid4-cnt-bln)}
+Hints: CREATING PRESHARED KEY use ipsec ranbits 256 > filename \\ \\ \\\\
+{\large \textbf{Installation von Openswan auf beiden Rechnern Hamburg (pnid4-mid-hh) und Berlin (pnid4-cnt-bln)}}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/Aufgabe_6/b1.PNG} 
 \end{center} 
 \caption[Abbildung P5 Installation Openswan]{Installation Openswan}
-\end{figure}
+\end{figure} 
 
-\textbf{Netzwerk für die Konfiguration der VPN-Verbindung}
+\newpage {\large \textbf{Netzwerk für die Konfiguration der VPN-Verbindung}}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/Aufgabe_6/b2.PNG} 
@@ -2253,11 +2253,11 @@ Vor der Einrichtung von Openswan können HTTP-Pakete von beliebigen Angreifern oh
 \caption[Abbildung P5 dst 10.88.40.130 \&\& tcp \&\& port 80]{dst 10.88.40.130 \&\& tcp \&\& port 80}
 \end{figure}
 
-Auf dem Rechner pnid4-cnt-bln wird im Browser die IP-Adresse von pnid4-mid-hh eingeben, um HTTP-Pakete abzufangen (siehe Abbildung ..)
+Auf dem Rechner pnid4-cnt-bln wird im Browser die IP-Adresse von pnid4-mid-hh eingeben, um HTTP-Pakete abzufangen (siehe Abbildung 139)
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/Aufgabe_6/b4.PNG} 
+\includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_6/b4.PNG} 
 \end{center} 
 \caption[Abbildung P5 http://10.88.40.130]{http://10.88.40.130}
 \end{figure}
@@ -2292,7 +2292,7 @@ Die Datei wird so angepasst, dass Sie folgende Struktur bekommt:\\
 \caption[Abbildung P5 psk.secrets]{psk.secrets}
 \end{figure}
 
-Als nächstes wird die psk.conf Datei erstellt, welches sich ebenfalls im Verzeichnis ipsec.d befindet. Hier erfolgt die Konfiguration des Tunnels. Dabei wird die Authentifizierung über authby angegeben. Mit type wird der Typ der Verbindung (tunnel, transport) bezeichnet. Die betroffenen Kommunikationspartner werden mit left und right dargestellt. Left bezeichnet dabei den Host, auf den wir uns befinden. Right hingegen bezeichnet den dazugehörigen Kommunikationspartner. Left und right entsprechen dabei die IP-Adressen der jeweiligen Kommunikationspartner. Auto bezeichnet die Operation, welche beim starten von IPsec ausgeführt werden soll.
+\newpage Als nächstes wird die psk.conf Datei erstellt, welches sich ebenfalls im Verzeichnis ipsec.d befindet. Hier erfolgt die Konfiguration des Tunnels. Dabei wird die Authentifizierung über authby angegeben. Mit type wird der Typ der Verbindung (tunnel, transport) bezeichnet. Die betroffenen Kommunikationspartner werden mit left und right dargestellt. Left bezeichnet dabei den Host, auf den wir uns befinden. Right hingegen bezeichnet den dazugehörigen Kommunikationspartner. Left und right entsprechen dabei die IP-Adressen der jeweiligen Kommunikationspartner. Auto bezeichnet die Operation, welche beim starten von IPsec ausgeführt werden soll. \\ \\
 
 \begin{figure}[H]
 \begin{center}
@@ -2301,7 +2301,7 @@ Als nächstes wird die psk.conf Datei erstellt, welches sich ebenfalls im Verzeic
 \caption[Abbildung P5: psk.conf]{psk.conf}
 \end{figure}
 
-Damit alle Dateien innerhalb des Verzeichnisses /etc/ipsec.d mit der Endung .conf eingebunden werden können, muss die letzte Zeile (siehe Abb. ) auskommentiert werden.
+\newpage Damit alle Dateien innerhalb des Verzeichnisses /etc/ipsec.d mit der Endung .conf eingebunden werden können, muss die letzte Zeile (siehe Abb. ) auskommentiert werden.
 
 \begin{figure}[H]
 \begin{center}
@@ -2319,7 +2319,7 @@ Damit beide Kommunikationspartner dieselben Dateien haben, wird die Datei psk.se
 %\caption[Abbildung P5]{}
 \end{figure}
 
-Auf beiden Rechnern wird ipsec gestartet:
+\newpage \textbf{Auf beiden Rechnern wird ipsec gestartet:}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/ii/4.PNG} 
@@ -2345,7 +2345,7 @@ Mit dem Befehl \verb|ipsec auto --up psk| wird die Verbindung gestartet. Dabei v
 \caption[Abbildung P5 ipsec auto --up]{ipsec auto --up}
 \end{figure}
 
-Pluto ist der IKE-Daemon, der das IKE-Protokoll implementiert. Pluto erstellt automatische Sicherheitsbeziehungen, die untereinander geteilt werden. Für die Authentifikation verwendet Pluto Shared Secrets oder RSA Signaturen.
+\newpage Pluto ist der IKE-Daemon, der das IKE-Protokoll implementiert. Pluto erstellt automatische Sicherheitsbeziehungen, die untereinander geteilt werden. Für die Authentifikation verwendet Pluto Shared Secrets oder RSA Signaturen.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/ii/7.PNG} 
@@ -2378,12 +2378,12 @@ iii) Secure the computer traffic by creating iptables rules to permit only IPSec
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iii/5.PNG} 
+\includegraphics[width=0.85\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iii/5.PNG} 
 \end{center} 
 %\caption[Abbildung P5]{}
 \end{figure}
 
-iv) After a successful IPSec connection has been established, create the following files using the given commands: \\
+\newpage iv) After a successful IPSec connection has been established, create the following files using the given commands: \\
 File ipsec\_ifconfig.dump \\
 ifconfig > ipsec\_fconfig.dump \\
 File ipsec\_look.dump \\
@@ -2414,7 +2414,7 @@ The following files must be included with the lab report: \\
 \caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
-\textbf{2) /etc/ipsec.conf }
+\newpage \textbf{2) /etc/ipsec.conf }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/3.PNG} 
@@ -2430,7 +2430,7 @@ The following files must be included with the lab report: \\
 \caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
-\textbf{4) ipsec\_ifconfig.dump }
+\newpage \textbf{4) ipsec\_ifconfig.dump }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/5.PNG} 
@@ -2478,7 +2478,7 @@ The following files must be included with the lab report: \\
 \caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
 \end{figure}
 
-\textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules}
+\newpage \textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/4.PNG} 
@@ -2494,7 +2494,7 @@ The following files must be included with the lab report: \\
 \caption[Abbildung P5 ipsec\_ifconfig.dump]{ipsec\_ifconfig.dump}
 \end{figure}
 
-\textbf{5) ipsec\_look.dump}
+\newpage \textbf{5) ipsec\_look.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/6.PNG} 
@@ -2532,13 +2532,24 @@ Confirm that the connection is established.\\
 Capture again http packets between pnidX-mid-hh and pnidX-cnt-bln
 using Wireshark after establishing a tunnel and save the packet captured. Please include this with your lab report\\
 
-\textbf{Berlin:}
+\newpage \textbf{Privaten RSA-Schlüssel generieren} \\
+a) certutil -N -d /etc/ipsec.d
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/1.PNG} 
 \end{center} 
-\caption[Abbildung P5 certutil -N -d /etc/ipsec.d]{certutil -N -d /etc/ipsec.d}
+\caption[Abbildung P5 Berlin: certutil -N -d /etc/ipsec.d]{certutil -N -d /etc/ipsec.d}
 \end{figure}
+
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/1.PNG} 
+\end{center} 
+\caption[Abbildung P5 Hamburg: certutil -N -d /etc/ipsec.d]{certutil -N -d /etc/ipsec.d}
+\end{figure}
+
+\newpage b) \verb|ipsec newhostkey --configdir /etc/ipsec.d/ --output /etc/ipsec.d/keys.secrets|\\ 
+\textbf{Der Befehl generiert 2 RSA Authentifikationsschlüssel für Hamburg und Berlin.}
 
 \begin{figure}[H]
 \begin{center}
@@ -2549,38 +2560,25 @@ using Wireshark after establishing a tunnel and save the packet captured. Please
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/3.PNG} 
-\end{center} 
-\caption[Abbildung P5 rsa.conf]{rsa.conf}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/4.PNG} 
-\end{center} 
-\caption[Abbildung P5 ipsec setup reload]{ipsec setup reload}
-\end{figure}
-
-\textbf{Hamburg:}
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/1.PNG} 
-\end{center} 
-\caption[Abbildung P5 certutil -N -d /etc/ipsec.d]{certutil -N -d /etc/ipsec.d}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/2.PNG} 
 \end{center} 
 \caption[Abbildung P5 ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets]{ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets}
 \end{figure}
 
+Die \textbf{rsa.conf} -Datei wird auf beiden Rechnern wie folgt angepasst.
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/3.PNG} 
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/3.PNG} 
 \end{center} 
 \caption[Abbildung P5 rsa.conf]{rsa.conf}
+\end{figure}
+
+\newpage \textbf{Auf beiden Rechnern wird ipsec gestartet:}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/4.PNG} 
+\end{center} 
+\caption[Abbildung P5 ipsec setup reload]{ipsec setup reload}
 \end{figure}
 
 \begin{figure}[H]
@@ -2590,6 +2588,7 @@ using Wireshark after establishing a tunnel and save the packet captured. Please
 \caption[Abbildung P5 ipsec setup reload]{ipsec setup reload}
 \end{figure}
 
+\textbf{Die Verbindung wird in die Datenbank eingelesen:}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/5.PNG} 
@@ -2597,6 +2596,7 @@ using Wireshark after establishing a tunnel and save the packet captured. Please
 \caption[Abbildung P5 ipsec auto - - add rsa]{ipsec auto - - add rsa}
 \end{figure}
 
+\textbf{Verbindung wird hergestellt und ein Tunnel aufgebaut.}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/6.PNG} 
@@ -2604,9 +2604,9 @@ using Wireshark after establishing a tunnel and save the packet captured. Please
 \caption[Abbildung P5 ipsec auto - - up rsa]{ipsec auto - - up rsa}
 \end{figure}
 
-iii) Secure the computer traffic by creating iptables rules to permit only IPSec traffic between the two computers. All other, non-IPSec packets must be denied. \\
+\newpage iii) Secure the computer traffic by creating iptables rules to permit only IPSec traffic between the two computers. All other, non-IPSec packets must be denied. \\
 
-\textbf{Hamburg:}
+\textbf{iptables Rules für Hamburg:}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iii/mid/1.PNG} 
@@ -2628,7 +2628,7 @@ iii) Secure the computer traffic by creating iptables rules to permit only IPSec
 %\caption[Abbildung P5 ipsec auto - - up rsa]{ipsec auto - - up rsa}
 \end{figure}
 
-\textbf{Berlin:}
+\textbf{iptables Rules für Berlin:}
 
 \begin{figure}[H]
 \begin{center}
@@ -2661,7 +2661,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
-\textbf{2) /etc/ipsec.conf }
+\newpage \textbf{2) /etc/ipsec.conf }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/3.PNG} 
@@ -2677,7 +2677,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
-\textbf{4) ipsec\_ifconfig.dump }
+\newpage \textbf{4) ipsec\_ifconfig.dump }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/bln/1.PNG} 
@@ -2693,7 +2693,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
-\textbf{6) ipsec\_route.dump}
+\newpage \textbf{6) ipsec\_route.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/bln/3.PNG} 
@@ -2734,7 +2734,7 @@ The following files must be included with the lab report:\\
 \caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
 \end{figure}
 
-\textbf{5) ipsec\_look.dump}
+\newpage \textbf{5) ipsec\_look.dump}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/2.PNG} 
@@ -2753,26 +2753,30 @@ The following files must be included with the lab report:\\
 \section*{Exercise 8: Set up a network-to-network VPN using preshared key}
 \addcontentsline{toc}{section}{Exercise 8: Set up a network-to-network VPN using preshared key}
 To create a network-to-network VPN as shown in Figure 3 using preshared key both systems must have OPENS/WAN properly installed and tested. Next, you must ensure that IP networking is functioning. For this exercise you will capture http packets between the hosts. This capture will allow you to compare and prove that IPSec is functioning after the tunnel is created between the hosts. Make sure Apache and Wireshark are installed.\\\\
-i) Test connectivity between pnidX-mid-hh and pnidX-cnt-bln using ping,
-see figure 3 and save the result.\\
 
+\newpage i) Test connectivity between pnidX-mid-hh and pnidX-cnt-bln using ping,
+see figure 3 and save the result.\\
+\textbf{Ping between pnid4-mid-hh and pnid4-cnt-bln}
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/1.PNG} 
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/aufgabe_8/1.PNG} 
 \end{center} 
-%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung P5 ping-Ergebnis]{ping-Ergebnis}
 \end{figure}
 
+\textbf{Zenmap between pnid4-mid-hh and pnid4-cnt-bln}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/2.PNG} 
 \end{center} 
-%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung P5 zenmap for testing the connectivity]{zenmap for testing the connectivity}
 \end{figure}
 
-ii) Capture http packets from pnidX-mid-hh to pnidX-cnt-bln
+\newpage ii) Capture http packets from pnidX-mid-hh to pnidX-cnt-bln
 see figure 3, by using Wireshark on pnidX-kln-st before establishing a tunnel and save the packet captured.\\Please include this with your lab report\\
 
+\textbf{HTTP-Pakete mit Wireshark filtern} \\
+dst 10.88.40.130 \&\& tcp \&\& port 80
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/3.PNG} 
@@ -2787,22 +2791,25 @@ see figure 3, by using Wireshark on pnidX-kln-st before establishing a tunnel an
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
-iii) Establish a tunnelled IPSec connection, using the preshared key Method between the two gateways. Confirm that the connection is established.
+\newpage iii) Establish a tunnelled IPSec connection, using the preshared key Method between the two gateways. Confirm that the connection is established.
 Capture again http packets from pnidX-mid-hh to pnidX-cnt-bln
 see figure 3, by using Wireshark on pnidX-kln-st after establishing a tunnel and save the packet captured. Please include this with your lab report\\
+
+Mit Hilfe des Befehls \# ipsec ranbits 256 > net-to-net-psk.secrets wird ein zufällig erzeugter Key generiert, der in der Datei net-to-net-psk.secrets gespeichert wird.
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/01.PNG} 
 \end{center} 
-%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung P5 net-to-net-psk.secrets]{net-to-net-psk.secrets}
 \end{figure}
 
+\textbf{Konfiguration der net-to-net-psk.conf Datei}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/02.PNG} 
 \end{center} 
-%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung P5 net-to-net-psk.conf]{net-to-net-psk.conf}
 \end{figure}
 
 \begin{figure}[H]
