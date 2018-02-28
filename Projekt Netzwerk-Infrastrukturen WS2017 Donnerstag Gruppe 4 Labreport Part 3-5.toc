@@ -5,18 +5,18 @@
 \contentsline {section}{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}{18}{section*.25}
 \contentsline {section}{Exercise 8: Configure the following network (figure 1) using ip and nmcli}{29}{section*.45}
 \contentsline {section}{Exercise 9: Configure the following network (figure 1) using GUI}{37}{section*.56}
-\contentsline {chapter}{Part 4: Network Scanning}{50}{chapter*.57}
-\contentsline {section}{Exercise 1: Configure the networks of figure 1}{51}{section*.59}
-\contentsline {section}{Exercise 2: NMAP}{54}{section*.66}
-\contentsline {section}{Exercise 3: Nessus network device identification}{59}{section*.78}
-\contentsline {section}{Exercise 4: OpenVAS Network device identification}{75}{section*.97}
-\contentsline {chapter}{Part 5: Sniffing, Virtual Private Network (VPN)}{86}{chapter*.110}
-\contentsline {section}{Exercise 1: Configure and set the networks shown below (figure1 and 2)}{87}{section*.111}
-\contentsline {section}{Exercise 2: Getting started with network monitoring tools}{92}{section*.120}
-\contentsline {section}{Exercise 3: TCPDUMP}{99}{section*.132}
-\contentsline {section}{Exercise 4: Wireshark}{108}{section*.152}
-\contentsline {section}{Exercise 5: Experimenting with network monitoring tools}{116}{section*.163}
-\contentsline {section}{Exercise 6: Set up a host-to-host VPN using preshared key}{117}{section*.166}
-\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{132}{section*.199}
-\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{144}{section*.226}
-\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{157}{section*.257}
+\contentsline {chapter}{Part 4: Network Scanning}{51}{chapter*.57}
+\contentsline {section}{Exercise 1: Configure the networks of figure 1}{52}{section*.59}
+\contentsline {section}{Exercise 2: NMAP}{55}{section*.66}
+\contentsline {section}{Exercise 3: Nessus network device identification}{60}{section*.78}
+\contentsline {section}{Exercise 4: OpenVAS Network device identification}{76}{section*.97}
+\contentsline {chapter}{Part 5: Sniffing, Virtual Private Network (VPN)}{87}{chapter*.110}
+\contentsline {section}{Exercise 1: Configure and set the networks shown below (figure1 and 2)}{88}{section*.111}
+\contentsline {section}{Exercise 2: Getting started with network monitoring tools}{93}{section*.120}
+\contentsline {section}{Exercise 3: TCPDUMP}{100}{section*.132}
+\contentsline {section}{Exercise 4: Wireshark}{110}{section*.152}
+\contentsline {section}{Exercise 5: Experimenting with network monitoring tools}{117}{section*.163}
+\contentsline {section}{Exercise 6: Set up a host-to-host VPN using preshared key}{118}{section*.166}
+\contentsline {section}{Exercise 7: Set up a host-to-host VPN using RSA keys}{134}{section*.199}
+\contentsline {section}{Exercise 8: Set up a network-to-network VPN using preshared key}{146}{section*.226}
+\contentsline {section}{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}{159}{section*.257}
