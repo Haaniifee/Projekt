@@ -2754,7 +2754,9 @@ The following files must be included with the lab report:\\
 \addcontentsline{toc}{section}{Exercise 8: Set up a network-to-network VPN using preshared key}
 To create a network-to-network VPN as shown in Figure 3 using preshared key both systems must have OPENS/WAN properly installed and tested. Next, you must ensure that IP networking is functioning. For this exercise you will capture http packets between the hosts. This capture will allow you to compare and prove that IPSec is functioning after the tunnel is created between the hosts. Make sure Apache and Wireshark are installed.\\\\
 
-\newpage i) Test connectivity between pnidX-mid-hh and pnidX-cnt-bln using ping,
+Network-to-network ist eine VPN-Situation, indem eine Vielzahl lokaler Netzwerke zu einem virtuellen Netzwerk zusammengeschaltet werden. Ebenfalls besteht die Möglichkeit eine Festverbindung zwischen den verschiedenen Netzwerken, die an unterschiedlichen Orten sind, herzustellen. Jedoch ist der Kostenaufwand hierfür deutlich höher als wenn man die Netzwerke mit einer VPN-Verbindung über das Internet aufbaut. 
+
+i) Test connectivity between pnidX-mid-hh and pnidX-cnt-bln using ping,
 see figure 3 and save the result.\\
 \textbf{Ping between pnid4-mid-hh and pnid4-cnt-bln}
 \begin{figure}[H]
@@ -2767,7 +2769,7 @@ see figure 3 and save the result.\\
 \textbf{Zenmap between pnid4-mid-hh and pnid4-cnt-bln}
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/2.PNG} 
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/aufgabe_8/2.PNG} 
 \end{center} 
 \caption[Abbildung P5 zenmap for testing the connectivity]{zenmap for testing the connectivity}
 \end{figure}
@@ -2812,6 +2814,7 @@ Mit Hilfe des Befehls \# ipsec ranbits 256 > net-to-net-psk.secrets wird ein zuf
 \caption[Abbildung P5 net-to-net-psk.conf]{net-to-net-psk.conf}
 \end{figure}
 
+Da auf beiden Rechnern, dieselbe secrets und conf Datei ist, senden wir diese mit dem scp Protokoll rüber.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/03.PNG} 
@@ -2819,6 +2822,7 @@ Mit Hilfe des Befehls \# ipsec ranbits 256 > net-to-net-psk.secrets wird ein zuf
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{Auf beiden Rechnern wird ipsec gestartet}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/04.PNG} 
@@ -2826,6 +2830,7 @@ Mit Hilfe des Befehls \# ipsec ranbits 256 > net-to-net-psk.secrets wird ein zuf
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{Der Status wird geprüft}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/05.PNG} 
@@ -2833,6 +2838,7 @@ Mit Hilfe des Befehls \# ipsec ranbits 256 > net-to-net-psk.secrets wird ein zuf
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{Verbindung wird hergestellt und Tunnel aufgebaut}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/06.PNG} 
@@ -2840,6 +2846,7 @@ Mit Hilfe des Befehls \# ipsec ranbits 256 > net-to-net-psk.secrets wird ein zuf
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{Status wird erneut geprüft}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/07.PNG} 
@@ -2847,13 +2854,15 @@ Mit Hilfe des Befehls \# ipsec ranbits 256 > net-to-net-psk.secrets wird ein zuf
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{2 Tunnels up}
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/08.PNG} 
+\includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/08.PNG} 
 \end{center} 
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{HTTP-Pakete mittels Wireshark filtern}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/09.PNG} 
@@ -2867,9 +2876,10 @@ iv) Secure the computer traffic by creating iptables rules to permit only IPSec 
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iv/01.PNG} 
 \end{center} 
-%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung P5 creating iptables rules]{creating iptables rules}
 \end{figure}
 
+\textbf{iptable rules mid-hh}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iv/02.PNG} 
@@ -2877,6 +2887,7 @@ iv) Secure the computer traffic by creating iptables rules to permit only IPSec 
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{iptable rules cnt-bln}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iv/03.PNG} 
@@ -3018,6 +3029,7 @@ To create a network-to-network VPN as shown in Figure 2 using RSA keys both syst
 i) Test connectivity between pnidX-mid-hh and pnidX-cnt-bln using ping,
 see figure 2 and save the result.\\
 
+\textbf{Ping between pnid4-mid-hh and pnid4-cnt-bln}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/1.PNG} 
@@ -3025,6 +3037,7 @@ see figure 2 and save the result.\\
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{Zenmap between pnid4-mid-hh and pnid4-cnt-bln}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/2.PNG} 
@@ -3035,6 +3048,8 @@ see figure 2 and save the result.\\
 ii) Capture http packets from pnidX-mid-hh to pnidX-cnt-bln
 see figure 2, by using Wireshark on pnidX-kln-st before establishing a tunnel and save the packet captured. Please include this with your lab report\\
 
+\textbf{HTTP-Pakete mit Wireshark filtern} \\
+\textbf{dst 10.88.40.130 \&\& tcp \&\& port 80}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/3.PNG} 
@@ -3054,7 +3069,11 @@ two gateways pnidX-gw-hh and pnidX-gw-bln \\
 Confirm that the connection is established. \\
 Capture again http packets from pnidX-mid-hh to pnidX-cnt-bln
 see figure 2, by using Wireshark on pnidX-kln-st after establishing a tunnel and save the packet captured. Please include this with your lab report.\\\\
-\textbf{Berlin:}\\
+
+ \textbf{Privaten RSA-Schlüssel generieren auf beiden Gateways} \\
+ \textbf{a) certutil -N -d /etc/ipsec.d}\\
+
+ \textbf{privater Schlüssel von Gateway-Berlin}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/1.PNG} 
@@ -3062,35 +3081,7 @@ see figure 2, by using Wireshark on pnidX-kln-st after establishing a tunnel and
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/2.PNG} 
-\end{center} 
-%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/3.PNG} 
-\end{center} 
-%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/4.PNG} 
-\end{center} 
-%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
-\end{figure}
-
-\begin{figure}[H]
-\begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/5.PNG} 
-\end{center} 
-%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
-\end{figure}
-\textbf{Hamburg:}\\
-
+\textbf{privater Schlüssel von Gateway-Hamburg}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/1.PNG} 
@@ -3098,16 +3089,37 @@ see figure 2, by using Wireshark on pnidX-kln-st after establishing a tunnel and
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{b)} \verb|ipsec newhostkey --configdir /etc/ipsec.d/ --output /etc/ipsec.d/keys.secrets|\\
+\textbf{Der Befehl generiert 2 RSA Authentifikationsschlüssel für die beiden Gateways.}
+
+\textbf{net-to-net-rsa.secrets}
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/2.PNG} 
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/2.PNG} 
 \end{center} 
-%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung P5 Berlin: net-to-net-rsa.secrets]{ net-to-net-rsa.secrets}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
-\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/3.PNG} 
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/2.PNG} 
+\end{center} 
+\caption[Abbildung P5 Hamburg: net-to-net-rsa.secrets]{net-to-net-rsa.secrets}
+\end{figure}
+
+\textbf{net-to-net-rsa.conf}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/3.PNG} 
+\end{center} 
+\caption[Abbildung P5 net-to-net-rsa.conf]{net-to-net-rsa.conf}
+\end{figure}
+
+
+\textbf{ipsec wird gestartet auf beiden Gateways}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/4.PNG} 
 \end{center} 
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
@@ -3119,6 +3131,7 @@ see figure 2, by using Wireshark on pnidX-kln-st after establishing a tunnel and
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{Verbindung wird in Datenbank eingelesen}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/5.PNG} 
@@ -3126,6 +3139,7 @@ see figure 2, by using Wireshark on pnidX-kln-st after establishing a tunnel and
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{Verbindung wird hergestellt und ein Tunnel baut sich auf }
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/hh/6.PNG} 
@@ -3133,8 +3147,17 @@ see figure 2, by using Wireshark on pnidX-kln-st after establishing a tunnel and
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{2 Tunnels up}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iii/bln/5.PNG} 
+\end{center} 
+%\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\end{figure}
+
 iv) Secure the computer traffic by creating iptables rules to permit only IPSec traffic between the two gateways. All other, non-IPSec packets must be denied.\\
 
+\textbf{iptable rules für Berlin}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iv/1.PNG} 
@@ -3142,6 +3165,7 @@ iv) Secure the computer traffic by creating iptables rules to permit only IPSec 
 %\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
+\textbf{iptable rules für Hamburg}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iv/2.PNG} 
