@@ -161,7 +161,7 @@ Deaktiviert iptables im runlevel 2. [Abb. 3]. Wir sehen, dass zuvor iptables im 
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b3.png}
 \end{center}
-\caption[Abbildung 3: ]{runlevel 2 wird ausgeschaltet}
+\caption[Abbildung 3: runlevel 2 wird ausgeschaltet]{runlevel 2 wird ausgeschaltet}
 \end{figure}
 
 4)\# \verb|chkconfig --level 2345 iptables off|\\
@@ -222,20 +222,20 @@ Die Dateien im Verzeichnis /etc/xinetd.d/ enthalten die Konfigurationsdateien fü
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_6.png}
 \end{center}
-\caption[Abbildung 11: ]{}
+\caption[Abbildung 11: xinet tftp config]{xinet tftp config}
 \end{figure}
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_7.png}
 \end{center}
-\caption[Abbildung 12: ]{}
+\caption[Abbildung 12: vi tftp service]{vi tftp service}
 \end{figure}
 Nachdem der Befehl \# chkconfig tftp on ausgeführt wurde, kann man sich mit dem Befehl \#chkconfig anzeigenlassen, ob der Dienst wirklich aktiviert wurde, da dieser angibt welche Dienste in ihren jeweiligen runlevels aktiviert bzw. deaktiviert sind. In der Abbildung 13 sieht man, dass tftp aktiviert ist. Tftp findet man unten im Bild bei den "xinetd based services".
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b6_8.png}
 \end{center}
-\caption[Abbildung 13: ]{}
+\caption[Abbildung 13: chkconfig]{chkconfig}
 \end{figure}
 7)\# \verb|chkconfig --level 2 vsftpd off| \\ Um diesen Befehl ausführen zu können, muss zunächst vsftpd installiert werden. Dies geschieht mit dem Befehl \# yum install vsftpd. Nach der erfolgreichen Installation kann vsftpd verwendet werden. 
 \begin{figure}[H]
@@ -258,7 +258,7 @@ Zunächst haben wir mit dem Befehl "\#  \verb|chkconfig --level 2345 vsftpd|"die 
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b8_1.png}
 \end{center}
-\caption[Abbildung 16: ]{}
+\caption[Abbildung 16: chkconfig --level]{chkconfig --level}
 \end{figure}
 
 Hier sieht man, dass nach der Aktivierung die entsprechenden Runlevels aktiviert wurden.
@@ -266,7 +266,7 @@ Hier sieht man, dass nach der Aktivierung die entsprechenden Runlevels aktiviert
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b8_2.png}
 \end{center}
-\caption[Abbildung 17: ]{}
+\caption[Abbildung 17: vsftpd runlevels]{vsftpd runlevels}
 \end{figure}
 
 Anschließend werden mit dem Befehl "\#  \verb|chkconfig --level 2345 vsftpd off|" die Runlevels 2, 3, 4 und 5 deaktiviert.
@@ -274,7 +274,7 @@ Anschließend werden mit dem Befehl "\#  \verb|chkconfig --level 2345 vsftpd off|
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b8_3.png}
 \end{center}
-\caption[Abbildung 18: ]{}
+\caption[Abbildung 18: chkconfig --level]{chkconfig --level}
 \end{figure}
 
 Man erkennt, dass die aktivierten Runlevels nach dem Ausführen des Befehls ausgeschaltet wurden.
@@ -282,7 +282,7 @@ Man erkennt, dass die aktivierten Runlevels nach dem Ausführen des Befehls ausge
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b8_4.png}
 \end{center}
-\caption[Abbildung 19: ]{}
+\caption[Abbildung 19: vsftpd runlevels]{vsftpd runlevels}
 \end{figure}
 9)\# Explain the function of xinetd \\
 Bei xinetd handelt es sich um einen open source Superserver für Unix-Systeme. Dieser verwaltet verschiedene Dienste u.a. den FTP / HTTP Server. \\Xinetd bietet gegenüber dem Vorgänger inetd noch weitere zusätzliche Dienste an um eine verbesserte Sicherheit zu ermöglichen. Dazu zählen Zugangskontrollen, zeitliche Beschränkung von Diensten (nach Datum und Uhrzeit), sowie einen Verteidigungsmechanismus gegen Portscanner. Sobald der xinetd Superserver eingeschaltet ist, lässt sich im Terminal nachvollziehen, welche Dienste über xinetd verwaltet werden.\\
@@ -295,7 +295,7 @@ Der command stoppt alle konfigurierten Netzwerk interfaces.
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_3/b10.png}
 \end{center}
-\caption[Abbildung 20: ]{}
+\caption[Abbildung 20: Netzwek Interface aktivieren]{Netzwek Interface aktivieren}
 \end{figure}
 
 \section*{Exercise 7: Configure the following network (figure 1) using ifconfig and route add}
@@ -311,12 +311,12 @@ Scan the networks: \\
 10.88.X.64/27 \\
 10.88.X.96/27 \\
 and 10.88.X.128/27 \\\\
-Ziel der Aufgaben 7, 8 und 9 ist, das folgende Netzwerk [Abb. 21] mithilfe verschiedener Kommandos aufzubauen um alle zugehörigen Subnetze zu konfigurieren. 
+Ziel der Aufgaben 7, 8 und 9 ist, das folgende Netzwerk mithilfe verschiedener Kommandos aufzubauen um alle zugehörigen Subnetze zu konfigurieren. 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b1.png}
 \end{center}
-\caption[Abbildung 21: ]{}
+\caption[Abbildung 21: Netzwerk figure 1]{Netzwerk figure 1}
 \end{figure}
 Zunächst haben wir das Netzwerk für den pnid4-svr-mu (Sever München) konfiguriert, indem wir die Ethernetkarte eth0 zustehende Adresse 10.88.40.129 zugewiesen haben und die Netmask-Adresse mit einbinden. Dieses haben wir ermöglicht, indem wir /27 im Anschluss hinzugefügt haben, jedoch ist es auch über dem Schlüsselwort netmask und die komplette Adresse realisierbar. \\
 Anschließend haben wir die Routing tables über dem Kommando route add erstellt. Hier haben wir die Netze 10.88.40.96, 10.88.40.64 und 10.88.40.32 mit dem Kommando versehen, da wir über alle drei Netze eine Verbindung herstellen möchten. \\
@@ -327,14 +327,14 @@ ifconfig eth0 weißt der Netzwerkkarte die zugehörige IP-Adresse zu. \\ Mit dem B
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b2.png}
 \end{center}
-\caption[Abbildung 22: ]{}
+\caption[Abbildung 22: ifconfig Server München (Routing-Tabelle)]{ ifconfig Server München}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b3.png}
 \end{center}
-\caption[Abbildung 23: ]{}
+\caption[Abbildung 23: Server München Routing-Tabelle anwenden]{Server München Routing-Tabelle anwenden}
 \end{figure}
 
 \textbf{Konfigurationsdatei von WEB-Hannover:(Routing-Tabelle)} \\
@@ -343,14 +343,14 @@ ifconfig ens33 weißt der Netzwerkkarte die zugehörige IP-Adresse zu. \\ Mit dem 
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b4.png}
 \end{center}
-\caption[Abbildung 24: ]{}
+\caption[Abbildung 24: ifconfig Webserver Hannover (Routing-Tabelle)]{ifconfig Webserver Hannover}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b5.png}
 \end{center}
-\caption[Abbildung 25: ]{}
+\caption[Abbildung 25: Webserver Hannover Routing-Tabelle anwenden]{Webserver Hannover  Routing-Tabelle anwenden}
 \end{figure}
 
 \textbf{Konfigurationsdatei von Server-Berlin:(Routing-Tabelle)} \\
@@ -359,14 +359,14 @@ ifconfig ens33 weißt der Netzwerkkarte die zugehörige IP-Adresse zu. \\ Mit dem 
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b6.png}
 \end{center}
-\caption[Abbildung 26: ]{}
+\caption[Abbildung 26: ifconfig Server Berlin (Routing-Tabelle)]{ifconfig Server Berlin}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b7.png}
 \end{center}
-\caption[Abbildung 27: ]{}
+\caption[Abbildung 27: Server Berlin Routing-Tabelle anwenden]{Server Berlin  Routing-Tabelle anwenden}
 \end{figure}
 
 \textbf{Konfigurationsdatei von Server-Hamburg:(Routing-Tabelle)} \\
@@ -375,14 +375,14 @@ ifconfig ens33 weißt der Netzwerkkarte die zugehörige IP-Adresse zu. \\ Mit dem 
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b8.png}
 \end{center}
-\caption[Abbildung 28: ]{}
+\caption[Abbildung 28: ifconfig Server Hamburg (Routing-Tabelle)]{ifconfig Server Hamburg}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b9.png}
 \end{center}
-\caption[Abbildung 29: ]{}
+\caption[Abbildung 29: Server Hamburg Routing-Tabelle anwenden]{Server Hamburg Routing-Tabelle anwenden}
 \end{figure}
 
 \textbf{Konfigurationsdatei von Router 1:(Routing-Tabelle)} \\
@@ -392,14 +392,14 @@ Mit ifconfig ens33 und ens37 weißt man den Netzwerkkarten die zugehörige IP-Adre
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b10.png}
 \end{center}
-\caption[Abbildung 30: ]{}
+\caption[Abbildung 30: ifconfig Router 1 (Routing-Tabelle)]{ifconfig Router 1}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b11.png}
 \end{center}
-\caption[Abbildung 31: ]{}
+\caption[Abbildung 31: Router 1 Routing-Tabelle anwenden]{Router 1 Routing-Tabelle anwenden}
 \end{figure}
 
 \textbf{Konfigurationsdatei von Router 2:(Routing-Tabelle)} \\
@@ -408,14 +408,14 @@ Mit ifconfig ens33 und ens37 weißt man den Netzwerkkarten die zugehörige IP-Adre
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b12.png}
 \end{center}
-\caption[Abbildung 32: ]{}
+\caption[Abbildung 32: ifconfig Router 2 (Routing-Tabelle)]{ifconfig Router 2}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b13.png}
 \end{center}
-\caption[Abbildung 33: ]{}
+\caption[Abbildung 33: Router 2 Routing-Tabelle anwenden]{Router 2 Routing-Tabelle anwenden}
 \end{figure}
 
 \textbf{Konfigurationsdatei von Router 3:(Routing-Tabelle)} \\
@@ -424,14 +424,14 @@ Mit ifconfig ens33 und ens37 weißt man den Netzwerkkarten die zugehörige IP-Adre
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b14.png}
 \end{center}
-\caption[Abbildung 34: ]{}
+\caption[Abbildung 34: ifconfig Router 3 (Routing-Tabelle)]{ifconfig Router 3}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_7/b15.png}
 \end{center}
-\caption[Abbildung 35: ]{}
+\caption[Abbildung 35: Router 3 Routing-Tabelle anwenden]{Router 3 Routing-Tabelle anwenden}
 \end{figure}
 Please use Kali Linux as root:
 \# zenmap\\
@@ -525,7 +525,7 @@ Die nächsten Zeilen legen fest, durch welches Gateway ein Datenpaket weitergelei
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/1svrmuip.png}
 \end{center}
-\caption[Abbildung 39: Konfig. Server München mit ip addr]{Konfig. Server München ip addr}
+\caption[Abbildung 40: Konfig. Server München mit ip addr]{Konfig. Server München ip addr}
 \end{figure}
 
 \textbf{Konfigurationsdatei von Router 3 mittels ip addr (Routing-Tabelle)}
@@ -534,7 +534,7 @@ Die nächsten Zeilen legen fest, durch welches Gateway ein Datenpaket weitergelei
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/2rou3ip.png}
 \end{center}
-\caption[Abbildung 39: Konfig. Router 3 mit ip addr]{Konfig. Router 3 ip addr}
+\caption[Abbildung 41: Konfig. Router 3 mit ip addr]{Konfig. Router 3 ip addr}
 \end{figure}
 
 \textbf{Gleiche Konfigurationsdatei von Router 3 mittels nmcli (Routing-Tabelle)}
@@ -543,7 +543,7 @@ Die nächsten Zeilen legen fest, durch welches Gateway ein Datenpaket weitergelei
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/2rou3nmcli.png}
 \end{center}
-\caption[Abbildung 39: Konfig. Router 3 mit nmcli]{Konfig. Router 3 nmcli}
+\caption[Abbildung 42: Konfig. Router 3 mit nmcli]{Konfig. Router 3 nmcli}
 \end{figure}
 
 Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgreich hinzugefügt. Mit nmcli con up wird die Verbindung aktiviert und anschließend wird über netstat -nr die Routing-Tabelle angezeigt.
@@ -558,7 +558,7 @@ Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgre
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/3rou2ip.png}
 \end{center}
-\caption[Abbildung 39: Konfig. Router 2 mit ip addr]{Konfig. Router 2 ip addr}
+\caption[Abbildung 43: Konfig. Router 2 mit ip addr]{Konfig. Router 2 ip addr}
 \end{figure}
 
 \textbf{Gleiche Konfigurationsdatei von Router 2 mittels nmcli (Routing-Tabelle)}
@@ -567,7 +567,7 @@ Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgre
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/3rou2nmcli.png}
 \end{center}
-\caption[Abbildung 39: Konfig. Router 2 mit nmcli]{Konfig. Router 2 nmcli}
+\caption[Abbildung 44: Konfig. Router 2 mit nmcli]{Konfig. Router 2 nmcli}
 \end{figure}
 
 \textbf{Konfigurationsdatei von Router 1 mittels ip addr (Routing-Tabelle)}
@@ -576,7 +576,7 @@ Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgre
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/4rou1ip.png}
 \end{center}
-\caption[Abbildung 39: Konfig. Router 1 mit ip addr]{Konfig. Router 1 ip addr}
+\caption[Abbildung 45: Konfig. Router 1 mit ip addr]{Konfig. Router 1 ip addr}
 \end{figure}
 
 \textbf{Gleiche Konfigurationsdatei von Router 1 mittels nmcli (Routing-Tabelle)}
@@ -585,7 +585,7 @@ Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgre
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/4rou1nmcli.png}
 \end{center}
-\caption[Abbildung 39: Konfig. Router 1 mit nmcli]{Konfig. Router 1 nmcli}
+\caption[Abbildung 46: Konfig. Router 1 mit nmcli]{Konfig. Router 1 nmcli}
 \end{figure}
 
 \textbf{Konfigurationsdatei von Webserver Hannover mittels ip addr (Routing-Tabelle)}
@@ -594,7 +594,7 @@ Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgre
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/5webhnip.png}
 \end{center}
-\caption[Abbildung 39: Konfig. Webserver Hannover mit ip addr]{Konfig.  Webserver Hannover ip addr}
+\caption[Abbildung 47: Konfig. Webserver Hannover mit ip addr]{Konfig.  Webserver Hannover ip addr}
 \end{figure}
 
 \textbf{Konfigurationsdatei von Server Berlin mittels nmcli (Routing-Tabelle)}
@@ -603,7 +603,7 @@ Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgre
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/6svrblnnmcli.png}
 \end{center}
-\caption[Abbildung 39: Konfig. Server Berlin mit nmcli]{Konfig.  Server Berlin nmcli}
+\caption[Abbildung 48: Konfig. Server Berlin mit nmcli]{Konfig.  Server Berlin nmcli}
 \end{figure}
 
 \begin{center}
@@ -616,7 +616,7 @@ Nach dem Ausführen des Skriptes wurden die Verbindungen ens33 und ens37 erfolgre
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_3/exercise_8/7svrhhip.png}
 \end{center}
-\caption[Abbildung 39: Konfig. Server Hamburg mit ip addr]{Konfig. Server Hamburg ip addr}
+\caption[Abbildung 49: Konfig. Server Hamburg mit ip addr]{Konfig. Server Hamburg ip addr}
 \end{figure}
 
 \textbf{Zenmap Ergebnisse der gescannten Subnetze: }
@@ -871,7 +871,7 @@ In der Suchleiste Target können wir nun die IP Adresse des Subnetzes eingeben, w
 \begin{center}
 \includegraphics[width=1.2\textwidth]{bilder/screens/Part_4/lan.PNG} 
 \end{center}
-\caption[Abbildung P4 figure 1 LAN]{Netzwerk mit allen Hosts und Subnetzen}
+\caption[Abbildung 50: figure 1 LAN]{Netzwerk mit allen Hosts und Subnetzen}
 \end{figure}
 
 \section*{Exercise 1: Configure the networks of figure 1}
@@ -896,7 +896,7 @@ Scan des Subnetztes 10.88.40.64/27
 \begin{center}
 \includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/z64.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 1 Zenmap Subnetz 64]{Subnetz 10.88.40.64/27}
+\caption[Abbildung 51: Zenmap Subnetz 64]{Subnetz 10.88.40.64/27}
 \end{figure}
 
 \begin{center}
@@ -907,7 +907,7 @@ Scan des Subnetztes 10.88.40.96/27
 \begin{center}
 \includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/z96.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 1 Zenmap Subnetz 96]{Subnetz 10.88.40.96/27}
+\caption[Abbildung 52: Zenmap Subnetz 96]{Subnetz 10.88.40.96/27}
 \end{figure}
 
 \begin{center}
@@ -918,7 +918,7 @@ Scan des Subnetztes 10.88.40.128/27
 \begin{center}
 \includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/z128.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 1 Zenmap Subnetz 128]{Subnetz 10.88.40.128/27}
+\caption[Abbildung 53: Zenmap Subnetz 128]{Subnetz 10.88.40.128/27}
 \end{figure}
 
 \begin{center}
@@ -929,7 +929,7 @@ Scan des Subnetztes 10.88.40.160/27
 \begin{center}
 \includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/z160.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 1 Zenmap Subnetz 160]{Subnetz 10.88.40.160/27}
+\caption[Abbildung 54: Zenmap Subnetz 160]{Subnetz 10.88.40.160/27}
 \end{figure}
 
 \begin{center}
@@ -940,7 +940,7 @@ Scan des Subnetztes 10.88.40.32/27
 \begin{center}
 \includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/z32.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 1 Zenmap Subnetz 32]{Subnetz 10.88.40.32/27}
+\caption[Abbildung 55: Zenmap Subnetz 32]{Subnetz 10.88.40.32/27}
 \end{figure}
 
 \textbf{Solution of c) Use Zenmap to scan all the above networks}
@@ -949,7 +949,7 @@ Scan des Subnetztes 10.88.40.32/27
 \begin{center}
 \includegraphics[width=0.55\textwidth]{bilder/screens/Part_4/Exercise_1/zAlle.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 1 Zenmap alle Subnetze]{Alle Subnetze}
+\caption[Abbildung 56: Zenmap alle Subnetze]{Alle Subnetze}
 \end{figure}
 
 Alternativ hätte man als Target auch folgendes in die Eingabemaske einfügen können: 10.88.40.32-160/27
@@ -978,7 +978,7 @@ Q10: Please type and explain the nmap command: nmap -sP -v 10.88.X.? \\
 \begin{center}
 \includegraphics[width=0.65\textwidth]{bilder/screens/Part_4/Exercise_2/Q1.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 2 nmap command 1]{nmap -sS -O 10.88.40.130}
+\caption[Abbildung 57: nmap command 1]{nmap -sS -O 10.88.40.130}
 \end{figure}
 
 \textbf{Question 2:} Please type and explain the nmap command: nmap -sF 10.88.X.? -oN outfile \\ 
@@ -989,14 +989,14 @@ Q10: Please type and explain the nmap command: nmap -sP -v 10.88.X.? \\
 \begin{center}
 \includegraphics[width=0.5\textwidth]{bilder/screens/Part_4/Exercise_2/Q2/Q21.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 2 nmap command 2]{nmap -sF 10.88.40.128 -oN outfile}
+\caption[Abbildung 58: nmap command 2]{nmap -sF 10.88.40.128 -oN outfile}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.5\textwidth]{bilder/screens/Part_4/Exercise_2/Q2/Q23.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 2 nmap externes Logfile]{externes Logfile}
+\caption[Abbildung 59: nmap externes Logfile]{externes Logfile}
 \end{figure}
 
 Mit dem Befehl  -sF werden die Ports, die gescannt werden manipuliert, in dem verfälschte TCP-Pakete versendet werden. Dadruch erhält man die Information, ob ein Port offen oder von einer Firewall geschützt ist.  Die Ausgabe wird im Terminal angezeigt, sowie durch das Argument -oN outfile, in einer seperaten outfilele.txt Datei. \\
@@ -1009,7 +1009,7 @@ Mit dem Befehl  -sF werden die Ports, die gescannt werden manipuliert, in dem ve
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_4/Exercise_2/Q3.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 2 nmap command 3]{nmap -sS 10.88.40.130 -D 10.88.40.36}
+\caption[Abbildung 60: nmap command 3]{nmap -sS 10.88.40.130 -D 10.88.40.36}
 \end{figure}
 
 \textbf{Question 4:} Please type and explain the nmap command: nmap -sS -O 10.88.X.Y/Z \\ 
@@ -1020,7 +1020,7 @@ Mit dem Befehl  -sF werden die Ports, die gescannt werden manipuliert, in dem ve
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_4/Exercise_2/Q4.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 2 nmap command 4]{nmap -sS -O 10.88.40.160/27}
+\caption[Abbildung 61: nmap command 4]{nmap -sS -O 10.88.40.160/27}
 \end{figure}
 
 \textbf{Question 5:} Please type and explain the nmap command: nmap -sP -PS 10.88.X.?\\ 
@@ -1031,7 +1031,7 @@ Mit dem Befehl  -sF werden die Ports, die gescannt werden manipuliert, in dem ve
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q5.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 2 nmap command 5]{nmap -sP -PS 10.88.40.130}
+\caption[Abbildung 62: nmap command 5]{nmap -sP -PS 10.88.40.130}
 \end{figure}
 
 \textbf{Question 6:} Please type and explain the nmap command: nmap -sP -PS25 10.88.X.?\\ 
@@ -1042,7 +1042,7 @@ Mit dem Befehl  -sF werden die Ports, die gescannt werden manipuliert, in dem ve
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q6.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 2 nmap command 6]{nmap -sP -PS25 10.88.40.130}
+\caption[Abbildung 63: nmap command 6]{nmap -sP -PS25 10.88.40.130}
 \end{figure}
 
 \textbf{Question 7:} Please type and explain the nmap command: nmap -sP -PS80 10.88.X.?/Z\\ 
@@ -1053,7 +1053,7 @@ Mit dem Befehl  -sF werden die Ports, die gescannt werden manipuliert, in dem ve
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q7.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 2 nmap command 7]{nmap -sP -PS80 10.88.40.130/27}
+\caption[Abbildung 64: nmap command 7]{nmap -sP -PS80 10.88.40.130/27}
 \end{figure}
 
 \textbf{Question 8:}  Please type and explain the nmap command: nmap -sP -PS53 10.88.X.?/27\\ 
@@ -1064,7 +1064,7 @@ Mit dem Befehl  -sF werden die Ports, die gescannt werden manipuliert, in dem ve
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q8.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 2 nmap command 8]{nmap -sP -PS53 10.88.40.130/27}
+\caption[Abbildung 65: nmap command 8]{nmap -sP -PS53 10.88.40.130/27}
 \end{figure}
 
 \textbf{Question 9:}  Please type and explain the nmap command: nmap -sS -v 10.88.X.?\\ 
@@ -1075,7 +1075,7 @@ Mit dem Befehl  -sF werden die Ports, die gescannt werden manipuliert, in dem ve
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q9.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 2 nmap command 9]{nmap -sS -v 10.88.40.130}
+\caption[Abbildung 66: nmap command 9]{nmap -sS -v 10.88.40.130}
 \end{figure}
 
 \textbf{Question 10:} Please type and explain the nmap command: nmap -sP -v 10.88.X.? \\ 
@@ -1086,7 +1086,7 @@ Mit dem Befehl  -sF werden die Ports, die gescannt werden manipuliert, in dem ve
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_2/Q10.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 2 nmap command 10]{nmap -sP -v 10.88.40.130}
+\caption[Abbildung 67: nmap command 10]{nmap -sP -v 10.88.40.130}
 \end{figure}
 
 \section*{Exercise 3: Nessus network device identification}
@@ -1140,7 +1140,7 @@ Um die Binary zu installieren wird der Befehl: rpm -Uvh /home/hanifka/Schreibtis
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/install_nessus.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3 installation Nessus]{Installation von Nessus im Terminal}
+\caption[Abbildung 68: installation Nessus]{Installation von Nessus im Terminal}
 \end{figure}
 
 Nach erfolgreicher Installation kann Nessus mit folgendem Befehl gestartet warden: /bin/systemctl start nessusd.service. Anschließend wird der Browser geöffnet und man gibt folgenden Link ein: https://localhost.localdomain:8834/, um den Scanner konfigurieren zu können. \\
@@ -1161,7 +1161,7 @@ Jetzt kann mit der Konfiguration gestartet warden.
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/3.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3 Konfiguration Nessus]{Nessus Konfiguration Startseite}
+\caption[Abbildung 69: Konfiguration Nessus]{Nessus Konfiguration Startseite}
 \end{figure}
 
 \textbf{Solution of 3)} Register Nessus to obtain the plugins (note: choose the offline method) \\
@@ -1172,7 +1172,7 @@ Damit man sich erfolgreich registrieren kann, wählt man die offline Methode. Dan
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/4.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Registrierung Nessus]{Nessus Registrierung}
+\caption[Abbildung 70:  Registrierung Nessus]{Nessus Registrierung}
 \end{figure}
 
 Im Browser wird nun folgender Tab geöffnet. Hier wird zuerst unser zu eben erzeugter challenge code eingegeben und unten wird der der Aktivierungs Code eingegeben, den man per Email nach der Registrierung erhalten hat. 
@@ -1181,7 +1181,7 @@ Im Browser wird nun folgender Tab geöffnet. Hier wird zuerst unser zu eben erzeu
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/activeKey.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Aktivierung Nessus]{Nessus Aktivierungskey}
+\caption[Abbildung 71:  Aktivierung Nessus]{Nessus Aktivierungskey}
 \end{figure}
 
 Nach dem Klicken auf Submit erhalten wir unsere Nessus License. 
@@ -1190,7 +1190,7 @@ Nach dem Klicken auf Submit erhalten wir unsere Nessus License.
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/activeKey.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  License Nessus]{Nessus License}
+\caption[Abbildung 72:  License Nessus]{Nessus License}
 \end{figure}
 
 Die Nessus License kopieren wir und fügen diese ein, da sie für die erfolgreiche Registrierung notwendig ist. \\
@@ -1237,7 +1237,7 @@ Wir geben bei Targets das zugehörige Netz an, welches gescannt werden soll. Dies
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/32/s32.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Scan Hosts in Subnetzt 10.88.40.32/27]{Scan des Subnetztes 10.88.40.32/27}
+\caption[Abbildung 73:  Scan Hosts in Subnetzt 10.88.40.32/27]{Scan des Subnetztes 10.88.40.32/27}
 \end{figure}
 
 Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.32/27 gehören, die durch Host-Discovery ermittelt wurden.
@@ -1246,7 +1246,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.32/27 gehören, d
 \begin{center}
 \includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/32/s322.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Ergebnis des Scans im Subnetz 10.88.40.32/27]{Alle Hosts im Subnetz 10.88.40.32/27}
+\caption[Abbildung 74:  Ergebnis des Scans im Subnetz 10.88.40.32/27]{Alle Hosts im Subnetz 10.88.40.32/27}
 \end{figure}
 
 \textbf{Scan des Subnetzes 10.88.40.64/27:} \\
@@ -1255,7 +1255,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.32/27 gehören, d
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/64/s64.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Scan Hosts in Subnetzt 10.88.40.64/27]{Scan des Subnetztes 10.88.40.64/27}
+\caption[Abbildung 75:  Scan Hosts in Subnetzt 10.88.40.64/27]{Scan des Subnetztes 10.88.40.64/27}
 \end{figure}
 
 Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.64/27 gehören, die durch Host-Discovery ermittelt wurden.
@@ -1264,7 +1264,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.64/27 gehören, d
 \begin{center}
 \includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/64/s642.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Ergebnis des Scans im Subnetz 10.88.40.64/27]{Alle Hosts im Subnetz 10.88.40.64/27}
+\caption[Abbildung 76:  Ergebnis des Scans im Subnetz 10.88.40.64/27]{Alle Hosts im Subnetz 10.88.40.64/27}
 \end{figure}
 
 \textbf{Scan des Subnetzes 10.88.40.96/27:} \\
@@ -1273,7 +1273,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.64/27 gehören, d
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/96/s96.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Scan Hosts in Subnetzt 10.88.40.96/27]{Scan des Subnetztes 10.88.40.96/27}
+\caption[Abbildung 77:  Scan Hosts in Subnetzt 10.88.40.96/27]{Scan des Subnetztes 10.88.40.96/27}
 \end{figure}
 
 Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.96/27 gehören, die durch Host-Discovery ermittelt wurden.
@@ -1282,7 +1282,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.96/27 gehören, d
 \begin{center}
 \includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/96/s962.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Ergebnis des Scans im Subnetz 10.88.40.96/27]{Alle Hosts im Subnetz 10.88.40.96/27}
+\caption[Abbildung 78:  Ergebnis des Scans im Subnetz 10.88.40.96/27]{Alle Hosts im Subnetz 10.88.40.96/27}
 \end{figure}
 
 \textbf{Scan des Subnetzes 10.88.40.128/27:} \\
@@ -1291,7 +1291,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.96/27 gehören, d
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/128/s128.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Scan Hosts in Subnetzt 10.88.40.128/27]{Scan des Subnetztes 10.88.40.128/27}
+\caption[Abbildung 79: Scan Hosts in Subnetzt 10.88.40.128/27]{Scan des Subnetztes 10.88.40.128/27}
 \end{figure}
 
 Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.128/27 gehören, die durch Host-Discovery ermittelt wurden.
@@ -1300,7 +1300,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.128/27 gehören, 
 \begin{center}
 \includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/128/s1282.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Ergebnis des Scans im Subnetz 10.88.40.128/27]{Alle Hosts im Subnetz 10.88.40.128/27}
+\caption[Abbildung 80:  Ergebnis des Scans im Subnetz 10.88.40.128/27]{Alle Hosts im Subnetz 10.88.40.128/27}
 \end{figure}
 
 \textbf{Scan des Subnetzes 10.88.40.160/27:} \\
@@ -1309,7 +1309,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.128/27 gehören, 
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/160/s160.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Scan Hosts in Subnetzt 10.88.40.160/27]{Scan des Subnetztes 10.88.40.160/27}
+\caption[Abbildung 81:  Scan Hosts in Subnetzt 10.88.40.160/27]{Scan des Subnetztes 10.88.40.160/27}
 \end{figure}
 
 Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.160/27 gehören, die durch Host-Discovery ermittelt wurden.
@@ -1318,7 +1318,7 @@ Hier sieht man alle zugehörigen Netze, die zum Subnetz 10.88.40.160/27 gehören, 
 \begin{center}
 \includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/160/s1602.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Ergebnis des Scans im Subnetz 10.88.40.160/27]{Alle Hosts im Subnetz 10.88.40.160/27}
+\caption[Abbildung 82:  Ergebnis des Scans im Subnetz 10.88.40.160/27]{Alle Hosts im Subnetz 10.88.40.160/27}
 \end{figure}
 
 \textbf{Alle Subnetze:} \\
@@ -1328,7 +1328,7 @@ Im folgenden Bild wurden alle Subnetze gescannt, nämlich 10.88.40.64/27, 10.88.4
 \begin{center}
 \includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/nessus/alle_Subnetze.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3  Ergebnis des Scans aller Subnetze]{Alle Subnetze}
+\caption[Abbildung 83:  Ergebnis des Scans aller Subnetze]{Alle Subnetze}
 \end{figure}
 
 \textbf{Ergebnis aller Scans:} Die Scans wurden als PDF-Datei extrahiert. Darin stehen alle relevanten Informationen, die über das erfolgreiche Scannen der Host Discovery ermittelt wurden. Die gesamte Datei befindet sich im Anhang der Email. \\
@@ -1359,7 +1359,7 @@ Da wir die Gruppe 4 sind, vergeben wir die IP Adresse 172.16.15.43 und tragen al
 \begin{center}
 \includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/sol71.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3 Netzwerkkonfiguration über die GUI]{Netzwerkkonfiguration über die GUI}
+\caption[Abbildung 84: Netzwerkkonfiguration über die GUI]{Netzwerkkonfiguration über die GUI}
 \end{figure}
 
 Die Internetverbindung ist nun erfolgreich hergestellt, sodass wir beliebige Webseiten, wie zum Beispiel www.google.de, auf unserer virtuellen Maschine (pnid4-svr-hh -> Server Hamburg) aufrufen können.
@@ -1368,7 +1368,7 @@ Die Internetverbindung ist nun erfolgreich hergestellt, sodass wir beliebige Web
 \begin{center}
 \includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/install_nessus/sol72.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 3 erfolgreiche Internetverbindung]{erfolgreiche Internetverbindung}
+\caption[Abbildung 85: erfolgreiche Internetverbindung]{erfolgreiche Internetverbindung}
 \end{figure}
 
 \section*{Exercise 4: OpenVAS Network device identification}
@@ -1476,7 +1476,7 @@ Nachdem wir IPv4 für diese VM eingerichtet haben, lassen wir die Paketlisten (so
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/52.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 apt-get update]{apt-get update}
+\caption[Abbildung 86: apt-get update]{apt-get update}
 \end{figure}
 
 Nachdem wir das update durchgeführt haben, installieren wir Pakete wenn es welche gibt auf eine aktuelle Version durch den Kommando apt-get upgrade.
@@ -1485,7 +1485,7 @@ Nachdem wir das update durchgeführt haben, installieren wir Pakete wenn es welch
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/6.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 apt-get upgrade]{apt-get upgrade}
+\caption[Abbildung 87: apt-get upgrade]{apt-get upgrade}
 \end{figure}
 
 Und um openVas vollständig zu installieren, haben wir den Kommendo apt -get install -y openvas genutzt. Das Installieren hat sehr viel Zeit in Anspruch genommen, denn über diesen Kommando werden nicht nur die Pakete installiert, sondern darüber hinaus noch nicht installierte Abhängigkeiten werden ebenfalls installiert. Man sieht dann auch im Terminal welche Packete installisiert wurden.
@@ -1494,7 +1494,7 @@ Und um openVas vollständig zu installieren, haben wir den Kommendo apt -get inst
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/7.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 OpenVas Installation]{OpenVas Installation}
+\caption[Abbildung 88: OpenVas Installation]{OpenVas Installation}
 \end{figure}
 
 Anschließend haben wir OpenVas eingerichtet, indem wir folgenden Kommando in den Terminal eingegeben haben: openvas-setup. Wie der Name bereits verrät ist dieser Kommando für die Einrichtung für OpenVAS da.
@@ -1503,7 +1503,7 @@ Anschließend haben wir OpenVas eingerichtet, indem wir folgenden Kommando in den
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/8.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 OpenVas Konfiguration]{OpenVas Konfiguration}
+\caption[Abbildung 89: OpenVas Konfiguration]{OpenVas Konfiguration}
 \end{figure}
 
 Im nächsten Schritt haben wir uns einen Benutzer und das dazugehörige Passwort für den Manager daemon über den Kommendaro openvasmd --user=admin --new-password=admin angelegt. Im Anschluss dessen haben wir die Services anhand Eingabe des openvas-start Kommando gestartet.
@@ -1512,7 +1512,7 @@ Im nächsten Schritt haben wir uns einen Benutzer und das dazugehörige Passwort f
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/10.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 OpenVas user anlegen]{user anlegen}
+\caption[Abbildung 90: OpenVas user anlegen]{user anlegen}
 \end{figure}
 
 \textbf{6.} Use your webbrowser https:// 127.0.0.1:9392/ \\
@@ -1523,7 +1523,7 @@ Im nächsten Schritt haben wir https://127.0.0.1:9392/ in die Adresszeile unseres
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/11.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 OpenVas Login]{Login OpenVas}
+\caption[Abbildung 91: OpenVas Login]{Login OpenVas}
 \end{figure} 
 
 \textbf{7. }Now you must use openVAS to identify all the devices running on the following network as depicted on figure 1:  \\
@@ -1536,7 +1536,7 @@ Daraufhin haben wir OpenVAS genutzt um alle VM in unserem Netz zu scannen. In Fo
 \begin{center}
 \includegraphics[width=0.9\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n32.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 OpenVas Scan des Subnetzes 10.88.40.32/27]{Scan des Subnetzes 10.88.40.32/27}
+\caption[Abbildung 92: OpenVas Scan des Subnetzes 10.88.40.32/27]{Scan des Subnetzes 10.88.40.32/27}
 \end{figure} 
 
 \textbf{Scan des Subnetzes 10.88.40.64/27:} 
@@ -1545,7 +1545,7 @@ Daraufhin haben wir OpenVAS genutzt um alle VM in unserem Netz zu scannen. In Fo
 \begin{center}
 \includegraphics[width=0.9\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n64.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 OpenVas Scan des Subnetzes 10.88.40.64/27]{Scan des Subnetzes 10.88.40.64/27}
+\caption[Abbildung 93: OpenVas Scan des Subnetzes 10.88.40.64/27]{Scan des Subnetzes 10.88.40.64/27}
 \end{figure} 
 
 \textbf{Scan des Subnetzes 10.88.40.96/27:} 
@@ -1554,7 +1554,7 @@ Daraufhin haben wir OpenVAS genutzt um alle VM in unserem Netz zu scannen. In Fo
 \begin{center}
 \includegraphics[width=0.9\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n96.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 OpenVas Scan des Subnetzes 10.88.40.96/27]{Scan des Subnetzes 10.88.40.96/27}
+\caption[Abbildung 94: OpenVas Scan des Subnetzes 10.88.40.96/27]{Scan des Subnetzes 10.88.40.96/27}
 \end{figure} 
 
 \begin{center}
@@ -1567,7 +1567,7 @@ Daraufhin haben wir OpenVAS genutzt um alle VM in unserem Netz zu scannen. In Fo
 \begin{center}
 \includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n128.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 OpenVas Scan des Subnetzes 10.88.40.128/27]{Scan des Subnetzes 10.88.40.128/27}
+\caption[Abbildung 95: OpenVas Scan des Subnetzes 10.88.40.128/27]{Scan des Subnetzes 10.88.40.128/27}
 \end{figure} 
 
 \begin{center}
@@ -1580,7 +1580,7 @@ Daraufhin haben wir OpenVAS genutzt um alle VM in unserem Netz zu scannen. In Fo
 \begin{center}
 \includegraphics[width=0.8\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/n160.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 OpenVas Scan des Subnetzes 10.88.40.160/27]{Scan des Subnetzes 10.88.40.160/27}
+\caption[Abbildung 96: OpenVas Scan des Subnetzes 10.88.40.160/27]{Scan des Subnetzes 10.88.40.160/27}
 \end{figure} 
 
 \begin{center}
@@ -1593,7 +1593,7 @@ Ebenfalls ist hier eine Übersicht aller (10.88.40.32/27 ,10.88.40.64/27 ,10.88.4
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_4/Exercise_3/openvas/13.PNG} 
 \end{center}
-\caption[Abbildung P4 ex. 4 OpenVas Scan alle Subnetze]{Scan aller Subnetze}
+\caption[Abbildung 97: OpenVas Scan alle Subnetze]{Scan aller Subnetze}
 \end{figure} 
 
 
@@ -1618,14 +1618,14 @@ Please scan the Network below( Figure 2) from pnidX-mid-hh to pnidX-cnt-bln and 
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/1.PNG} 
 \end{center}
-\caption[ Figur 1]{ Abbildung Figur 1}
+\caption[Abbildung 98: Figur 1]{ Abbildung Figur 1}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/2.PNG} 
 \end{center}
-\caption[ Figur 2]{ Abbildung Figur 2}
+\caption[Abbildung 99: Figur 2]{ Abbildung Figur 2}
 \end{figure}
 
 Wie in der Aufgabe gefordert, haben wir die Netze genauso konfiguriert wie in es im Figur 1 und Figur 2 vorgegeben ist.
@@ -1637,7 +1637,7 @@ Zenmap ist ein Nmap Sicherheitsscanner - weitere Infos sind bereits auf S. 19 hi
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/3.PNG} 
 \end{center}
-\caption[install nmap-frontend] {Abbildung install nmap-frontend}
+\caption[Abbildung 100: install nmap-frontend] {Abbildung install nmap-frontend}
 \end{figure}
 
 Doch wie auf der letzten Abbildung zu sehen ist, konnte ein Paket nicht geladen werden. Dieses Paket haben wir dann auf der nächsten Abbildung explizit installiert, sodass wir Zenmap vollständig installiert haben.
@@ -1646,7 +1646,7 @@ Doch wie auf der letzten Abbildung zu sehen ist, konnte ein Paket nicht geladen 
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/4.PNG} 
 \end{center}
-\caption[install nmap-frontend 2] {Abbildung install nmap-frontend 2}
+\caption[Abbildung 101: install nmap-frontend 2] {Abbildung install nmap-frontend 2}
 \end{figure}
 
 Folglich haben wir wie in der Aufgabe das Netz von \textbf{pnid4-mid-hh} nach \textbf{pnid4-cnt-bln} gescannt. Somit sah es wie folgt aus:
@@ -1655,7 +1655,7 @@ Folglich haben wir wie in der Aufgabe das Netz von \textbf{pnid4-mid-hh} nach \t
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/5.PNG} 
 \end{center}
-\caption[pnid4-mid-hh nach pnid4-cnt-bln] {pnid4-mid-hh nach pnid4-cnt-bln}
+\caption[Abbildung 102: pnid4-mid-hh nach pnid4-cnt-bln] {pnid4-mid-hh nach pnid4-cnt-bln}
 \end{figure}
 
 Im folgendem Screenshot ist das Netz \textbf{pnid4-mid-hh} nach \textbf{pnid4-cnt-bln} gescannt:
@@ -1664,7 +1664,7 @@ Im folgendem Screenshot ist das Netz \textbf{pnid4-mid-hh} nach \textbf{pnid4-cn
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/6.PNG} 
 \end{center}
-\caption[pnid4-mid-hh nach pnid4-cnt-bln 2] {Abbildung pnid4-mid-hh nach pnid4-cnt-bln 2}
+\caption[Abbildung 103: pnid4-mid-hh nach pnid4-cnt-bln 2] {Abbildung pnid4-mid-hh nach pnid4-cnt-bln 2}
 \end{figure}
 
 Dasselbe taten wir dann auch für das Netz von \textbf{pnid4-cnt-bln} nach \textbf{pnid4-mid-hh}
@@ -1673,14 +1673,14 @@ Dasselbe taten wir dann auch für das Netz von \textbf{pnid4-cnt-bln} nach \textb
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/7.PNG} 
 \end{center}
-\caption[pnid4-cnt-bln nach pnid4-mid-hh] {Abbildung pnid4-cnt-bln nach pnid4-mid-hh}
+\caption[Abbildung 104: pnid4-cnt-bln nach pnid4-mid-hh] {Abbildung pnid4-cnt-bln nach pnid4-mid-hh}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/8.PNG} 
 \end{center}
-\caption[pnid4-cnt-bln nach pnid4-mid-hh 2] {Abbildung pnid4-cnt-bln nach pnid4-mid-hh 2}
+\caption[Abbildung 105: pnid4-cnt-bln nach pnid4-mid-hh 2] {Abbildung pnid4-cnt-bln nach pnid4-mid-hh 2}
 \end{figure}
 
 \section*{Exercise 2: Getting started with network monitoring tools}
@@ -1711,14 +1711,14 @@ Zusätzlich haben wir Libsmi, eine C Biblothek welche den Zugang zu Informationen
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/9.PNG} 
 \end{center}
-\caption[installation wireshark] {Abbildung installation wireshark}
+\caption[Abbildung 106: installation wireshark] {Abbildung installation wireshark}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/10.PNG} 
 \end{center}
-\caption[installation libsmi] {Abbildung installation libsmi}
+\caption[Abbildung 107: installation libsmi] {Abbildung installation libsmi}
 \end{figure}
 
 Anschließend haben wir in exakt dieser Reihenfolge folgendes installiert:\\
@@ -1732,14 +1732,14 @@ Anschließend haben wir in exakt dieser Reihenfolge folgendes installiert:\\
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/11.PNG} 
 \end{center}
-\caption[installation httpd] {Abbildung installation httpd}
+\caption[Abbildung 108: installation httpd] {Abbildung installation httpd}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/12.PNG} 
 \end{center}
-\caption[installation httpd 2] {Abbildung installation httpd 2}
+\caption[Abbildung 109: installation httpd 2] {Abbildung installation httpd 2}
 \end{figure}
 
 \begin{center}
@@ -1750,7 +1750,7 @@ Tcpdump - schneidet transportierte Datenpakete mit
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/13.PNG} 
 \end{center}
-\caption[installation tcpdump] {Abbildung installation tcpdump}
+\caption[Abbildung 110: installation tcpdump] {Abbildung installation tcpdump}
 \end{figure}
 
 \begin{center}
@@ -1761,14 +1761,14 @@ Telnet - ein Netzwerkprotokoll für die Verbindung zu einem anderen Rechner über 
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/14.PNG} 
 \end{center}
-\caption[installation telnet] {Abbildung installation telnet}
+\caption[Abbildung 111: installation telnet] {Abbildung installation telnet}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/15.PNG} 
 \end{center}
-\caption[installation wireshark] {Abbildung installation wireshark}
+\caption[Abbildung 112: installation wireshark] {Abbildung installation wireshark}
 \end{figure}
 
 Nach den sämtlichen Installationen haben wir für den nächsten Schritt den Kommando \textit{service httpd start} genutzt, somit sind die Dienste von Apache aktiviert worden.
@@ -1777,7 +1777,7 @@ Nach den sämtlichen Installationen haben wir für den nächsten Schritt den Komman
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/16.PNG} 
 \end{center}
-\caption[Apache aktivieren] {Abbildung Apache aktivieren}
+\caption[Abbildung 113: Apache aktivieren] {Abbildung Apache aktivieren}
 \end{figure}
 
 Infolgedessen ist uns gelungen eine Verbindung zum Apache http Server herzustellen, wie man auf dem folgenden Screenshot sehen kann. Um dieses aufzurufen, haben wir in der Adresszeile die IP-Adresse unseres lokalen Host eingegeben.
@@ -1786,7 +1786,7 @@ Infolgedessen ist uns gelungen eine Verbindung zum Apache http Server herzustell
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/17.PNG} 
 \end{center}
-\caption[ Abbildung Verbindung zum http Server] {  Verbindung zum http Server}
+\caption[Abbildung 114: Verbindung zum http Server] {  Verbindung zum http Server}
 \end{figure}
 
 Schließlich haben wir Wireshark gestartet und nach httpd gefiltert, sodass dann die Netzwerkpakete zum Server demonstriert wurden.
@@ -1795,7 +1795,7 @@ Schließlich haben wir Wireshark gestartet und nach httpd gefiltert, sodass dann 
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/18.PNG} 
 \end{center}
-\caption[ Abbildung Wireshark Analyse] {Wireshark Analyse}
+\caption[Abbildung 115: Wireshark Analyse] {Wireshark Analyse}
 \end{figure}
 
 Wie in der Abbildung 116 zu erkennen, haben wir ebenfalls über Tcpdump den Netzverkehr im Terminal lassen.
@@ -1804,7 +1804,7 @@ Wie in der Abbildung 116 zu erkennen, haben wir ebenfalls über Tcpdump den Netzv
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/19.PNG} 
 \end{center}
-\caption[ Abbildung Tcpdump Analyse] {Tcpdump Analyse}
+\caption[Abbildung 116 Tcpdump Analyse] {Tcpdump Analyse}
 \end{figure}
 
 
@@ -1819,7 +1819,7 @@ Der Kommando tcpdump -i ens33 gibt an, dass die Netzwerkschnittstelle ens33 anal
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/20.PNG} 
 \end{center}
-%\caption[Abbildung tcpdump -i ens33] {tcpdump -i ens33}
+\caption[Abbildung 117: tcpdump -i ens33] {tcpdump -i ens33}
 \end{figure}
 
 Q2:  Please type and explain the syntax of a tcpdump command that captures 12 packets from the eth1 interface of your roudX1-st. \\
@@ -1829,7 +1829,7 @@ Der Kommando tcpdump -c 12 -i ens33 analysiert ebenfalls die Netzwerkschnittstel
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/21.PNG} 
 \end{center}
-%\caption[Abbildung tcpdump -c 12 -i ens33 ] {tcpdump -c 12 -i ens33}
+\caption[Abbildung 118: tcpdump -c 12 -i ens33 ] {tcpdump -c 12 -i ens33}
 \end{figure}
 
 Q3:  Please type and explain the syntax of a tcpdump command that captures packets containing ICMP messages with source or destination IP address equal to e.g. 10.88.X.?. 
@@ -1839,7 +1839,7 @@ Durch das eingeben von tcpdump -i ens33 "ip host 10.88.40.130 and icmp" werden d
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/22.PNG} 
 \end{center}
-%\caption[Abbildung tcpdump -c 12 -i ens33 ] {tcpdump -c 12 -i ens33}
+\caption[Abbildung 119: tcpdump -c 12 -i ens33 ] {tcpdump -c 12 -i ens33}
 \end{figure}
 
 Q4:  Please type and explain the syntax of a tcpdump command that captures packets containing IP datagram between pnidX-mid-hh and pnidX-cnt-bln with IP addresses 10.88.X.? and 10.88.X.P.\\\\
@@ -1932,7 +1932,7 @@ Hier haben wir von der virtuellen Maschine pnid4-mid-hh die virtuelle Maschine p
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/29.PNG} 
 \end{center}
-\caption[Abbildung Telnet mid-hh to cnt-bln ] {Telnet mid-hh to cnt-bln}
+\caption[Abbildung 120: Telnet mid-hh to cnt-bln ] {Telnet mid-hh to cnt-bln}
 \end{figure}
 
 7.	Now, as root on virtual machine pnidX-mid-hh, start tcpdump with the 
@@ -1944,7 +1944,7 @@ Dieser Kommando gibt sehr viele Informationen. Je mehr V´s desto mehr Informatio
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/30.PNG} 
 \end{center}
-\caption[Abbildung tcpdump -vvv ] {tcpdump -vvv}
+\caption[Abbildung 121: tcpdump -vvv ] {tcpdump -vvv}
 \end{figure}
 
 8. On pnidX-mid-hh, open another shell and telnet from pnidX-mid-hh to pnidX- cnt-bln and login as user "trumpX". Logout of pnidX-cnt-bln. \\\\
@@ -1954,7 +1954,7 @@ Auch in diesem Schritt haben wir uns (pnid4-mid-hh) Mithilfe von telnet unter tr
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/31.PNG} 
 \end{center}
-\caption[Abbildung telnet trump4 ] {telnet trump4 }
+\caption[Abbildung 122: telnet trump4 ] {telnet trump4 }
 \end{figure}
 
 9. 	Stop tcpdump, examine the file pnidX-mid-hh-dump.1 with vi.\\\\
@@ -1964,7 +1964,7 @@ Auch in diesem Schritt haben wir uns (pnid4-mid-hh) Mithilfe von telnet unter tr
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/32.PNG} 
 \end{center}
-\caption[Abbildung pnidX-mid-hh-dump.1 ] {pnidX-mid-hh-dump.1}
+\caption[Abbildung 123: pnidX-mid-hh-dump.1 ] {pnidX-mid-hh-dump.1}
 \end{figure}
 
 10. Now, as root on pnidX-mid-hh, again start tcpdump with the command tcpdump -a -i ethX (X for your interface) > pnidX-mid-hh-dump.2 \\\\
@@ -1986,7 +1986,7 @@ Hier haben wir den Kommand ssh an 10.88.40.37 ausgeführt.
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/34.PNG} 
 \end{center}
-%\caption[Abbildung ssh 10.88.40.37 ] {ssh 10.88.40.37}
+\caption[Abbildung 124: ssh 10.88.40.37 ] {ssh 10.88.40.37}
 \end{figure}
 
 12.	Examine the pnidX-mid-hh-dump.2 \\\\
@@ -1996,7 +1996,7 @@ Wie in diesem Schritt gefordert, haben wir die durch vi pnidX-mid-hh-dump.2 den 
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/35.PNG} 
 \end{center}
-\caption[Abbildung  pnidX-mid-hh-dump.2] {pnidX-mid-hh-dump.2}
+\caption[Abbildung 125: pnidX-mid-hh-dump.2] {pnidX-mid-hh-dump.2}
 \end{figure}
 
 
@@ -2008,7 +2008,7 @@ Hier haben wir durch den Kommando tcpdump -I eth4 -x > pnid4-cnt-bln-dump.3 die 
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/36.PNG} 
 \end{center}
-%\caption[Abbildung  pnidX-mid-hh-dump.2] {pnidX-mid-hh-dump.2}
+\caption[Abbildung 126:  pnidX-mid-hh-dump.2] {pnidX-mid-hh-dump.2}
 \end{figure}
 
 14.	Again, open another shell on pnidX-mid-hh and from pnidX-mid-hh ftp to pnidX- cnt-bln. When you login to pnidX-cnt-bln, just logout.\\\\
@@ -2018,7 +2018,7 @@ In diesem Fall haben wir ftp 10.88.40.37 ausgeführt.
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/37.PNG} 
 \end{center}
-%\caption[Abbildung  pnidX-mid-hh-dump.2] {pnidX-mid-hh-dump.2}
+\caption[Abbildung 127:  pnidX-mid-hh-dump.2] {pnidX-mid-hh-dump.2}
 \end{figure}
 
 15.	Examine the pnidX-mid-hh-dump.3 \\\\
@@ -2028,13 +2028,14 @@ In diesem Fall haben wir ftp 10.88.40.37 ausgeführt.
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/karan/38.PNG} 
 \end{center}
-\caption[Abbildung  pnidX-mid-hh-dump.3] {pnidX-mid-hh-dump.3}
+\caption[Abbildung 128: pnidX-mid-hh-dump.3] {pnidX-mid-hh-dump.3}
 \end{figure}
 
 Q10: Now answer the following questions: \\\\
 1.	What is the difference in the three tcpdump commands? In their outputs?
-\\Der Kommand tcpdump -i eth4 -vvv  > pnid4-cnt-bln-dump.1 gibt sehr viele Infromationen aus. Bei je mehr V im Kommando werden desto mehr Details bereitgestellt. \\\\
+\\Der Kommand tcpdump -i eth4 -vvv  > pnid4-cnt-bln-dump.1 gibt sehr viele Infromationen aus. Je mehr -v Paramaeter im Kommando verwendet werden desto, mehr Details werden bereitgestellt. \\\\
 Für tcpdump -a -i eth4 > pnid4-cnt-bln.dump.2 hier werden alle Pakete von der Netzwerkschnittstelle angesammelt und als ASCII ausgegeben.\\\\
+Bei Verwendung des Befehlst tcpdump -x >  pnid4-cnt-bln.dump.3 werden die Pakete als Hexadezimalcode ausgegeben.\\\\
 2.	Is it possible to discover "trumplX" password with tcpdump? 
 How would you do this? \\
 Theoretisch kann man mit tcpdump ein Passwort "sniffen". Mit egrep kann man dies beispielweise durch folgenden Kommando Passwörter aufspüren: \\
@@ -2057,7 +2058,7 @@ Theoretisch kann man mit tcpdump ein Passwort "sniffen". Mit egrep kann man dies
 \begin{center}
 \includegraphics[width=0.6\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q1.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 4 Wireshark Filter 1]{Wireshark Filter ip.addr == 10.88.40.70}
+\caption[Abbildung 129: Wireshark Filter 1]{Wireshark Filter ip.addr == 10.88.40.70}
 \end{figure}
 
 \textbf{Question 2:} Please type and examine the syntax for a Wireshark display filter that shows IP datagrams with destination IP address equal to 10.88.X.? and frame size greater than 400 bytes. \\
@@ -2068,7 +2069,7 @@ Theoretisch kann man mit tcpdump ein Passwort "sniffen". Mit egrep kann man dies
 \begin{center}
 \includegraphics[width=0.55\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q2.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 4 Wireshark Filter 2]{Wireshark Filter ip.addr == 10.88.40.70 \&\& frame.len > 400}
+\caption[Abbildung 130: Wireshark Filter 2]{Wireshark Filter ip.addr == 10.88.40.70 \&\& frame.len > 400}
 \end{figure}
 
 \textbf{Question 3:} Please type and examine the syntax for a Wireshark display filter that shows packets containing ICMP messages with source or destination IP address equal to 10.88.X.? and frame numbers between 15 and 30 \\
@@ -2079,7 +2080,7 @@ Theoretisch kann man mit tcpdump ein Passwort "sniffen". Mit egrep kann man dies
 \begin{center}
 \includegraphics[width=0.7\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q3.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 4 Wireshark Filter 3]{Wireshark Filter ip.addr == 10.88.40.70 \&\& (frame.number > 15 \&\& frame.number < 30)}
+\caption[Abbildung 131:  Wireshark Filter 3]{Wireshark Filter ip.addr == 10.88.40.70 \&\& (frame.number > 15 \&\& frame.number < 30)}
 \end{figure}
 
 \textbf{Question 4:} Please type and examine the syntax for a Wireshark display filter that shows packets containing TCP segments with source or destination IP address equal to 10.88.X.? and using port number 23. \\
@@ -2090,7 +2091,7 @@ Theoretisch kann man mit tcpdump ein Passwort "sniffen". Mit egrep kann man dies
 \begin{center}
 \includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q4.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 4 Wireshark Filter 4]{Wireshark Filter ip.dst == 10.88.40.70 and tcp.port == 23}
+\caption[Abbildung 132: Wireshark Filter 4]{Wireshark Filter ip.dst == 10.88.40.70 and tcp.port == 23}
 \end{figure}
 
 
@@ -2102,7 +2103,7 @@ Theoretisch kann man mit tcpdump ein Passwort "sniffen". Mit egrep kann man dies
 \begin{center}
 \includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q5.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 4 Wireshark Filter 5]{Wireshark Filter host 10.88.40.70 \&\& tcp port 23}
+\caption[Abbildung 133: Wireshark Filter 5]{Wireshark Filter host 10.88.40.70 \&\& tcp port 23}
 \end{figure}
 
 \textbf{Question 6:} Please type and examine the syntax for a Wireshark command which, by default, collects packets with source or destination IP address 10.88.X.? on interface eth4. \\
@@ -2117,7 +2118,7 @@ Theoretisch kann man mit tcpdump ein Passwort "sniffen". Mit egrep kann man dies
 \begin{center}
 \includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q7.PNG} 
 \end{center}
-\caption[Abbildung P5 ex. 4 Wireshark Filter 7]{Wireshark Filter ip.addr == 10.88.40.70 \&\& tcp.port == 23}
+\caption[Abbildung 134: Wireshark Filter 7]{Wireshark Filter ip.addr == 10.88.40.70 \&\& tcp.port == 23}
 \end{figure}
 
 \textbf{Question 8:} Please login to the server pnidX-mid-hh and start an ftp client to the server pnidXcnt-bln(vsftpd
@@ -2142,7 +2143,7 @@ Danach starten wir wireshark auf dem Host mid-hh und melden uns über den Host cn
 \begin{center}
 \includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q82.PNG} 
 \end{center} 
-\caption[Abbildung P5 ex. 4 Wireshark Filter 8]{Wireshark Filter ftp}
+\caption[Abbildung 135: Wireshark Filter 8]{Wireshark Filter ftp}
 \end{figure}
 
 Wir schauen uns nun die Pakete genauer an und können die Logininformationen in einem der Pakete anzeigen lassen. \\
@@ -2150,7 +2151,7 @@ Wir schauen uns nun die Pakete genauer an und können die Logininformationen in e
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.4\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q84.PNG} 
-\caption[Abbildung P5 ex. 4 Wireshark ftp Login Passwort]{Wireshark ftp Login Passwort}
+\caption[Abbildung 136: Wireshark ftp Login Passwort]{Wireshark ftp Login Passwort}
 \end{center} 
 \end{figure}
 
@@ -2177,7 +2178,7 @@ Danach starten wir wireshark auf dem Host mid-hh und melden uns über den Host cn
 \begin{center}
 \includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q93.PNG} 
 \end{center} 
-\caption[Abbildung P5 ex. 4 Wireshark Filter 9]{Wireshark Filter ssh}
+\caption[Abbildung 137: Wireshark Filter 9]{Wireshark Filter ssh}
 \end{figure}
 
 Wir schauen uns nun die Pakete genauer an und können keine Informationen über das Login erhalten, da alle Datenfragmente verschlüsselt wurden. \\
@@ -2186,7 +2187,7 @@ Wir schauen uns nun die Pakete genauer an und können keine Informationen über da
 \begin{center}
 \includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_4/Q94.PNG} 
 \end{center} 
-\caption[Abbildung P5 ex. 4 Wireshark ssh Datenpaket]{Wireshark verschlüsselte Datenfragmente}
+\caption[Abbildung 138: Wireshark ssh Datenpaket]{Wireshark verschlüsselte Datenfragmente}
 \end{figure}
 
 \section*{Exercise 5: Experimenting with network monitoring tools}
@@ -2201,7 +2202,7 @@ a service of your choice (e.g. ftp, http, ssh etc.) on pnidX cnt-bln. Let pnidX-
 \begin{center}
 \includegraphics[width=0.45\textwidth]{bilder/screens/Part_5/Aufgabe_5/s1.PNG} 
 \end{center} 
-\caption[Abbildung P5 ex. 5 nmap offene Ports anzeigen]{Zeigt uns die offenen Ports an}
+\caption[Abbildung 139: nmap offene Ports anzeigen]{Zeigt uns die offenen Ports an}
 \end{figure}
 
 Wir sehen nun, dass die Ports 21 ftp, 22 ssh, 23 telnet, 80 http und 111 rpcbind offen sind und entscheiden uns via Telnet vom Quellhost pnid4-cnt-bln bei dem Zielhost pnid-mid-hh anzumelden. \\
@@ -2210,7 +2211,7 @@ Wir sehen nun, dass die Ports 21 ftp, 22 ssh, 23 telnet, 80 http und 111 rpcbind
 \begin{center}
 \includegraphics[width=0.45\textwidth]{bilder/screens/Part_5/Aufgabe_5/s2.PNG} 
 \end{center} 
-\caption[Abbildung P5 ex. 5 Telnet login]{Anmeldung via Telnet}
+\caption[Abbildung 140: Telnet login]{Anmeldung via Telnet}
 \end{figure}
 
 Die Ausgabe des letzten Logins zeigt uns, dass die Anmeldung erfolgreich war.  
@@ -2232,7 +2233,7 @@ Hints: CREATING PRESHARED KEY use ipsec ranbits 256 > filename \\ \\ \\\\
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/Aufgabe_6/b1.PNG} 
 \end{center} 
-\caption[Abbildung P5 Installation Openswan]{Installation Openswan}
+\caption[Abbildung 141: Installation Openswan]{Installation Openswan}
 \end{figure} 
 
 \newpage {\large \textbf{Netzwerk für die Konfiguration der VPN-Verbindung}}
@@ -2240,7 +2241,7 @@ Hints: CREATING PRESHARED KEY use ipsec ranbits 256 > filename \\ \\ \\\\
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/Aufgabe_6/b2.PNG} 
 \end{center} 
-\caption[Abbildung P5 Figure 1: HOST-TO-HOST-VPN]{Figure 1: HOST-TO-HOST-VPN}
+\caption[Abbildung 142: Figure 1: HOST-TO-HOST-VPN]{Figure 1: HOST-TO-HOST-VPN}
 \end{figure}
 
 i) Capture http packets between pnidX-mid-hh and pnidX-cnt-bln using 
@@ -2250,7 +2251,7 @@ Vor der Einrichtung von Openswan können HTTP-Pakete von beliebigen Angreifern oh
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/Aufgabe_6/b3.PNG} 
 \end{center} 
-\caption[Abbildung P5 dst 10.88.40.130 \&\& tcp \&\& port 80]{dst 10.88.40.130 \&\& tcp \&\& port 80}
+\caption[Abbildung 143: dst 10.88.40.130 \&\& tcp \&\& port 80]{dst 10.88.40.130 \&\& tcp \&\& port 80}
 \end{figure}
 
 Auf dem Rechner pnid4-cnt-bln wird im Browser die IP-Adresse von pnid4-mid-hh eingeben, um HTTP-Pakete abzufangen (siehe Abbildung 139)
@@ -2259,14 +2260,14 @@ Auf dem Rechner pnid4-cnt-bln wird im Browser die IP-Adresse von pnid4-mid-hh ei
 \begin{center}
 \includegraphics[width=0.5\textwidth]{bilder/screens/Part_5/Aufgabe_6/b4.PNG} 
 \end{center} 
-\caption[Abbildung P5 http://10.88.40.130]{http://10.88.40.130}
+\caption[Abbildung 144: http://10.88.40.130]{http://10.88.40.130}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/Aufgabe_6/b5.PNG} 
 \end{center} 
-\caption[Abbildung P5 Filter: dst 10.88.40.130 \&\& tcp \&\& port 80]{Filter: dst 10.88.40.130 \&\& tcp \&\& port 80}
+\caption[Abbildung 145: Filter: dst 10.88.40.130 \&\& tcp \&\& port 80]{Filter: dst 10.88.40.130 \&\& tcp \&\& port 80}
 \end{figure}
 
 ii) Establish a tunnelled IPSec connection, using a 256 preshared secret. 
@@ -2279,7 +2280,7 @@ Mit Hilfe des Befehls \# ipsec ranbits 256 > psk.secrets wird ein zufällig erzeu
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/ii/2.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec ranbits 256 >]{ipsec ranbits 256 >}
+\caption[Abbildung 146: ipsec ranbits 256 >]{ipsec ranbits 256 >}
 \end{figure}
 
 Die Datei wird so angepasst, dass Sie folgende Struktur bekommt:\\
@@ -2289,7 +2290,7 @@ Die Datei wird so angepasst, dass Sie folgende Struktur bekommt:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/ii/2a.PNG} 
 \end{center} 
-\caption[Abbildung P5 psk.secrets]{psk.secrets}
+\caption[Abbildung 147: psk.secrets]{psk.secrets}
 \end{figure}
 
 \newpage Als nächstes wird die psk.conf Datei erstellt, welches sich ebenfalls im Verzeichnis ipsec.d befindet. Hier erfolgt die Konfiguration des Tunnels. Dabei wird die Authentifizierung über authby angegeben. Mit type wird der Typ der Verbindung (tunnel, transport) bezeichnet. Die betroffenen Kommunikationspartner werden mit left und right dargestellt. Left bezeichnet dabei den Host, auf den wir uns befinden. Right hingegen bezeichnet den dazugehörigen Kommunikationspartner. Left und right entsprechen dabei die IP-Adressen der jeweiligen Kommunikationspartner. Auto bezeichnet die Operation, welche beim starten von IPsec ausgeführt werden soll. \\ \\
@@ -2298,7 +2299,7 @@ Die Datei wird so angepasst, dass Sie folgende Struktur bekommt:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/ii/2b.PNG} 
 \end{center} 
-\caption[Abbildung P5: psk.conf]{psk.conf}
+\caption[Abbildung 148: psk.conf]{psk.conf}
 \end{figure}
 
 \newpage Damit alle Dateien innerhalb des Verzeichnisses /etc/ipsec.d mit der Endung .conf eingebunden werden können, muss die letzte Zeile (siehe Abb. ) auskommentiert werden.
@@ -2324,7 +2325,7 @@ Damit beide Kommunikationspartner dieselben Dateien haben, wird die Datei psk.se
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/ii/4.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec setup reload]{ipsec setup reload}
+\caption[Abbildung 149: ipsec setup reload]{ipsec setup reload}
 \end{figure}
 
 Mit dem Befehl \verb|ipsec auto --add| wird eine neue Verbindung aus der Konfigurationsdatei in die Pluto-Datenbank eingelesen.
@@ -2333,7 +2334,7 @@ Mit dem Befehl \verb|ipsec auto --add| wird eine neue Verbindung aus der Konfigu
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/ii/5.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec auto --add]{ipsec auto --add}
+\caption[Abbildung 150: ipsec auto --add]{ipsec auto --add}
 \end{figure}
 
 Mit dem Befehl \verb|ipsec auto --up psk| wird die Verbindung gestartet. Dabei versucht Pluto in der internen Datenbank der geladenen Konfiguration die benötigte Verbindung aufzubauen.
@@ -2342,7 +2343,7 @@ Mit dem Befehl \verb|ipsec auto --up psk| wird die Verbindung gestartet. Dabei v
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/ii/6.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec auto --up]{ipsec auto --up}
+\caption[Abbildung 151: ipsec auto --up]{ipsec auto --up}
 \end{figure}
 
 \newpage Pluto ist der IKE-Daemon, der das IKE-Protokoll implementiert. Pluto erstellt automatische Sicherheitsbeziehungen, die untereinander geteilt werden. Für die Authentifikation verwendet Pluto Shared Secrets oder RSA Signaturen.
@@ -2359,7 +2360,7 @@ iii) Secure the computer traffic by creating iptables rules to permit only IPSec
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iii/1.PNG} 
 \end{center} 
-\caption[Abbildung P5 iptables rules]{iptables rules}
+\caption[Abbildung 152: iptables rules]{iptables rules}
 \end{figure}
 
 \begin{figure}[H]
@@ -2411,7 +2412,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/2.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\caption[Abbildung 153: /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
 \newpage \textbf{2) /etc/ipsec.conf }
@@ -2419,7 +2420,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\caption[Abbildung 154: /etc/ipsec.conf]{/etc/ipsec.conf}
 \end{figure}
 
 \textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
@@ -2427,7 +2428,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/4.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\caption[Abbildung 155: /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
 \newpage \textbf{4) ipsec\_ifconfig.dump }
@@ -2435,7 +2436,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/5.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\caption[Abbildung 156: ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
 \end{figure}
 
 \textbf{5) ipsec\_look.dump}
@@ -2443,7 +2444,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/6.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\caption[Abbildung 157:  ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
 \textbf{6) ipsec\_route.dump}
@@ -2451,7 +2452,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/bln/7.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung 158: ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
 \textbf{Files from Hamburg:}
@@ -2467,7 +2468,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/2.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\caption[Abbildung 159: /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
 \textbf{2) /etc/ipsec.conf}
@@ -2475,7 +2476,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\caption[Abbildung 160: /etc/ipsec.conf]{/etc/ipsec.conf}
 \end{figure}
 
 \newpage \textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules}
@@ -2483,7 +2484,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/4.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec\_iptables]{/etc/ipsec\_iptables}
+\caption[Abbildung 161: /etc/ipsec\_iptables]{/etc/ipsec\_iptables}
 \end{figure}
 
 \textbf{4) ipsec\_ifconfig.dump}
@@ -2491,7 +2492,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/5.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec\_ifconfig.dump]{ipsec\_ifconfig.dump}
+\caption[Abbildung 162: ipsec\_ifconfig.dump]{ipsec\_ifconfig.dump}
 \end{figure}
 
 \newpage \textbf{5) ipsec\_look.dump}
@@ -2499,7 +2500,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/6.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec\_look.dump]{ipsec\_look.dump}
+\caption[Abbildung 163: ipsec\_look.dump]{ipsec\_look.dump}
 \end{figure}
 
 \textbf{6) ipsec\_route.dump}
@@ -2507,7 +2508,7 @@ The following files must be included with the lab report: \\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/Aufgabe_6/A6/iv/mid/7.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung 164: ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
 \section*{Exercise 7: Set up a host-to-host VPN using RSA keys}
@@ -2525,7 +2526,7 @@ Wireshark before establishing a tunnel and save the packet captured. Please incl
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/i/1.PNG} 
 \end{center} 
-\caption[Abbildung P5 dst 10.88.40.130 \&\& tcp port 80]{dst 10.88.40.130 \&\& tcp port 80}
+\caption[Abbildung 165: dst 10.88.40.130 \&\& tcp port 80]{dst 10.88.40.130 \&\& tcp port 80}
 \end{figure}
 ii) Establish a tunnelled IPSec connection, using RSA Method between the two computers.\\
 Confirm that the connection is established.\\
@@ -2538,14 +2539,14 @@ a) certutil -N -d /etc/ipsec.d
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/1.PNG} 
 \end{center} 
-\caption[Abbildung P5 Berlin: certutil -N -d /etc/ipsec.d]{certutil -N -d /etc/ipsec.d}
+\caption[Abbildung 166: Berlin: certutil -N -d /etc/ipsec.d]{certutil -N -d /etc/ipsec.d}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/1.PNG} 
 \end{center} 
-\caption[Abbildung P5 Hamburg: certutil -N -d /etc/ipsec.d]{certutil -N -d /etc/ipsec.d}
+\caption[Abbildung 167: Hamburg: certutil -N -d /etc/ipsec.d]{certutil -N -d /etc/ipsec.d}
 \end{figure}
 
 \newpage b) \verb|ipsec newhostkey --configdir /etc/ipsec.d/ --output /etc/ipsec.d/keys.secrets|\\ 
@@ -2555,14 +2556,14 @@ a) certutil -N -d /etc/ipsec.d
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/2.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets]{ipsec newhostkey - - configdir /etc/ipsec.d/ - -output /etc/ipsec.d/keys.secrets}
+\caption[Abbildung 168: ipsec newhostkey 1]{ipsec newhostkey 1}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/2.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets]{ipsec newhostkey - - configdir /etc/ipsec.d/ - - output /etc/ipsec.d/keys.secrets}
+\caption[Abbildung 169: ipsec newhostkey 2]{ipsec newhostkey 2}
 \end{figure}
 
 Die \textbf{rsa.conf} -Datei wird auf beiden Rechnern wie folgt angepasst.
@@ -2570,7 +2571,7 @@ Die \textbf{rsa.conf} -Datei wird auf beiden Rechnern wie folgt angepasst.
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 rsa.conf]{rsa.conf}
+\caption[Abbildung 170: rsa.conf]{rsa.conf}
 \end{figure}
 
 \newpage \textbf{Auf beiden Rechnern wird ipsec gestartet:}
@@ -2578,14 +2579,14 @@ Die \textbf{rsa.conf} -Datei wird auf beiden Rechnern wie folgt angepasst.
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/4.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec setup reload]{ipsec setup reload}
+\caption[Abbildung 171: ipsec setup reload]{ipsec setup reload}
 \end{figure}
 
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/4.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec setup reload]{ipsec setup reload}
+\caption[Abbildung 172: ipsec setup reload]{ipsec setup reload}
 \end{figure}
 
 \textbf{Die Verbindung wird in die Datenbank eingelesen:}
@@ -2593,7 +2594,7 @@ Die \textbf{rsa.conf} -Datei wird auf beiden Rechnern wie folgt angepasst.
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/5.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec auto - - add rsa]{ipsec auto - - add rsa}
+\caption[Abbildung 173: ipsec auto - - add rsa]{ipsec auto - - add rsa}
 \end{figure}
 
 \textbf{Verbindung wird hergestellt und ein Tunnel aufgebaut.}
@@ -2601,7 +2602,7 @@ Die \textbf{rsa.conf} -Datei wird auf beiden Rechnern wie folgt angepasst.
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/6.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec auto - - up rsa]{ipsec auto - - up rsa}
+\caption[Abbildung 174: ipsec auto - - up rsa]{ipsec auto - - up rsa}
 \end{figure}
 
 \newpage iii) Secure the computer traffic by creating iptables rules to permit only IPSec traffic between the two computers. All other, non-IPSec packets must be denied. \\
@@ -2658,7 +2659,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/bln/4.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\caption[Abbildung 175: /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
 \newpage \textbf{2) /etc/ipsec.conf }
@@ -2666,7 +2667,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/bln/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\caption[Abbildung 176: /etc/ipsec.conf]{/etc/ipsec.conf}
 \end{figure}
 
 \textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
@@ -2674,7 +2675,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iii/bln/1.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\caption[Abbildung 177: /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
 \newpage \textbf{4) ipsec\_ifconfig.dump }
@@ -2682,7 +2683,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/bln/1.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\caption[Abbildung 178:  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
 \end{figure}
 
 \textbf{5) ipsec\_look.dump}
@@ -2690,7 +2691,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/bln/2.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\caption[Abbildung 179:  ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
 \newpage \textbf{6) ipsec\_route.dump}
@@ -2698,7 +2699,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/bln/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung 180: ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
 \textbf{Files from Hamburg:}\\
@@ -2707,7 +2708,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/4.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\caption[Abbildung 181: /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
 \textbf{2) /etc/ipsec.conf }
@@ -2715,7 +2716,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/ii/mid/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\caption[Abbildung 182: /etc/ipsec.conf]{/etc/ipsec.conf}
 \end{figure}
 
 \textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
@@ -2723,7 +2724,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iii/mid/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\caption[Abbildung 183: /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
 \textbf{4) ipsec\_ifconfig.dump }
@@ -2731,7 +2732,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/1.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\caption[Abbildung 184: ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
 \end{figure}
 
 \newpage \textbf{5) ipsec\_look.dump}
@@ -2739,7 +2740,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/2.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\caption[Abbildung 185: ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
 \textbf{6) ipsec\_route.dump}
@@ -2747,7 +2748,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_7/iv/mid/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung 186: ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
 \section*{Exercise 8: Set up a network-to-network VPN using preshared key}
@@ -2763,7 +2764,7 @@ see figure 3 and save the result.\\
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/aufgabe_8/1.PNG} 
 \end{center} 
-\caption[Abbildung P5 ping-Ergebnis]{ping-Ergebnis}
+\caption[Abbildung 187: ping-Ergebnis]{ping-Ergebnis}
 \end{figure}
 
 \textbf{Zenmap between pnid4-mid-hh and pnid4-cnt-bln}
@@ -2771,7 +2772,7 @@ see figure 3 and save the result.\\
 \begin{center}
 \includegraphics[width=0.75\textwidth]{bilder/screens/Part_5/aufgabe_8/2.PNG} 
 \end{center} 
-\caption[Abbildung P5 zenmap for testing the connectivity]{zenmap for testing the connectivity}
+\caption[Abbildung 188: zenmap for testing the connectivity]{zenmap for testing the connectivity}
 \end{figure}
 
 \newpage ii) Capture http packets from pnidX-mid-hh to pnidX-cnt-bln
@@ -2803,7 +2804,7 @@ Mit Hilfe des Befehls \# ipsec ranbits 256 > net-to-net-psk.secrets wird ein zuf
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/01.PNG} 
 \end{center} 
-\caption[Abbildung P5 net-to-net-psk.secrets]{net-to-net-psk.secrets}
+\caption[Abbildung 189: net-to-net-psk.secrets]{net-to-net-psk.secrets}
 \end{figure}
 
 \textbf{Konfiguration der net-to-net-psk.conf Datei}
@@ -2811,7 +2812,7 @@ Mit Hilfe des Befehls \# ipsec ranbits 256 > net-to-net-psk.secrets wird ein zuf
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iii/02.PNG} 
 \end{center} 
-\caption[Abbildung P5 net-to-net-psk.conf]{net-to-net-psk.conf}
+\caption[Abbildung 190: net-to-net-psk.conf]{net-to-net-psk.conf}
 \end{figure}
 
 Da auf beiden Rechnern, dieselbe secrets und conf Datei ist, senden wir diese mit dem scp Protokoll rüber.
@@ -2923,7 +2924,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/2.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\caption[Abbildung 191: /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
 \textbf{2) /etc/ipsec.conf }
@@ -2931,7 +2932,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\caption[Abbildung 192: /etc/ipsec.conf]{/etc/ipsec.conf}
 \end{figure}
 
 \textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
@@ -2939,7 +2940,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iv/03.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\caption[Abbildung 193: /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
 \textbf{4) ipsec\_ifconfig.dump }
@@ -2947,7 +2948,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/4.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\caption[Abbildung 194: ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
 \end{figure}
 
 \textbf{5) ipsec\_look.dump}
@@ -2955,7 +2956,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/5.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\caption[Abbildung 195: ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
 \textbf{6) ipsec\_route.dump}
@@ -2963,7 +2964,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/bln/6.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung 196: ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
 \textbf{Files from Hamburg:}\\
@@ -2980,7 +2981,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/2.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\caption[Abbildung 197: /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
 \textbf{2) /etc/ipsec.conf }
@@ -2988,7 +2989,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\caption[Abbildung 198: /etc/ipsec.conf]{/etc/ipsec.conf}
 \end{figure}
 
 \textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
@@ -2996,7 +2997,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/iv/02.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\caption[Abbildung 199: /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
 \textbf{4) ipsec\_ifconfig.dump }
@@ -3004,7 +3005,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/4.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\caption[Abbildung 200: ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
 \end{figure}
 
 \textbf{5) ipsec\_look.dump}
@@ -3012,7 +3013,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/5.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\caption[Abbildung 201: ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
 \textbf{6) ipsec\_route.dump}
@@ -3020,7 +3021,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_8/v/hh/6.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung 202: ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
 \section*{Exercise 9: Set up a network-to-network VPN using RSA secrets keys}
@@ -3201,7 +3202,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/2.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\caption[Abbildung 203: /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
 \textbf{2) /etc/ipsec.conf }
@@ -3209,7 +3210,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\caption[Abbildung 204: /etc/ipsec.conf]{/etc/ipsec.conf}
 \end{figure}
 
 \textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
@@ -3217,7 +3218,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iv/1.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\caption[Abbildung 205: /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
 \textbf{4) ipsec\_ifconfig.dump }
@@ -3225,7 +3226,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/4.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\caption[Abbildung 206:  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
 \end{figure}
 
 \textbf{5) ipsec\_look.dump}
@@ -3233,7 +3234,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/5.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\caption[Abbildung 207:  ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
 \textbf{6) ipsec\_route.dump}
@@ -3241,7 +3242,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/bln/6.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung 208: ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
 \textbf{Files from Hamburg:}\\
@@ -3258,7 +3259,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/2.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.secrets]{/etc/ipsec.secrets}
+\caption[Abbildung 209: /etc/ipsec.secrets]{/etc/ipsec.secrets}
 \end{figure}
 
 \textbf{2) /etc/ipsec.conf }
@@ -3266,7 +3267,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/3.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec.conf]{/etc/ipsec.conf}
+\caption[Abbildung 210: /etc/ipsec.conf]{/etc/ipsec.conf}
 \end{figure}
 
 \textbf{3) /etc/ipsec\_iptables - a file which contains your iptables rules }
@@ -3274,7 +3275,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/iv/2.PNG} 
 \end{center} 
-\caption[Abbildung P5 /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
+\caption[Abbildung 211: /etc/ipsec\_iptables ]{/etc/ipsec\_iptables }
 \end{figure}
 
 \textbf{4) ipsec\_ifconfig.dump }
@@ -3282,7 +3283,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/4.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
+\caption[Abbildung 212:  ipsec\_ifconfig.dump]{ ipsec\_ifconfig.dump}
 \end{figure}
 
 \textbf{5) ipsec\_look.dump}
@@ -3290,7 +3291,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/5.PNG} 
 \end{center} 
-\caption[Abbildung P5  ipsec\_look.dump]{ ipsec\_look.dump}
+\caption[Abbildung 213: ipsec\_look.dump]{ ipsec\_look.dump}
 \end{figure}
 
 \textbf{6) ipsec\_route.dump}
@@ -3298,7 +3299,7 @@ The following files must be included with the lab report:\\
 \begin{center}
 \includegraphics[width=1\textwidth]{bilder/screens/Part_5/aufgabe_9/v/hh/6.PNG} 
 \end{center} 
-\caption[Abbildung P5 ipsec\_route.dump]{ipsec\_route.dump}
+\caption[Abbildung 214: ipsec\_route.dump]{ipsec\_route.dump}
 \end{figure}
 
 %\backmatter 
